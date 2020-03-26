@@ -5,20 +5,24 @@ using System.Text;
 
 namespace MantenimientoVehicular.Entidades
 {
-    public class EntradaArticulo
+    public class DetallePedido
     {
         [Key]
-        public int EntradaVehiculoId { get; set; }
+        public int Id { get; set; }
+        public int PedidoId { get; set; }
         public int ArticuloId { get; set; }
-        public string NombreArticulo { get; set; }
+        public string Descripcion { get; set; }
         public decimal Cantidad { get; set; }
+        public decimal Precio { get; set; }
 
-        public EntradaArticulo()
+        public DetallePedido()
         {
-            EntradaVehiculoId = 0;
+            Id = 0;
+            PedidoId = 0;
             ArticuloId = 0;
-            NombreArticulo = string.Empty;
+            Descripcion = string.Empty;
             Cantidad = 0;
+            Precio = 0;
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace MantenimientoVehicular.Entidades
 {
-    public class PedidoProveedores
+    public class PedidosProveedores
     {
         [Key]
         public int PedidoId { get; set; }
@@ -15,10 +15,12 @@ namespace MantenimientoVehicular.Entidades
         public decimal SubTotal { get; set; }
         public decimal Itebis { get; set; }
         public decimal Total { get; set; }
-        [ForeignKey("PedidoId")]
-        public virtual List<DetallePedidoProveedor> DPedidos { get; set; }
+        
 
-        public PedidoProveedores(int pedidoId, string proveedor, DateTime fecha, decimal subTotal, decimal itebis, decimal total, List<DetallePedidoProveedor> dPedidos)
+        [ForeignKey("PedidoId")]
+        public virtual List<DetallePedido> DPedidos { get; set; }
+
+        public PedidosProveedores(int pedidoId, string proveedor, DateTime fecha, decimal subTotal, decimal itebis, decimal total, List<DetallePedido> dPedidos)
         {
             PedidoId = pedidoId;
             Proveedor = proveedor;

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MantenimientoVehicular.Entidades
 {
-    public class Cliente
+    public class Clientes
     {
         [Key]
         public int ClienteId { get; set; }
@@ -14,8 +14,9 @@ namespace MantenimientoVehicular.Entidades
         public string Telefono { get; set; }
         public string Direccion { get; set; }
         public string Email { get; set; }
+        public DateTime Fecha { get; set; }
 
-        public Cliente()
+        public Clientes()
         {
             ClienteId = 0;
             Nombre = string.Empty;
@@ -23,6 +24,7 @@ namespace MantenimientoVehicular.Entidades
             Telefono = string.Empty;
             Direccion = string.Empty;
             Email = string.Empty;
+            Fecha = DateTime.Now;
         }
     }
 }

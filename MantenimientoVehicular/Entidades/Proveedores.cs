@@ -14,6 +14,7 @@ namespace MantenimientoVehicular.Entidades
         public string Provincia { get; set; }
         public string Ciudad { get; set; }
         public string Calle { get; set; }
+        public DateTime Fecha { get; set; }
 
         public Proveedores()
         {
@@ -23,7 +24,7 @@ namespace MantenimientoVehicular.Entidades
             Provincia = string.Empty;
             Ciudad = string.Empty;
             Calle = string.Empty;
-
+            Fecha = DateTime.Now;
         }
     }
 }

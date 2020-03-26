@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MantenimientoVehicular.Entidades
 {
-    public class Vehiculo
+    public class Vehiculos
     {
         [Key]
         public int VehiculoId { get; set; }
@@ -13,14 +13,15 @@ namespace MantenimientoVehicular.Entidades
         public string TipoVehiculo { get; set; }
         public string Descripcion { get; set; }
         public int Año { get; set; }
-
-        public Vehiculo()
+        public DateTime Fecha { get; set; }
+        public Vehiculos()
         {
             VehiculoId = 0;
             ClienteId = 0;
             TipoVehiculo = string.Empty;
             Descripcion = string.Empty;
             Año = 0;
+            Fecha = DateTime.Now;
         }
     }
 }

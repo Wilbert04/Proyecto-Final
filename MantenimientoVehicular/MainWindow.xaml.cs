@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MantenimientoVehicular.UI.Registros;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,28 @@ namespace MantenimientoVehicular
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void RegistroUsuario_Click(object sender, RoutedEventArgs e)
+        {
+            rUsuario registro = new rUsuario();
+            registro.ShowDialog();
+
+        }
+
+        private void RegistroCliente_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RegistroVehiculo_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ConsultaUsuario_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

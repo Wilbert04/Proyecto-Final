@@ -16,10 +16,12 @@ namespace MantenimientoVehicular.Entidades
         public decimal SubTotal { get; set; }
         public decimal Itebis { get; set; }
         public decimal Total { get; set; }
+        public DateTime Fecha { get; set; }
+
         [ForeignKey("MantenimientoId")]
         public virtual List<DetalleMantenimiento> Dmantenimiento { get; set; }
 
-        public Mantenimiento(int mantemientoId, DateTime proximoMantemiento, string vehiculo, string cliente, decimal subTotal, decimal itebis, decimal total, List<DetalleMantenimiento> dmantenimiento)
+        public Mantenimiento(int mantemientoId, DateTime proximoMantemiento, string vehiculo, string cliente, decimal subTotal, decimal itebis, decimal total, DateTime fecha, List<DetalleMantenimiento> dmantenimiento)
         {
             MantemientoId = mantemientoId;
             ProximoMantemiento = proximoMantemiento;
@@ -28,6 +30,7 @@ namespace MantenimientoVehicular.Entidades
             SubTotal = subTotal;
             Itebis = itebis;
             Total = total;
+            Fecha = DateTime.Now;
             Dmantenimiento = dmantenimiento;
         }
     }
