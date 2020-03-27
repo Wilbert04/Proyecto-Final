@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace Proyecto_MantenimientoVehicular.Entidades
 {
@@ -18,7 +17,7 @@ namespace Proyecto_MantenimientoVehicular.Entidades
         [ForeignKey("PedidoId")]
         public virtual List<DetallePedidos> DPedidos { get; set; } = new List<DetallePedidos>();
 
-         public PedidosProveedor()
+        public PedidosProveedor()
         {
             PedidoId = 0;
             Proveedor = string.Empty;

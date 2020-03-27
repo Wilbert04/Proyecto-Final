@@ -3,9 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:PasswordHelper="clr-namespace:Proyecto_MantenimientoVehicular.Entidades"
         xmlns:local="clr-namespace:Proyecto_MantenimientoVehicular.UI.Registros"
         mc:Ignorable="d"
-        Title="rUsuarios" Height="450" Width="800">
+        Title="rUsuarios" Height="450" Width="670">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50*"/>
@@ -53,10 +54,16 @@
 
             <Label Content="Contraseña" HorizontalAlignment="Left" Margin="350,-95,0,0" Height="30"/>
             <Label Content="Confirmar" HorizontalAlignment="Left" Margin="355,-25,0,0" Height="26"/>
-            <PasswordBox x:Name="contraseñaPasswordBox" Width="145" HorizontalAlignment="Left" Margin="430,-99,0,0" Height="21"
-                         >
+
+            <PasswordBox x:Name="contraseñaPasswordBox" Width="145" HorizontalAlignment="Left" Margin="430,-99,0,0" Height="21" >
+                <!--PasswordHelper:PasswordHelper.Attach="True"
+                         PasswordHelper:PasswordHelper.Password="{Binding Contraseña,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"-->
+                         
+                         
+                        
 
             </PasswordBox>
+            
             <PasswordBox x:Name="confirmarPasswordBox" Width="145" HorizontalAlignment="Left" Margin="430,-30,0,0" Height="23"/>
 
 

@@ -2,10 +2,7 @@
 using Proyecto_MantenimientoVehicular.DAL;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using Proyecto_MantenimientoVehicular.Entidades;
 
 namespace Proyecto_MantenimientoVehicular.BLL
 {

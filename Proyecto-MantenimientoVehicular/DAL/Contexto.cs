@@ -1,8 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Proyecto_MantenimientoVehicular.Entidades;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Proyecto_MantenimientoVehicular.DAL
 {

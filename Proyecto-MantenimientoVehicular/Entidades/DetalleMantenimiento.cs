@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Proyecto_MantenimientoVehicular.Entidades
 {
-   public class DetalleMantenimiento
+    public class DetalleMantenimiento
     {
         [Key]
         public int Id { get; set; }
