@@ -12,23 +12,20 @@ namespace MantenimientoVehicular.Entidades
         public int PedidoId { get; set; }
         public string Proveedor { get; set; }
         public DateTime Fecha { get; set; }
-        public decimal SubTotal { get; set; }
-        public decimal Itebis { get; set; }
-        public decimal Total { get; set; }
-        
+       
+
 
         [ForeignKey("PedidoId")]
-        public virtual List<DetallePedido> DPedidos { get; set; }
+        public virtual List<DetallePedido> DPedidos { get; set; } = new List<DetallePedido>();
 
-        public PedidosProveedores(int pedidoId, string proveedor, DateTime fecha, decimal subTotal, decimal itebis, decimal total, List<DetallePedido> dPedidos)
+        public PedidosProveedores()
         {
-            PedidoId = pedidoId;
-            Proveedor = proveedor;
-            Fecha = fecha;
-            SubTotal = subTotal;
-            Itebis = itebis;
-            Total = total;
-            DPedidos = dPedidos;
+            PedidoId = 0;
+            Proveedor = string.Empty;
+            Fecha = DateTime.Now;
+            
+
+
         }
     }
 }

@@ -9,7 +9,7 @@ namespace MantenimientoVehicular.Entidades
     public class Mantenimiento
     {
         [Key]
-        public int MantemientoId { get; set; }
+        public int MantenimientoId { get; set; }
         public DateTime ProximoMantemiento { get; set; }
         public string Vehiculo { get; set; }
         public string Cliente { get; set; }
@@ -19,19 +19,20 @@ namespace MantenimientoVehicular.Entidades
         public DateTime Fecha { get; set; }
 
         [ForeignKey("MantenimientoId")]
-        public virtual List<DetalleMantenimiento> Dmantenimiento { get; set; }
+        public virtual List<DetalleMantenimiento> DMantenimiento { get; set; } = new List<DetalleMantenimiento>();
 
-        public Mantenimiento(int mantemientoId, DateTime proximoMantemiento, string vehiculo, string cliente, decimal subTotal, decimal itebis, decimal total, DateTime fecha, List<DetalleMantenimiento> dmantenimiento)
+        public Mantenimiento()
         {
-            MantemientoId = mantemientoId;
-            ProximoMantemiento = proximoMantemiento;
-            Vehiculo = vehiculo;
-            Cliente = cliente;
-            SubTotal = subTotal;
-            Itebis = itebis;
-            Total = total;
+            MantenimientoId = 0;
+            ProximoMantemiento = DateTime.Now;
+            Vehiculo = string.Empty;
+            Cliente = string.Empty;
+            SubTotal = 0;
+            Itebis = 0;
+            Total = 0;
             Fecha = DateTime.Now;
-            Dmantenimiento = dmantenimiento;
+
+
         }
     }
 }

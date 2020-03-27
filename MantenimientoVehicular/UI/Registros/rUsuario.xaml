@@ -53,25 +53,11 @@
 
             <Label Content="Contraseña" HorizontalAlignment="Left" Margin="350,-95,0,0" Height="30"/>
             <Label Content="Confirmar" HorizontalAlignment="Left" Margin="355,-25,0,0" Height="26"/>
-            <TextBox x:Name="contraseñaTextBox" TextWrapping="Wrap" Width="158" HorizontalAlignment="Left" Margin="428,-100,0,0" Height="23">
-                <TextBox.Text>
-                    <Binding Path="Contraseña" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
-                        <Binding.ValidationRules>
-                            <ExceptionValidationRule/>
-                        </Binding.ValidationRules>
-                    </Binding>
-                </TextBox.Text>
-            </TextBox>
-
-            <TextBox x:Name="confirmarTextBox" TextWrapping="Wrap" Width="157" HorizontalAlignment="Left" Margin="428,-30,0,0" Height="24">
-                <TextBox.Text>
-                    <Binding Path="Confirmar" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
-                        <Binding.ValidationRules>
-                            <ExceptionValidationRule/>
-                        </Binding.ValidationRules>
-                        </Binding>
-                </TextBox.Text>
-            </TextBox>
+            <PasswordBox x:Name="contraseñaPasswordBox" Width="145" HorizontalAlignment="Left" Margin="430,-99,0,0" Height="21"
+                         >
+                
+            </PasswordBox>
+            <PasswordBox Width="145" HorizontalAlignment="Left" Margin="430,-30,0,0" Height="23"/>
 
 
         </StackPanel>
