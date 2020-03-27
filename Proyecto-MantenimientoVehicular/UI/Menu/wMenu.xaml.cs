@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using Proyecto_MantenimientoVehicular.UI.Registros;
+using System.Windows;
 
 namespace Proyecto_MantenimientoVehicular.UI.Menu
 {
@@ -10,6 +11,18 @@ namespace Proyecto_MantenimientoVehicular.UI.Menu
         public wMenu()
         {
             InitializeComponent();
+        }
+
+        private void registrousuario_Click(object sender, RoutedEventArgs e)
+        {
+            rUsuarios registro = new rUsuarios();
+            registro.ShowDialog();
+        }
+
+        private void registrovehiculo_Click(object sender, RoutedEventArgs e)
+        {
+            rVehiculo registro = new rVehiculo();
+            registro.ShowDialog();
         }
     }
 }

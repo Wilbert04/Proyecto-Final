@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_MantenimientoVehicular"
+        xmlns:PH="clr-namespace:Proyecto_MantenimientoVehicular.Entidades"
         mc:Ignorable="d"
         Title="Login" Height="400" Width="500">
     <Grid>
@@ -13,7 +14,11 @@
             <Label Content="Contraseña" HorizontalAlignment="Left" Margin="100,10,0,0" Width="100" FontFamily="Bell MT" FontWeight="Bold"/>
             <Button x:Name="iniciarSesionButton" Content="Iniciar Sesion" HorizontalAlignment="Left" Width="120" Height="30" Margin="205,25,0,0" Click="Button_Click" />
             <Button x:Name="salirButton" Content="Salir" HorizontalAlignment="Left" Width="80" Height="30" Margin="224,13,0,0" Click="salirButton_Click" />
-            <PasswordBox x:Name="contraseñaPasswordBox" Width="173" HorizontalAlignment="Left" Margin="175,-220,0,0" Height="19"/>
+            <PasswordBox x:Name="contraseñaPasswordBox" Width="176" HorizontalAlignment="Left" Margin="175,-222,0,0" Height="20"/>
+
+
+
+
 
 
         </StackPanel>
