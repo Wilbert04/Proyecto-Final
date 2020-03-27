@@ -15,7 +15,7 @@ namespace Proyecto_MantenimientoVehicular.Entidades
         public decimal Cantidad { get; set; }
         public decimal Precio { get; set; }
 
-        public DetallePedido()
+        public DetallePedidos()
         {
             Id = 0;
             PedidoId = 0;
