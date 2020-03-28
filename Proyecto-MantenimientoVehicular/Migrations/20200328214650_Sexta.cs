@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Proyecto_MantenimientoVehicular.Migrations
 {
-    public partial class Segunda : Migration
+    public partial class Sexta : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -135,6 +135,7 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                     ClienteId = table.Column<string>(nullable: true),
                     TipoVehiculo = table.Column<string>(nullable: true),
                     Descripcion = table.Column<string>(nullable: true),
+                    Placa = table.Column<int>(nullable: false),
                     Año = table.Column<int>(nullable: false),
                     Fecha = table.Column<DateTime>(nullable: false)
                 },

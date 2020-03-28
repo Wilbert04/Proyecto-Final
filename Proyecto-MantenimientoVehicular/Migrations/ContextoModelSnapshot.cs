@@ -269,6 +269,9 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("Placa")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("TipoVehiculo")
                         .HasColumnType("TEXT");
 

@@ -9,8 +9,8 @@ using Proyecto_MantenimientoVehicular.DAL;
 namespace Proyecto_MantenimientoVehicular.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20200328200133_Segunda")]
-    partial class Segunda
+    [Migration("20200328214650_Sexta")]
+    partial class Sexta
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -270,6 +270,9 @@ namespace Proyecto_MantenimientoVehicular.Migrations
 
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("Placa")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("TipoVehiculo")
                         .HasColumnType("TEXT");

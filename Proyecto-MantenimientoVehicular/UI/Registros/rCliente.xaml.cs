@@ -24,18 +24,19 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
         {
             InitializeComponent();
             this.DataContext = clientes;
+            idTextBox.Text = "0";
         }
 
         private void LimpiarCampos()
         {
-            idTextBox.Text = string.Empty;
+            
             nombreTextBox.Text = string.Empty;
             telefonoTextBox.Text = string.Empty;
             cedulaTextBox.Text = string.Empty;
             direccionTextBox.Text = string.Empty;
             emailTextBox.Text = string.Empty;
+            fechaDatePicker.SelectedDate = DateTime.Now;
         }
-
 
         private bool ExisteEnLaBaseDatos()
         {
@@ -43,38 +44,38 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             return (clientes != null);
         }
 
+
         private bool ValidarCampos()
         {
-            bool paso = false;
+            bool paso = true;
 
-           
             if (string.IsNullOrWhiteSpace(nombreTextBox.Text))
             {
-                MessageBox.Show("Campo Obligatorio!!", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Este Campo es Obligatorio");
                 paso = false;
             }
 
             if (string.IsNullOrWhiteSpace(telefonoTextBox.Text))
             {
-                MessageBox.Show("Campo Obligatorio!!", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Este Campo es Obligatorio");
                 paso = false;
             }
 
             if (string.IsNullOrWhiteSpace(cedulaTextBox.Text))
             {
-                MessageBox.Show("Campo Obligatorio!!", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Este Campo es Obligatorio");
                 paso = false;
             }
 
             if (string.IsNullOrWhiteSpace(direccionTextBox.Text))
             {
-                MessageBox.Show("Campo Obligatorio!!", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Este Campo es Obligatorio");
                 paso = false;
             }
 
             if (string.IsNullOrWhiteSpace(emailTextBox.Text))
             {
-                MessageBox.Show("Campo Obligatorio!!", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Este Campo es Obligatorio");
                 paso = false;
             }
 
@@ -133,6 +134,11 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             }
         }
 
+        private void nuevoButton_Click(object sender, RoutedEventArgs e)
+        {
+            LimpiarCampos();
+        }
+
         private void eliminarButton_Click(object sender, RoutedEventArgs e)
         {
             if (ClienteBLL.Eliminar(clientes.ClienteId))
@@ -144,11 +150,6 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             {
                 MessageBox.Show("No Eliminado", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-        }
-
-        private void nuevoButton_Click(object sender, RoutedEventArgs e)
-        {
-            LimpiarCampos();
         }
     }
 }

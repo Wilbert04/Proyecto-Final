@@ -11,6 +11,7 @@ namespace Proyecto_MantenimientoVehicular.Entidades
         public string ClienteId { get; set; }
         public string TipoVehiculo { get; set; }
         public string Descripcion { get; set; }
+        public int Placa { get; set; }
         public int Año { get; set; }
         public DateTime Fecha { get; set; }
 
@@ -21,6 +22,7 @@ namespace Proyecto_MantenimientoVehicular.Entidades
             ClienteId = string.Empty;
             TipoVehiculo = string.Empty;
             Descripcion = string.Empty;
+            Placa = 0;
             Año = 0;
             Fecha = DateTime.Now;
         }

@@ -23,14 +23,14 @@ namespace Proyecto_MantenimientoVehicular
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            ////if (usuarioTextBox.Text == "Admin" && contraseñaPasswordBox.Password == "Admin")
-            ////{
-            ////    wMenu menuprimcipal = new wMenu();
-            ////    menuprimcipal.ShowDialog();
-            ////    this.Close();
-            ////}
+            if (usuarioTextBox.Text == "Admin" && contraseñaPasswordBox.Password == "Admin")
+            {
+                wMenu menuprimcipal = new wMenu();
+                menuprimcipal.ShowDialog();
+                this.Close();
+            }
 
-            IniciarSesion();
+            //IniciarSesion();
 
         }
 

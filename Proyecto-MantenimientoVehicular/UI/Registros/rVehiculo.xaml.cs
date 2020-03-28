@@ -27,13 +27,13 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             {
                 "Julio","Ericsson"
             };
-            clienteComboBox.SelectedItem = clientes ;
+            clienteComboBox.ItemsSource = clientes;
 
             List<string> tipoVehiculo = new List<string>
             {
                 "Carros","Camionetas","Jeepetas","Motores","Camiones",
             };
-            tipovehiculoComboBox.SelectedItem = tipoVehiculo;
+            tipovehiculoComboBox.ItemsSource = tipoVehiculo;
 
             this.DataContext = vehiculos;
             idTextBox.Text = "0";
@@ -44,6 +44,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             clienteComboBox.Text = string.Empty;
             descripcionTextBox.Text = string.Empty;
             clienteComboBox.Text = string.Empty;
+            placaTextBox.Text = string.Empty;
             añoTextBox.Text = string.Empty;
             tipovehiculoComboBox.Text = string.Empty;
             fechaDatePicker.SelectedDate = DateTime.Now;

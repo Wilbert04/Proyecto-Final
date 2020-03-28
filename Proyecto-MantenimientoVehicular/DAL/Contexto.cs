@@ -17,7 +17,7 @@ namespace Proyecto_MantenimientoVehicular.DAL
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlite(@"Data Source = Mantenimiento1.db");
+            optionsBuilder.UseSqlite(@"Data Source = Mantenimiento4.db");
         }
     }
 }
