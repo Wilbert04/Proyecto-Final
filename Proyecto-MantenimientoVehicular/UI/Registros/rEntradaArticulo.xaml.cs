@@ -13,11 +13,11 @@ using System.Windows.Shapes;
 namespace Proyecto_MantenimientoVehicular.UI.Registros
 {
     /// <summary>
-    /// Interaction logic for EntraArticulo.xaml
+    /// Interaction logic for rEntradaArticulo.xaml
     /// </summary>
-    public partial class EntraArticulo : Window
+    public partial class rEntradaArticulo : Window
     {
-        public EntraArticulo()
+        public rEntradaArticulo()
         {
             InitializeComponent();
         }

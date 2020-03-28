@@ -40,7 +40,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
         private bool ExisteEnLaBaseDatos()
         {
             Proveedores proveedores = ProveedoresBLL.Buscar((int)Convert.ToInt32(idTextBox.Text));
-                return (proveedores != null);
+            return (proveedores != null);
         }
 
         private bool ValidarCampos()
@@ -151,5 +151,6 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
         {
             LimpiarCampos();
         }
+
     }
 }

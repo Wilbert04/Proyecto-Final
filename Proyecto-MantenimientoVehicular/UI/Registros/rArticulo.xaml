@@ -1,11 +1,11 @@
-﻿<Window x:Class="Proyecto_MantenimientoVehicular.UI.Registros.RegistroArticulo"
+﻿<Window x:Class="Proyecto_MantenimientoVehicular.UI.Registros.rArticulo"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_MantenimientoVehicular.UI.Registros"
         mc:Ignorable="d"
-        Title="Registro Articulos" Height="350" Width="600">
+        Title="rArticulo" Height="350" Width="600">
     <Grid>
         <Label Content="ArticuloId" HorizontalAlignment="Left" Margin="23,30,0,0" VerticalAlignment="Top"/>
         <Label Content="Descripcion" HorizontalAlignment="Left" Margin="21,107,0,0" VerticalAlignment="Top"/>
@@ -13,32 +13,71 @@
         <Label Content="Precio/U" HorizontalAlignment="Left" Margin="23,167,0,0" VerticalAlignment="Top"/>
         <Label Content="Existencia" HorizontalAlignment="Left" Margin="339,106,0,0" VerticalAlignment="Top"/>
         <Label Content="Fecha" HorizontalAlignment="Left" Margin="378,31,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="100,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
-        <TextBox HorizontalAlignment="Left" Margin="102,111,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="206"/>
-        <TextBox HorizontalAlignment="Left" Margin="101,143,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="109"/>
-        <TextBox HorizontalAlignment="Left" Margin="102,173,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="107"/>
-        <TextBox HorizontalAlignment="Left" Margin="409,111,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Nuevo" HorizontalAlignment="Left" Margin="44,260,0,0" VerticalAlignment="Top" Height="25" Width="115" FontSize="14" FontWeight="Bold">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/nuevo.png" Stretch="Uniform" AlignmentX="Left" TileMode="None"/>
-            </Button.Background>
+        <TextBox x:Name="idTextBox" HorizontalAlignment="Left" Margin="100,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">
+            <TextBox.Text>
+                <Binding Path="ArticuloId" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                    <Binding.ValidationRules>
+                        <ExceptionValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox x:Name="descripcionTextBox" HorizontalAlignment="Left" Margin="102,111,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="206">
+            <TextBox.Text>
+                <Binding Path="Descripcion" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                    <Binding.ValidationRules>
+                        <ExceptionValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox x:Name="cantidadTextBox" HorizontalAlignment="Left" Margin="101,143,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="109">
+            <TextBox.Text>
+                <Binding Path="Cantidad" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                    <Binding.ValidationRules>
+                        <ExceptionValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox x:Name="precioTextBox" HorizontalAlignment="Left" Margin="102,173,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="107">
+            <TextBox.Text>
+                <Binding Path="Precio" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                    <Binding.ValidationRules>
+                        <ExceptionValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox x:Name="existenciaTextBox" HorizontalAlignment="Left" Margin="409,111,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120">
+            <TextBox.Text>
+                <Binding Path="Existencia" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                    <Binding.ValidationRules>
+                        <ExceptionValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <Button x:Name="nuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="44,260,0,0" VerticalAlignment="Top" Height="25" Width="115" FontSize="14" FontWeight="Bold" Click="nuevoButton_Click">
+           
         </Button>
-        <Button Content="Guardar" HorizontalAlignment="Left" Margin="234,260,0,0" VerticalAlignment="Top" Height="25" Width="115" FontSize="14" FontWeight="Bold">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Save.png" Stretch="Uniform" AlignmentX="Left" TileMode="None"/>
-            </Button.Background>
+        <Button x:Name="guardrButton" Content="Guardar" HorizontalAlignment="Left" Margin="234,260,0,0" VerticalAlignment="Top" Height="25" Width="115" FontSize="14" FontWeight="Bold" Click="guardrButton_Click">
+            
         </Button>
-        <Button Content="Eliminar" HorizontalAlignment="Left" Margin="421,260,0,0" VerticalAlignment="Top" Height="25" Width="115" FontSize="14" FontWeight="Bold">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Eliminar.png" Stretch="Uniform" AlignmentX="Left" TileMode="None"/>
-            </Button.Background>
+        <Button x:Name="eliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="421,260,0,0" VerticalAlignment="Top" Height="25" Width="115" FontSize="14" FontWeight="Bold" Click="eliminarButton_Click">
+            
         </Button>
-        <Button Content="Buscar" HorizontalAlignment="Left" Margin="214,31,0,0" VerticalAlignment="Top" Height="25" Width="116" FontSize="14" FontWeight="Bold">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Buscar.png" Stretch="Uniform" AlignmentX="Left" TileMode="None"/>
-            </Button.Background>
+        <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="214,31,0,0" VerticalAlignment="Top" Height="25" Width="116" FontSize="14" FontWeight="Bold" Click="buscarButton_Click">
+            
         </Button>
-        <DatePicker HorizontalAlignment="Left" Margin="425,33,0,0" VerticalAlignment="Top" Width="119"/>
-
+        <DatePicker x:Name="fechaDatePicker" HorizontalAlignment="Left" Margin="425,33,0,0" VerticalAlignment="Top" Width="119">
+            <DatePicker.SelectedDate>
+                <Binding Path="Fecha" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                    <Binding.ValidationRules>
+                        <ExceptionValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </DatePicker.SelectedDate>
+        </DatePicker>
     </Grid>
 </Window>

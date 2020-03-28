@@ -24,24 +24,5 @@ namespace Proyecto_MantenimientoVehicular.UI.Menu
             rVehiculo registro = new rVehiculo();
             registro.ShowDialog();
         }
-
-        private void RegistroCliente_Click(object sender, RoutedEventArgs e)
-        {
-            RegistroCliente rCliente = new RegistroCliente();
-            rCliente.ShowDialog();
-        }
-
-        private void EntraArticulo_Click(object sender, RoutedEventArgs e)
-        {
-            EntraArticulo Registro = new EntraArticulo();
-            Registro.ShowDialog();
-        }
-
-        private void rProveedores_Click(object sender, RoutedEventArgs e)
-        {
-            rProveedores rproveedores = new rProveedores();
-            rproveedores.ShowDialog();
-
-        }
     }
 }

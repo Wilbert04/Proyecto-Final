@@ -12,9 +12,6 @@
             <MenuItem Header="Registros">
                 <MenuItem x:Name="registrousuario" Header="Registrar Usuario" Click="registrousuario_Click"/>
                 <MenuItem x:Name="registrovehiculo" Header="Registrar Vehiculo" Click="registrovehiculo_Click"/>
-                <MenuItem x:Name="RegistroCliente" Header="Registrar Cliente" Click="RegistroCliente_Click"/>
-                <MenuItem x:Name="EntraArticulo" Header=" Registrar entra Articulo" Click="EntraArticulo_Click"/>
-                <MenuItem x:Name="rProveedores" Header="Registrar Proveedor" Click="rProveedores_Click"/>
             </MenuItem>
             <MenuItem Header="Consultas"> </MenuItem>
             <MenuItem Header="Ayuda"></MenuItem>

@@ -1,40 +1,31 @@
-﻿<Window x:Class="Proyecto_MantenimientoVehicular.UI.Registros.EntraArticulo"
+﻿<Window x:Class="Proyecto_MantenimientoVehicular.UI.Registros.rEntradaArticulo"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_MantenimientoVehicular.UI.Registros"
         mc:Ignorable="d"
-        Title="Registro entra Articulo" Height="350" Width="500">
+        Title="rEntradaArticulo" Height="350" Width="510">
     <Grid>
         <Label Content="EntradaId" HorizontalAlignment="Left" Margin="18,31,0,0" VerticalAlignment="Top"/>
         <Label Content="Descripcion" HorizontalAlignment="Left" Margin="20,116,0,0" VerticalAlignment="Top"/>
         <Label Content="Cantidad" HorizontalAlignment="Left" Margin="21,150,0,0" VerticalAlignment="Top"/>
         <Label Content="Fecha" HorizontalAlignment="Left" Margin="317,31,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="IdTextbox" HorizontalAlignment="Left" Margin="94,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82"/>
-        <TextBox x:Name="DescripcionId" HorizontalAlignment="Left" Margin="94,121,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="217"/>
+        <TextBox x:Name="descripcionTextBox" HorizontalAlignment="Left" Margin="94,121,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="217"/>
         <TextBox x:Name="CantidadTextbox" HorizontalAlignment="Left" Margin="96,154,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Nuevo" HorizontalAlignment="Left" Margin="30,242,0,0" VerticalAlignment="Top" Height="33" Width="115" FontSize="14" FontWeight="Bold">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/nuevo.png" Stretch="Uniform" AlignmentX="Left" TileMode="None"/>
-            </Button.Background>
+        <Button x:Name="nuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="30,242,0,0" VerticalAlignment="Top" Height="33" Width="115" FontSize="14" FontWeight="Bold">
+            
         </Button>
-        <Button Content="Guardar" HorizontalAlignment="Left" Margin="203,242,0,0" VerticalAlignment="Top" Height="33" Width="115" FontSize="14" FontWeight="Bold">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Save.png" Stretch="Uniform" AlignmentX="Left" TileMode="None"/>
-            </Button.Background>
+        <Button x:Name="guardarButton" Content="Guardar" HorizontalAlignment="Left" Margin="203,242,0,0" VerticalAlignment="Top" Height="33" Width="115" FontSize="14" FontWeight="Bold">
+            
         </Button>
-        <Button Content="Eliminar" HorizontalAlignment="Left" Margin="357,242,0,0" VerticalAlignment="Top" Height="33" Width="115" FontSize="14" FontWeight="Bold">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Eliminar.png" Stretch="Uniform" AlignmentX="Left" TileMode="None"/>
-            </Button.Background>
+        <Button x:Name="eliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="357,242,0,0" VerticalAlignment="Top" Height="33" Width="115" FontSize="14" FontWeight="Bold">
+            
         </Button>
-        <Button Content="Buscar" HorizontalAlignment="Left" Margin="189,31,0,0" VerticalAlignment="Top" Height="26" Width="90" FontSize="14" FontWeight="Bold">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Buscar.png" Stretch="Uniform" AlignmentX="Left" TileMode="None"/>
-            </Button.Background>
+        <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="189,31,0,0" VerticalAlignment="Top" Height="26" Width="90" FontSize="14" FontWeight="Bold">
+            
         </Button>
         <DatePicker x:Name="FechaPicker" HorizontalAlignment="Left" Margin="364,33,0,0" VerticalAlignment="Top" Width="100"/>
-
     </Grid>
 </Window>

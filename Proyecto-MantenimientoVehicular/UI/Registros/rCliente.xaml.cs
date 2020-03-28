@@ -15,63 +15,68 @@ using System.Windows.Shapes;
 namespace Proyecto_MantenimientoVehicular.UI.Registros
 {
     /// <summary>
-    /// Interaction logic for rArticulo.xaml
+    /// Interaction logic for rCliente.xaml
     /// </summary>
-    public partial class rArticulo : Window
+    public partial class rCliente : Window
     {
-        Articulos articulos = new Articulos();
-        public rArticulo()
+        Clientes clientes = new Clientes();
+        public rCliente()
         {
             InitializeComponent();
-            this.DataContext = articulos;
+            this.DataContext = clientes;
         }
 
         private void LimpiarCampos()
         {
             idTextBox.Text = string.Empty;
-            descripcionTextBox.Text = string.Empty;
-            cantidadTextBox.Text = string.Empty;
-            precioTextBox.Text = string.Empty;
-            existenciaTextBox.Text = string.Empty;
-            fechaDatePicker.SelectedDate = DateTime.Now;
+            nombreTextBox.Text = string.Empty;
+            telefonoTextBox.Text = string.Empty;
+            cedulaTextBox.Text = string.Empty;
+            direccionTextBox.Text = string.Empty;
+            emailTextBox.Text = string.Empty;
         }
+
 
         private bool ExisteEnLaBaseDatos()
         {
-            Articulos articulos = ArticuloBLL.Buscar((int)Convert.ToInt32(idTextBox.Text));
-            return (articulos != null);
+            Clientes clientes = ClienteBLL.Buscar((int)Convert.ToInt32(idTextBox.Text));
+            return (clientes != null);
         }
-
 
         private bool ValidarCampos()
         {
-            bool paso = true;
+            bool paso = false;
 
-            if (string.IsNullOrWhiteSpace(descripcionTextBox.Text))
+           
+            if (string.IsNullOrWhiteSpace(nombreTextBox.Text))
             {
                 MessageBox.Show("Campo Obligatorio!!", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
                 paso = false;
             }
 
-            if (string.IsNullOrWhiteSpace(cantidadTextBox.Text))
+            if (string.IsNullOrWhiteSpace(telefonoTextBox.Text))
             {
                 MessageBox.Show("Campo Obligatorio!!", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
                 paso = false;
             }
 
-            if (string.IsNullOrWhiteSpace(precioTextBox.Text))
+            if (string.IsNullOrWhiteSpace(cedulaTextBox.Text))
             {
                 MessageBox.Show("Campo Obligatorio!!", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
                 paso = false;
             }
 
-            if (string.IsNullOrWhiteSpace(existenciaTextBox.Text))
+            if (string.IsNullOrWhiteSpace(direccionTextBox.Text))
             {
                 MessageBox.Show("Campo Obligatorio!!", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
                 paso = false;
             }
 
-
+            if (string.IsNullOrWhiteSpace(emailTextBox.Text))
+            {
+                MessageBox.Show("Campo Obligatorio!!", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
+                paso = false;
+            }
 
             return paso;
         }
@@ -79,10 +84,10 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
         private void Llenar()
         {
             this.DataContext = null;
-            this.DataContext = articulos;
+            this.DataContext = clientes;
         }
 
-        private void guardrButton_Click(object sender, RoutedEventArgs e)
+        private void guardarButton_Click(object sender, RoutedEventArgs e)
         {
             bool paso = false;
 
@@ -90,7 +95,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
                 return;
 
             if (idTextBox.Text == "0")
-                paso = ArticuloBLL.Guardar(articulos);
+                paso = ClienteBLL.Guardar(clientes);
 
             else
             {
@@ -98,7 +103,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
                 {
                     MessageBox.Show("No se puede modificar, no existe!!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
-                paso = ArticuloBLL.Modificar(articulos);
+                paso = ClienteBLL.Modificar(clientes);
             }
 
             if (paso)
@@ -114,11 +119,11 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
 
         private void buscarButton_Click(object sender, RoutedEventArgs e)
         {
-            Articulos articulolocal = ArticuloBLL.Buscar(articulos.ArticuloId);
+            Clientes clientelocal = ClienteBLL.Buscar(clientes.ClienteId);
 
-            if (articulolocal != null)
+            if (clientelocal != null)
             {
-                articulos = articulolocal;
+                clientes = clientelocal;
                 Llenar();
             }
             else
@@ -130,7 +135,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
 
         private void eliminarButton_Click(object sender, RoutedEventArgs e)
         {
-            if (ArticuloBLL.Eliminar(articulos.ArticuloId))
+            if (ClienteBLL.Eliminar(clientes.ClienteId))
             {
                 LimpiarCampos();
                 MessageBox.Show("Eliminado", "Exito", MessageBoxButton.OK, MessageBoxImage.Exclamation);
