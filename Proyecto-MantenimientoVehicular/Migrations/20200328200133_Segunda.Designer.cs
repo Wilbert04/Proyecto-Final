@@ -9,8 +9,8 @@ using Proyecto_MantenimientoVehicular.DAL;
 namespace Proyecto_MantenimientoVehicular.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20200327220005_Inicial")]
-    partial class Inicial
+    [Migration("20200328200133_Segunda")]
+    partial class Segunda
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Proyecto_MantenimientoVehicular.Migrations
 {
-    public partial class Inicial : Migration
+    public partial class Segunda : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

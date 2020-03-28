@@ -24,6 +24,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             this.tipoComboBox.ItemsSource = tipousuario;
 
             idTextBox.Text = "0";
+
             this.DataContext = usuarios;
         }
 
@@ -37,7 +38,6 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             fechaDatePicker.SelectedDate = DateTime.Now;
         }
 
-
         private bool ExisteEnLaBaseDatos()
         {
             Usuarios usuarios = UsuarioBLL.Buscar((int)Convert.ToInt32(idTextBox.Text));
@@ -46,47 +46,31 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
 
         private bool ValidarCampos()
         {
-            bool paso = false;
-
-            string contraseña = contraseñaPasswordBox.Password;
-            string confirmacion = confirmarPasswordBox.Password;
-
-            int verificar = 0;
-            verificar = string.Compare(contraseña, confirmacion);
-
-            if (verificar != 0)
-            {
-                MessageBox.Show("Las Contraseña no Coinciden!!", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
-                paso = false;
-            }
+            bool paso = true;
 
             if (string.IsNullOrWhiteSpace(nombreTextBox.Text))
             {
-                MessageBox.Show("Campo Obligatorio!!", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Este Campo es Obligatorio");
                 paso = false;
             }
 
             if (string.IsNullOrWhiteSpace(usuarioTextBox.Text))
             {
-                MessageBox.Show("Campo Obligatorio!!", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Este Campo es Obligatorio");
                 paso = false;
             }
 
+            
+
             if (string.IsNullOrWhiteSpace(contraseñaPasswordBox.Password))
             {
-                MessageBox.Show("Campo Obligatorio!!", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Este Campo es Obligatorio");
                 paso = false;
             }
 
             if (string.IsNullOrWhiteSpace(confirmarPasswordBox.Password))
             {
-                MessageBox.Show("Campo Obligatorio!!", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
-                paso = false;
-            }
-
-            if (string.IsNullOrWhiteSpace(tipoComboBox.Text))
-            {
-                MessageBox.Show("Campo Obligatorio!!", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Este Campo es Obligatorio");
                 paso = false;
             }
 
