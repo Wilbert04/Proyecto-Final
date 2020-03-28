@@ -25,8 +25,9 @@ namespace Proyecto_MantenimientoVehicular
         {
             if (usuarioTextBox.Text == "Admin" && contraseñaPasswordBox.Password == "Admin")
             {
-                rUsuarios registr = new rUsuarios();
-                registr.ShowDialog();
+                wMenu menuprimcipal = new wMenu();
+                menuprimcipal.ShowDialog();
+                this.Close();
             }
 
             //IniciarSesion();

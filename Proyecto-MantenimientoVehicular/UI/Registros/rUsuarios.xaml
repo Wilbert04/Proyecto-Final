@@ -28,7 +28,15 @@
 
             <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Height="39" Width="111" Margin="180,-30,0,0" Click="buscarButton_Click"/>
             <Label Content="Fecha" HorizontalAlignment="Left" Margin="370,-40,0,0" Height="26"/>
-            <DatePicker x:Name="fechaDatePicker" HorizontalAlignment="Left" Margin="428,-40,0,0" Height="26" Width="152"/>
+            <DatePicker x:Name="fechaDatePicker" HorizontalAlignment="Left" Margin="428,-40,0,0" Height="26" Width="152">
+                <DatePicker.SelectedDate>
+                    <Binding Path="Fecha" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                        <Binding.ValidationRules>
+                            <ExceptionValidationRule/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </DatePicker.SelectedDate>
+            </DatePicker>
 
             <Label Content="Nombre" HorizontalAlignment="Left" Margin="20,75,0,0"/>
             <TextBox x:Name="nombreTextBox" TextWrapping="Wrap" Width="205" HorizontalAlignment="Left" Margin="90,-22,0,0">
@@ -55,15 +63,12 @@
             <Label Content="Contraseña" HorizontalAlignment="Left" Margin="350,-95,0,0" Height="30"/>
             <Label Content="Confirmar" HorizontalAlignment="Left" Margin="355,-25,0,0" Height="26"/>
 
-            <PasswordBox x:Name="contraseñaPasswordBox" Width="145" HorizontalAlignment="Left" Margin="430,-99,0,0" Height="21" >
-                <!--PasswordHelper:PasswordHelper.Attach="True"
-                         PasswordHelper:PasswordHelper.Password="{Binding Contraseña,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"-->
-                         
-                         
-                        
+            <PasswordBox x:Name="contraseñaPasswordBox" Width="145" HorizontalAlignment="Left" Margin="430,-99,0,0" Height="21"
+                         PasswordHelper:PasswordHelper.Attach="True"
+                         PasswordHelper:PasswordHelper.Password="{Binding Contraseña,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
 
             </PasswordBox>
-            
+
             <PasswordBox x:Name="confirmarPasswordBox" Width="145" HorizontalAlignment="Left" Margin="430,-30,0,0" Height="23"/>
 
 

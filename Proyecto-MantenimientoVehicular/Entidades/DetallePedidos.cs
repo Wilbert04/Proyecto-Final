@@ -10,7 +10,7 @@ namespace Proyecto_MantenimientoVehicular.Entidades
         public int ArticuloId { get; set; }
         public string Descripcion { get; set; }
         public decimal Cantidad { get; set; }
-        public decimal Precio { get; set; }
+        
 
         public DetallePedidos()
         {
@@ -19,7 +19,7 @@ namespace Proyecto_MantenimientoVehicular.Entidades
             ArticuloId = 0;
             Descripcion = string.Empty;
             Cantidad = 0;
-            Precio = 0;
+           
         }
     }
 }

@@ -7,6 +7,16 @@
         mc:Ignorable="d"
         Title="wMenu" Height="450" Width="800">
     <Grid>
+        <Menu>
+            <MenuItem Header="File"></MenuItem>
+            <MenuItem Header="Registros">
+                <MenuItem x:Name="registrousuario" Header="Registrar Usuario" Click="registrousuario_Click"/>
+                <MenuItem x:Name="registrovehiculo" Header="Registrar Vehiculo" Click="registrovehiculo_Click"/>
+            </MenuItem>
+            <MenuItem Header="Consultas"> </MenuItem>
+            <MenuItem Header="Ayuda"></MenuItem>
+        </Menu>
+        
         
     </Grid>
 </Window>
