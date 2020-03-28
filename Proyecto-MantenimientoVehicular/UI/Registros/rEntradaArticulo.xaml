@@ -7,13 +7,13 @@
         mc:Ignorable="d"
         Title="Registro entra Articulo" Height="350" Width="500">
     <Grid>
-        <Label Content="Id" HorizontalAlignment="Left" Margin="71,54,0,0" VerticalAlignment="Top"/>
-        <Label Content="Descripcion" HorizontalAlignment="Left" Margin="71,109,0,0" VerticalAlignment="Top"/>
-        <Label Content="Cantidad" HorizontalAlignment="Left" Margin="71,141,0,0" VerticalAlignment="Top"/>
-        <Label Content="Fecha" HorizontalAlignment="Left" Margin="72,172,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="IdTextbox" HorizontalAlignment="Left" Margin="160,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="DescripcionId" HorizontalAlignment="Left" Margin="160,112,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="217"/>
-        <TextBox x:Name="CantidadTextbox" HorizontalAlignment="Left" Margin="160,147,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="216"/>
+        <Label Content="EntradaId" HorizontalAlignment="Left" Margin="18,31,0,0" VerticalAlignment="Top"/>
+        <Label Content="Descripcion" HorizontalAlignment="Left" Margin="20,116,0,0" VerticalAlignment="Top"/>
+        <Label Content="Cantidad" HorizontalAlignment="Left" Margin="21,150,0,0" VerticalAlignment="Top"/>
+        <Label Content="Fecha" HorizontalAlignment="Left" Margin="317,31,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="IdTextbox" HorizontalAlignment="Left" Margin="94,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82"/>
+        <TextBox x:Name="DescripcionId" HorizontalAlignment="Left" Margin="94,121,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="217"/>
+        <TextBox x:Name="CantidadTextbox" HorizontalAlignment="Left" Margin="96,154,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
         <Button Content="Nuevo" HorizontalAlignment="Left" Margin="30,242,0,0" VerticalAlignment="Top" Height="33" Width="115" FontSize="14" FontWeight="Bold">
             <Button.Background>
                 <ImageBrush ImageSource="/UI/Imagenes/nuevo.png" Stretch="Uniform" AlignmentX="Left" TileMode="None"/>
@@ -29,12 +29,12 @@
                 <ImageBrush ImageSource="/UI/Imagenes/Eliminar.png" Stretch="Uniform" AlignmentX="Left" TileMode="None"/>
             </Button.Background>
         </Button>
-        <Button Content="Buscar" HorizontalAlignment="Left" Margin="290,52,0,0" VerticalAlignment="Top" Height="26" Width="90" FontSize="14" FontWeight="Bold">
+        <Button Content="Buscar" HorizontalAlignment="Left" Margin="189,31,0,0" VerticalAlignment="Top" Height="26" Width="90" FontSize="14" FontWeight="Bold">
             <Button.Background>
                 <ImageBrush ImageSource="/UI/Imagenes/Buscar.png" Stretch="Uniform" AlignmentX="Left" TileMode="None"/>
             </Button.Background>
         </Button>
-        <DatePicker x:Name="FechaPicker" HorizontalAlignment="Left" Margin="160,179,0,0" VerticalAlignment="Top" Width="216"/>
+        <DatePicker x:Name="FechaPicker" HorizontalAlignment="Left" Margin="364,33,0,0" VerticalAlignment="Top" Width="100"/>
 
     </Grid>
 </Window>

@@ -5,96 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_MantenimientoVehicular.UI.Registros"
         mc:Ignorable="d"
-        Title="Registro Proveedores" Height="450" Width="800">
+        Title="rProveedores" Height="390" Width="550">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <StackPanel Margin="0,0,0,5">
-            <Label Content="Id" HorizontalAlignment="Left" Margin="40,40,-40,0" FontSize="14"/>
-            <TextBox x:Name="IdTextbox"  TextWrapping="Wrap" Width="164" HorizontalAlignment="Left" Margin="100,-30,0,0" Height="21">
-                <TextBox.Text>
-                    <Binding Path="Id" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
-                        <Binding.ValidationRules>
-                            <ExceptionValidationRule/>
-                        </Binding.ValidationRules>
-                        
-                    </Binding>
-                </TextBox.Text>
-            </TextBox>
-            <Label Content="Nombre" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,25,0,0" FontSize="14"/>
-            <TextBox x:Name="NombreTextbox"  TextWrapping="Wrap" Width="214" HorizontalAlignment="Left" Margin="110,-25,0,0" VerticalAlignment="Top" Height="21">
-                <TextBox.Text>
-                    <Binding Path="Nombre" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
-                        <Binding.ValidationRules>
-                            <ExceptionValidationRule/>
-                        </Binding.ValidationRules>
-                    </Binding>
-                </TextBox.Text>
-            </TextBox>
-            <Label Content="Telefono" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="40,10,0,0" FontSize="14"/>
-            <TextBox x:Name="TelefonoTextbox"  TextWrapping="Wrap" Width="214" HorizontalAlignment="Left" Margin="110,-30,0,0" Height="21">
-                <TextBox.Text>
-                    <Binding Path="Telefono" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
-                        <Binding.ValidationRules>
-                            <ExceptionValidationRule/>
-                        </Binding.ValidationRules>
-                        
-                    </Binding>
-                </TextBox.Text>  
-            </TextBox>
-            <Label Content="Provincia" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,10,0,0" FontSize="14"/>
-            <TextBox x:Name="ProvinciaTextbox"  TextWrapping="Wrap" Width="214" HorizontalAlignment="Left" Margin="110,-25,0,0" Height="21">
-                <TextBox.Text>
-                    <Binding Path="Provincia" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
-                        <Binding.ValidationRules>
-                            <ExceptionValidationRule/>
-                        </Binding.ValidationRules>
-                        
-                    </Binding>
-                </TextBox.Text>
-            </TextBox>    
-            <Label Content="Calle" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,-30,40,0" FontSize="14"/>
-            <TextBox x:Name="CalleTextbox"  TextWrapping="Wrap" Width="214" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="250,-26,0,0" Height="21">
-                <TextBox.Text>
-                    <Binding Path="Calle" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
-                        <Binding.ValidationRules>
-                            <ExceptionValidationRule/>
-                        </Binding.ValidationRules>
-                        
-                    </Binding>
-                </TextBox.Text>
-            </TextBox>
-            <Label Content="Cuidad" HorizontalAlignment="Center" Margin="0,-100,40,0" VerticalAlignment="Center" FontSize="14"/>
-            <TextBox x:Name="CiudadTextbox"  TextWrapping="Wrap" Width="214" HorizontalAlignment="Center" Margin="250,-57,0,0" VerticalAlignment="Top" Height="21">
-                <TextBox.Text>
-                    <Binding Path="Cuidad" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
-                        <Binding.ValidationRules>
-                            <ExceptionValidationRule/>
-                        </Binding.ValidationRules>
-                        
-                    </Binding>
-                </TextBox.Text>
-            </TextBox>
-            <Button Content="Buscar" HorizontalAlignment="Center" Margin="-100,-150,0,0" VerticalAlignment="Top" Width="60" Height="25" Click="Buscar"/>
-            <Label Content="Fecha" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,-100,40,0" FontSize="14"/>
-            <DatePicker x:Name="FechaPicker" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,-100,-180,0">
-                <DatePicker.SelectedDate>
-                    <Binding Path="Fecha" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
-                        <Binding.ValidationRules>
-                            <ExceptionValidationRule/>
-                        </Binding.ValidationRules>
-                        
-                    </Binding>
-                </DatePicker.SelectedDate>
-            </DatePicker>
-        </StackPanel>
-        <StackPanel Margin="0,217,0,61" Grid.RowSpan="2">
-            <Button Content="Nuevo" HorizontalAlignment="Left" Margin="70,50,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="Button_Nuevo"/>
-            <Button Content="Guardar" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-70,-30,0,0" Height="30" Width="80" Click="Button_Guardar"/>
-            <Button Content="Eliminar" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-30,150,0" Height="30" Width="80" Click="Button_Eliminar"/>
-        </StackPanel>
+        <Label Content="ProveedorId" HorizontalAlignment="Left" Margin="29,32,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="idTextBox" HorizontalAlignment="Left" Margin="109,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="88"/>
+        <Label Content="Fecha" HorizontalAlignment="Left" Margin="326,34,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nombre" HorizontalAlignment="Left" Margin="29,118,0,0" VerticalAlignment="Top"/>
+        <Label Content="Telefono" HorizontalAlignment="Left" Margin="321,117,0,0" VerticalAlignment="Top"/>
+        <Label Content="Provincia" HorizontalAlignment="Left" Margin="29,151,0,0" VerticalAlignment="Top"/>
+        <Label Content="Ciudad" HorizontalAlignment="Left" Margin="30,182,0,0" VerticalAlignment="Top"/>
+        <Label Content="Calle" HorizontalAlignment="Left" Margin="31,213,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="nombreTextBox" HorizontalAlignment="Left" Margin="100,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="191"/>
+        <TextBox x:Name="telefonoTextBox" HorizontalAlignment="Left" Margin="381,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="provinciaTextBox" HorizontalAlignment="Left" Margin="100,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="191"/>
+        <TextBox x:Name="ciudadTextBox" HorizontalAlignment="Left" Margin="100,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
+        <TextBox x:Name="calleTextBox" HorizontalAlignment="Left" Margin="100,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187"/>
+        <DatePicker x:Name="fechaDatePicker" HorizontalAlignment="Left" Margin="372,38,0,0" VerticalAlignment="Top" Width="99"/>
+        <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="213,30,0,0" VerticalAlignment="Top" Height="31" Width="75"/>
+        <Button x:Name="nuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="51,288,0,0" VerticalAlignment="Top" Height="40" Width="84"/>
+        <Button x:Name="guardarButton" Content="Guardar" HorizontalAlignment="Left" Margin="209,288,0,0" VerticalAlignment="Top" Height="40" Width="96"/>
+        <Button x:Name="eliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="378,285,0,0" VerticalAlignment="Top" Height="40" Width="95"/>
 
     </Grid>
 </Window>
