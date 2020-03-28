@@ -19,9 +19,13 @@
         </TextBox>
 
 
-        <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="233,31,0,0" VerticalAlignment="Top" Height="39" Width="86" Click="buscarButton_Click"/>
+        <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="233,31,0,0" VerticalAlignment="Top" Height="39" Width="110" Click="buscarButton_Click" FontSize="14" FontWeight="Bold">
+            <Button.Background>
+                <ImageBrush ImageSource="/UI/Imagenes/Buscar.png" Stretch="Uniform" AlignmentX="Left" TileMode="None"/>
+            </Button.Background>
+        </Button>
         <Label Content="Fecha" HorizontalAlignment="Left" Margin="350,36,0,0" VerticalAlignment="Top"/>
-        <DatePicker x:Name="fechaDatePicker" HorizontalAlignment="Left" Margin="396,38,0,0" VerticalAlignment="Top" Width="98">
+        <DatePicker x:Name="fechaDatePicker" HorizontalAlignment="Left" Margin="396,38,0,0" VerticalAlignment="Top" Width="147">
             <DatePicker.SelectedDate>
                 <Binding Path="Fecha" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -51,8 +55,8 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <Label Content="Placa" HorizontalAlignment="Left" Margin="30,187,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="placaTextBox" HorizontalAlignment="Left" Margin="112,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="197">
+        <Label Content="Placa" HorizontalAlignment="Left" Margin="30,197,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="placaTextBox" HorizontalAlignment="Left" Margin="112,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="197">
             <TextBox.Text>
                 <Binding Path="Placa" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -61,8 +65,8 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <Label Content="Año" HorizontalAlignment="Left" Margin="32,215,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="añoTextBox" HorizontalAlignment="Left" Margin="113,221,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">
+        <Label Content="Año" HorizontalAlignment="Left" Margin="32,235,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="añoTextBox" HorizontalAlignment="Left" Margin="113,241,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">
             <TextBox.Text>
                 <Binding Path="Año" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -71,9 +75,21 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <Button x:Name="nuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="52,295,0,0" VerticalAlignment="Top" Height="49" Width="107" Click="nuevoButton_Click"/>
-        <Button x:Name="guardarButton" Content="Guardar" HorizontalAlignment="Left" Margin="221,293,0,0" VerticalAlignment="Top" Height="50" Width="110" Click="guardarButton_Click"/>
-        <Button x:Name="eliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="399,292,0,0" VerticalAlignment="Top" Height="50" Width="119" Click="eliminarButton_Click"/>
+        <Button x:Name="nuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="52,295,0,0" VerticalAlignment="Top" Height="48" Width="138" Click="nuevoButton_Click" FontSize="14" FontWeight="Bold">
+            <Button.Background>
+                <ImageBrush ImageSource="/UI/Imagenes/nuevo.png" Stretch="Uniform" AlignmentX="Left" TileMode="None"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="guardarButton" Content="Guardar" HorizontalAlignment="Left" Margin="221,293,0,0" VerticalAlignment="Top" Height="50" Width="150" Click="guardarButton_Click" FontWeight="Bold" FontSize="14">
+            <Button.Background>
+                <ImageBrush ImageSource="/UI/Imagenes/save.png" Stretch="Uniform" AlignmentX="Left" TileMode="None"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="eliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="399,292,0,0" VerticalAlignment="Top" Height="50" Width="133" Click="eliminarButton_Click" FontSize="14" FontWeight="Bold">
+            <Button.Background>
+                <ImageBrush ImageSource="/UI/Imagenes/Eliminar.png" Stretch="Uniform" AlignmentX="Left" TileMode="None"/>
+            </Button.Background>
+        </Button>
 
 
 
