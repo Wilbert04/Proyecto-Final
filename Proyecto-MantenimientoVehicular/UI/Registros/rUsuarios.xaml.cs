@@ -16,7 +16,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
         {
 
             InitializeComponent();
-
+            
             List<string> tipousuario = new List<string>
             {
                 "Usuario","Administrador"

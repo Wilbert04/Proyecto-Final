@@ -19,7 +19,7 @@
         </TextBox>
 
 
-        <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="226,31,0,0" VerticalAlignment="Top" Height="39" Width="86" Click="buscarButton_Click"/>
+        <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="233,31,0,0" VerticalAlignment="Top" Height="39" Width="86" Click="buscarButton_Click"/>
         <Label Content="Fecha" HorizontalAlignment="Left" Margin="350,36,0,0" VerticalAlignment="Top"/>
         <DatePicker x:Name="fechaDatePicker" HorizontalAlignment="Left" Margin="396,38,0,0" VerticalAlignment="Top" Width="98">
             <DatePicker.SelectedDate>
@@ -35,11 +35,11 @@
         <ComboBox x:Name="clienteComboBox" HorizontalAlignment="Left" Margin="110,104,0,0" VerticalAlignment="Top" Width="126"
                   SelectedValue="{Binding ClienteId,Mode=TwoWay}">
         </ComboBox>
-        
+
         <Label Content="Tipo de Vehiculo" HorizontalAlignment="Left" Margin="322,158,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="tipovehiculoComboBox" HorizontalAlignment="Left" Margin="426,161,0,0" VerticalAlignment="Top" Width="120"
                   SelectedValue="{Binding TipoVehiculo, Mode=TwoWay}">
-            
+
         </ComboBox>
         <Label Content="Descripcion" HorizontalAlignment="Left" Margin="28,158,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="descripcionTextBox" HorizontalAlignment="Left" Margin="111,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200">
