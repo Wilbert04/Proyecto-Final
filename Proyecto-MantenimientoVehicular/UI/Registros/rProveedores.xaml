@@ -8,23 +8,84 @@
         Title="rProveedores" Height="390" Width="550">
     <Grid>
         <Label Content="ProveedorId" HorizontalAlignment="Left" Margin="29,32,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="idTextBox" HorizontalAlignment="Left" Margin="109,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="88"/>
+        <TextBox x:Name="idTextBox" HorizontalAlignment="Left" Margin="109,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="88">
+            <TextBox.Text>
+                <Binding Path="ProveedorId" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                    <Binding.ValidationRules>
+                        <ExceptionValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+
+
         <Label Content="Fecha" HorizontalAlignment="Left" Margin="326,34,0,0" VerticalAlignment="Top"/>
         <Label Content="Nombre" HorizontalAlignment="Left" Margin="29,118,0,0" VerticalAlignment="Top"/>
-        <Label Content="Telefono" HorizontalAlignment="Left" Margin="321,117,0,0" VerticalAlignment="Top"/>
-        <Label Content="Provincia" HorizontalAlignment="Left" Margin="29,151,0,0" VerticalAlignment="Top"/>
-        <Label Content="Ciudad" HorizontalAlignment="Left" Margin="30,182,0,0" VerticalAlignment="Top"/>
-        <Label Content="Calle" HorizontalAlignment="Left" Margin="31,213,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="nombreTextBox" HorizontalAlignment="Left" Margin="100,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="191"/>
-        <TextBox x:Name="telefonoTextBox" HorizontalAlignment="Left" Margin="381,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="provinciaTextBox" HorizontalAlignment="Left" Margin="100,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="191"/>
-        <TextBox x:Name="ciudadTextBox" HorizontalAlignment="Left" Margin="100,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
-        <TextBox x:Name="calleTextBox" HorizontalAlignment="Left" Margin="100,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187"/>
-        <DatePicker x:Name="fechaDatePicker" HorizontalAlignment="Left" Margin="372,38,0,0" VerticalAlignment="Top" Width="99"/>
-        <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="213,30,0,0" VerticalAlignment="Top" Height="31" Width="75"/>
-        <Button x:Name="nuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="51,288,0,0" VerticalAlignment="Top" Height="40" Width="84"/>
-        <Button x:Name="guardarButton" Content="Guardar" HorizontalAlignment="Left" Margin="209,288,0,0" VerticalAlignment="Top" Height="40" Width="96"/>
-        <Button x:Name="eliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="378,285,0,0" VerticalAlignment="Top" Height="40" Width="95"/>
+        <Label Content="Telefono" HorizontalAlignment="Left" Margin="27,152,0,0" VerticalAlignment="Top"/>
+        <Label Content="Provincia" HorizontalAlignment="Left" Margin="26,184,0,0" VerticalAlignment="Top"/>
+        <Label Content="Ciudad" HorizontalAlignment="Left" Margin="313,120,0,0" VerticalAlignment="Top"/>
+        <Label Content="Calle" HorizontalAlignment="Left" Margin="315,152,0,0" VerticalAlignment="Top"/>
+
+
+        <TextBox x:Name="nombreTextBox" HorizontalAlignment="Left" Margin="100,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="191">
+            <TextBox.Text>
+                <Binding Path="Nombre" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                    <Binding.ValidationRules>
+                        <ExceptionValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox x:Name="telefonoTextBox" HorizontalAlignment="Left" Margin="103,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185">
+            <TextBox.Text>
+                <Binding Path="Telefono" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                    <Binding.ValidationRules>
+                        <ExceptionValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox x:Name="provinciaTextBox" HorizontalAlignment="Left" Margin="102,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="191">
+            <TextBox.Text>
+                <Binding Path="Provincia" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                    <Binding.ValidationRules>
+                        <ExceptionValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox x:Name="ciudadTextBox" HorizontalAlignment="Left" Margin="367,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129">
+            <TextBox.Text>
+                <Binding Path="Ciudad" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                    <Binding.ValidationRules>
+                        <ExceptionValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox x:Name="calleTextBox" HorizontalAlignment="Left" Margin="369,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128">
+            <TextBox.Text>
+                <Binding Path="Calle" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                    <Binding.ValidationRules>
+                        <ExceptionValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <DatePicker x:Name="fechaDatePicker" HorizontalAlignment="Left" Margin="372,38,0,0" VerticalAlignment="Top" Width="99">
+            <DatePicker.SelectedDate>
+                <Binding Path="Fecha" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                    <Binding.ValidationRules>
+                        <ExceptionValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </DatePicker.SelectedDate>
+        </DatePicker>
+        <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="213,30,0,0" VerticalAlignment="Top" Height="31" Width="75" Click="buscarButton_Click"/>
+        <Button x:Name="nuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="44,270,0,0" VerticalAlignment="Top" Height="40" Width="84" Click="nuevoButton_Click"/>
+        <Button x:Name="guardarButton" Content="Guardar" HorizontalAlignment="Left" Margin="202,270,0,0" VerticalAlignment="Top" Height="40" Width="96" Click="guardarButton_Click"/>
+        <Button x:Name="eliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="372,267,0,0" VerticalAlignment="Top" Height="40" Width="94" Click="eliminarButton_Click"/>
 
     </Grid>
 </Window>
