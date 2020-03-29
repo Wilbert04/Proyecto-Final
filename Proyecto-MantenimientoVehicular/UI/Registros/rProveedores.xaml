@@ -83,10 +83,26 @@
                 </Binding>
             </DatePicker.SelectedDate>
         </DatePicker>
-        <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="213,30,0,0" VerticalAlignment="Top" Height="31" Width="75" Click="buscarButton_Click"/>
-        <Button x:Name="nuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="44,270,0,0" VerticalAlignment="Top" Height="40" Width="84" Click="nuevoButton_Click"/>
-        <Button x:Name="guardarButton" Content="Guardar" HorizontalAlignment="Left" Margin="202,270,0,0" VerticalAlignment="Top" Height="40" Width="96" Click="guardarButton_Click"/>
-        <Button x:Name="eliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="372,267,0,0" VerticalAlignment="Top" Height="40" Width="94" Click="eliminarButton_Click"/>
+        <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="213,30,0,0" VerticalAlignment="Top" Height="31" Width="89" Click="buscarButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/UI/Imagenes/Buscar.png" Stretch="Uniform" AlignmentX="Left" TileMode="None"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="nuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="44,270,0,0" VerticalAlignment="Top" Height="40" Width="111" Click="nuevoButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/UI/Imagenes/Nuevo.png" Stretch="Uniform" AlignmentX="Left" TileMode="None"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="guardarButton" Content="Guardar" HorizontalAlignment="Left" Margin="202,270,0,0" VerticalAlignment="Top" Height="40" Width="117" Click="guardarButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/UI/Imagenes/Save.png" Stretch="Uniform" AlignmentX="Left" TileMode="None"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="eliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="372,267,0,0" VerticalAlignment="Top" Height="40" Width="107" Click="eliminarButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/UI/Imagenes/Eliminar.png" Stretch="Uniform" AlignmentX="Left" TileMode="None"/>
+            </Button.Background>
+        </Button>
 
 
     </Grid>
