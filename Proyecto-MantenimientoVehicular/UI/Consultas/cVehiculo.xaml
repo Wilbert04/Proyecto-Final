@@ -18,12 +18,9 @@
             <ComboBoxItem>ID</ComboBoxItem>
             <ComboBoxItem>Placa</ComboBoxItem>
             <ComboBoxItem>Año</ComboBoxItem>
-            
+
         </ComboBox>
         <TextBox x:Name="criterioTextBox" HorizontalAlignment="Left" Margin="367,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121"/>
-        <Button x:Name="consultarButton" HorizontalAlignment="Left" Margin="497,37,0,0" VerticalAlignment="Top" Width="122" Height="35" Click="consultarButton_Click" FontSize="14" FontWeight="Bold" BorderBrush="#FF020000">
-            <Button Content="Button" Click="Button_Click"/>
-        </Button>
         <DataGrid x:Name="consultarDataGrid" Margin="9,88,10,12" ItemsSource="{Binding}" AutoGenerateColumns="False" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="VehiculoId"  Binding="{Binding VehiculoId}"/>
@@ -31,6 +28,7 @@
                 <DataGridTextColumn Header="Año"  Binding="{Binding Año}"/>
             </DataGrid.Columns>
         </DataGrid>
+        <Button x:Name="consultar1Button" Content="Consulta" HorizontalAlignment="Left" Margin="510,32,0,0" VerticalAlignment="Top" Height="40" Width="128" Click="consultar1Button_Click"/>
 
     </Grid>
 </Window>

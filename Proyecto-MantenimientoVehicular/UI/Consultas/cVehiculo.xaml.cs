@@ -25,10 +25,9 @@ namespace Proyecto_MantenimientoVehicular.UI.Consultas
             InitializeComponent();
         }
 
-       
-
-        private void consultarButton_Click(object sender, RoutedEventArgs e)
+        private void consultar1Button_Click(object sender, RoutedEventArgs e)
         {
+
             var listado = new List<Vehiculos>();
 
             if (criterioTextBox.Text.Trim().Length > 0)
@@ -53,11 +52,6 @@ namespace Proyecto_MantenimientoVehicular.UI.Consultas
                         int Año = Convert.ToInt32(criterioTextBox.Text);
                         listado = VehiculoBLL.GetList(p => p.VehiculoId == Año);
                         break;
-
-
-                    
-
-
 
                 }
 
