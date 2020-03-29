@@ -17,7 +17,14 @@
                 <MenuItem x:Name="registroproveedor" Header="Registrar Proveedor" Click="registroproveedor_Click"/>
                 <MenuItem x:Name="registrarentradaart" Header="Registrar Entrada Articulo" Click="registrarentradaart_Click"/>
             </MenuItem>
-            <MenuItem Header="Consultas"> </MenuItem>
+            <MenuItem Header="Consultas">
+                <MenuItem x:Name="consultaCliente" Header="Consultar Cliente" Click="consultaCliente_Click"/>
+                <MenuItem x:Name="consultaVehiculo" Header="Consultar Vehiculo" Click="consultaVehiculo_Click"/>
+                <MenuItem x:Name="consultaentradaarticulo" Header="Consultar Entrada Articulo" Click="consultaentradaarticulo_Click"/>
+                <MenuItem x:Name="consultararticulo" Header="Consultar Articulo" Click="consultararticulo_Click"/>
+                <MenuItem x:Name="consultaProveedores" Header="Consultar Proveedores" Click="consultaProveedores_Click"/>
+                <MenuItem x:Name="consultaUsuario" Header="Consultar Usuarios" Click="consultaUsuario_Click"/>
+            </MenuItem>
             <MenuItem Header="Ayuda"></MenuItem>
         </Menu>
         
