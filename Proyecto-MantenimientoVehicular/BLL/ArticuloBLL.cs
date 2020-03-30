@@ -117,5 +117,26 @@ namespace Proyecto_MantenimientoVehicular.BLL
             return Lista;
 
         }
+
+        public static Decimal CalcularItbis(decimal subtotal)
+        {
+            return subtotal * (decimal)0.18;
+        }
+
+        public static Decimal CalcularImporte(decimal cantidad, decimal precio)
+        {
+            return cantidad * precio;
+        }
+
+        public static Decimal CalcularSubtotal(decimal importe)
+        {
+            return importe;
+        }
+
+
+        public static Decimal CalcularTotal(decimal subtotal, decimal itbis)
+        {
+            return subtotal + itbis;
+        }
     }
 }

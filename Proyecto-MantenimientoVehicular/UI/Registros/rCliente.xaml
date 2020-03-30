@@ -70,24 +70,16 @@
         </TextBox>
 
         <Button x:Name="nuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="40,277,0,0" VerticalAlignment="Top" Height="40" Width="117" Click="nuevoButton_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Nuevo.png" Stretch="Uniform" AlignmentX="Left" TileMode="None"/>
-            </Button.Background>
+            
         </Button>
         <Button x:Name="guardarButton" Content="Guardar" HorizontalAlignment="Left" Margin="200,274,0,0" VerticalAlignment="Top" Height="43" Width="125" Click="guardarButton_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Save.png" Stretch="Uniform" AlignmentX="Left" TileMode="None"/>
-            </Button.Background>
+           
         </Button>
         <Button x:Name="eliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="356,275,0,0" VerticalAlignment="Top" Height="40" Width="121" Click="eliminarButton_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Eliminar.png" Stretch="Uniform" AlignmentX="Left" TileMode="None"/>
-            </Button.Background>
+           
         </Button>
         <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="180,25,0,0" VerticalAlignment="Top" Height="30" Width="89" Click="buscarButton_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Buscar.png" Stretch="Uniform" AlignmentX="Left" TileMode="None"/>
-            </Button.Background>
+            
         </Button>
         <Label Content="Fecha" HorizontalAlignment="Left" Margin="325,27,0,0" VerticalAlignment="Top"/>
         <DatePicker x:Name="fechaDatePicker" HorizontalAlignment="Left" Margin="367,29,0,0" VerticalAlignment="Top" Width="117">

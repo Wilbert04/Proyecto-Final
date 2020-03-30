@@ -1,0 +1,110 @@
+﻿<Window x:Class="Proyecto_MantenimientoVehicular.UI.Registros.rMantenimiento"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Proyecto_MantenimientoVehicular.UI.Registros"
+        mc:Ignorable="d"
+        Title="rMantenimiento" Height="580
+        " Width="730">
+    <Grid x:Name="idTextBox" Margin="-1,0,1,0">
+
+        <!--Labels-->
+        <Label Content="MantenimientoId" HorizontalAlignment="Left" Margin="21,36,0,0" VerticalAlignment="Top"/>
+        <Label Content="Fecha" HorizontalAlignment="Left" Margin="523,38,0,0" VerticalAlignment="Top"/>
+        <Label Content="Cliente" HorizontalAlignment="Left" Margin="28,111,0,0" VerticalAlignment="Top"/>
+        <Label Content="Proximo Mantenimiento" HorizontalAlignment="Left" Margin="186,423,0,0" VerticalAlignment="Top"/>
+        <Label Content="Vehiculo" HorizontalAlignment="Left" Margin="507,112,0,0" VerticalAlignment="Top"/>
+        <Label Content="Articulo" HorizontalAlignment="Left" Margin="22,177,0,0" VerticalAlignment="Top"/>
+        <Label Content="Cantidad" HorizontalAlignment="Left" Margin="214,176,0,0" VerticalAlignment="Top"/>
+        <Label Content="Precio" HorizontalAlignment="Left" Margin="371,176,0,0" VerticalAlignment="Top"/>
+        <Label Content="Importe" HorizontalAlignment="Left" Margin="514,176,0,0" VerticalAlignment="Top"/>
+
+
+        <!--TextBox-->
+
+        <TextBox x:Name="idTextBox1" HorizontalAlignment="Left" Margin="127,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
+        <DatePicker x:Name="fechaDatePicker" HorizontalAlignment="Left" Margin="570,40,0,0" VerticalAlignment="Top" Width="113"/>
+        <ComboBox x:Name="clienteComboBox" HorizontalAlignment="Left" Margin="88,113,0,0" VerticalAlignment="Top" Width="105"
+                  SelectedValue="{Binding Cliente,Mode=TwoWay}">
+
+        </ComboBox>
+
+        <ComboBox x:Name="vehiculoComboBox" HorizontalAlignment="Left" Margin="570,113,0,0" VerticalAlignment="Top" Width="109"
+                  SelectedValue="{Binding Vehiculo,Mode=TwoWay}">
+        </ComboBox>
+
+        <DatePicker x:Name="proxmantDatePicker" HorizontalAlignment="Left" Margin="332,425,0,0" VerticalAlignment="Top">
+            <DatePicker.SelectedDate>
+                <Binding Path="ProximoMantemiento" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                    <Binding.ValidationRules>
+                        <ExceptionValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </DatePicker.SelectedDate>
+        </DatePicker>
+        <ComboBox x:Name="articuloComboBox" HorizontalAlignment="Left" Margin="76,179,0,0" VerticalAlignment="Top" Width="99" SelectionChanged="articuloComboBox_SelectionChanged"
+                  >
+        </ComboBox>
+
+        <TextBox x:Name="cantidadTextBox" HorizontalAlignment="Left" Margin="273,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" TextChanged="cantidadTextBox_TextChanged">
+        </TextBox>
+        <TextBox x:Name="precioTextBox" HorizontalAlignment="Left" Margin="415,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="91">
+        </TextBox>
+        <TextBox x:Name="importeTextBox1" HorizontalAlignment="Left" Margin="569,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86"/>
+        
+        <DataGrid x:Name="detalleDataGrid" Margin="19,207,19,164">
+            <DataGrid.ItemsSource>
+                <Binding Path="DMantenimiento" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay"/>
+            </DataGrid.ItemsSource>
+        </DataGrid>
+        <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="216,32,0,0" VerticalAlignment="Top" Height="34" Width="79" Click="buscarButton_Click"/>
+        <Button x:Name="agregararticuloButton" Content="+" HorizontalAlignment="Left" Margin="180,179,0,0" VerticalAlignment="Top" Height="21" Width="20"/>
+        <Button x:Name="agregarButton" Content="+" HorizontalAlignment="Left" Margin="677,173,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="agregarButton_Click"/>
+        <Label Content="Subtotal" HorizontalAlignment="Left" Margin="585,402,0,0" VerticalAlignment="Top"/>
+        <Label Content="ITEBIS" HorizontalAlignment="Left" Margin="591,425,0,0" VerticalAlignment="Top"/>
+        <Label Content="Total" HorizontalAlignment="Left" Margin="597,447,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="removerButton" Content="Remover" HorizontalAlignment="Left" Margin="20,404,0,0" VerticalAlignment="Top" Height="27" Width="63" Click="removerButton_Click"/>
+        <TextBox x:Name="subtotalTextBox" HorizontalAlignment="Left" Margin="642,405,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="68">
+            <TextBox.Text>
+                <Binding Path="Subtotal" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                    <Binding.ValidationRules>
+                        <ExceptionValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox x:Name="itebisTextBox" HorizontalAlignment="Left" Margin="642,428,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69">
+            <TextBox.Text>
+                <Binding Path="Itebis" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                    <Binding.ValidationRules>
+                        <ExceptionValidationRule/>
+                    </Binding.ValidationRules>   
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox x:Name="totalTextBox" HorizontalAlignment="Left" Margin="642,450,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="71">
+            <TextBox.Text>
+                <Binding Path="Total" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                    <Binding.ValidationRules>
+                        <ExceptionValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <Button x:Name="nuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="55,490,0,0" VerticalAlignment="Top" Height="46" Width="114"/>
+        <Button x:Name="guadarButton" Content="Guardar" HorizontalAlignment="Left" Margin="215,490,0,0" VerticalAlignment="Top" Height="46" Width="109" Click="guadarButton_Click"/>
+        <Button x:Name="eliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="372,491,0,0" VerticalAlignment="Top" Height="46" Width="114" Click="eliminarButton_Click"/>
+        <Label Content="Descripcion" HorizontalAlignment="Left" Margin="211,111,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="descripcionTextBox" HorizontalAlignment="Left" Margin="289,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187">
+            <TextBox.Text>
+                <Binding Path="Descripcion" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                    <Binding.ValidationRules>
+                        <ExceptionValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+    </Grid>
+</Window>

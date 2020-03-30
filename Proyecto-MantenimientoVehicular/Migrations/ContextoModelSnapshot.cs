@@ -77,10 +77,13 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("ArticuloId")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("ArticuloId")
+                        .HasColumnType("TEXT");
 
                     b.Property<decimal>("Cantidad")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Descripcion")
                         .HasColumnType("TEXT");
 
                     b.Property<decimal>("Importe")

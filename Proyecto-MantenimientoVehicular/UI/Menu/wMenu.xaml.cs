@@ -14,7 +14,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Menu
             InitializeComponent();
         }
 
-        // Registros
+       
 
         private void registrousuario_Click(object sender, RoutedEventArgs e)
         {
@@ -52,8 +52,14 @@ namespace Proyecto_MantenimientoVehicular.UI.Menu
             registro.ShowDialog();
         }
 
+        private void registrarmantenimiento_Click(object sender, RoutedEventArgs e)
+        {
+            rMantenimiento registro = new rMantenimiento();
+            registro.ShowDialog();
+        }
 
-        //Consultas
+
+
 
         private void consultaCliente_Click(object sender, RoutedEventArgs e)
         {
@@ -90,5 +96,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Menu
             cUsuario consulta = new cUsuario();
             consulta.ShowDialog();
         }
+
+       
     }
 }

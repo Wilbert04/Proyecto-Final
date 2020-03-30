@@ -23,6 +23,16 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
         public rArticulo()
         {
             InitializeComponent();
+
+            List<string> articulo = new List<string>
+            {
+                "Neumarico","Filtro/Aire","Correa"
+            };
+            this.descripcionComboBox.ItemsSource = articulo;
+
+
+
+
             this.DataContext = articulos;
         }
 
@@ -145,5 +155,9 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
         {
             LimpiarCampos();
         }
+
+
+
+
     }
 }

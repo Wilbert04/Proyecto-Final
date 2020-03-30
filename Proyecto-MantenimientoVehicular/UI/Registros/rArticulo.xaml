@@ -22,14 +22,14 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBox x:Name="descripcionTextBox" HorizontalAlignment="Left" Margin="102,111,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="206">
-            <TextBox.Text>
+        <TextBox x:Name="descripcionTextBox" HorizontalAlignment="Left" Margin="362,190,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="206">
+            <!--<TextBox.Text>
                 <Binding Path="Descripcion" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
                         <ExceptionValidationRule/>
                     </Binding.ValidationRules>
                 </Binding>
-            </TextBox.Text>
+            </TextBox.Text>-->
         </TextBox>
         <TextBox x:Name="cantidadTextBox" HorizontalAlignment="Left" Margin="101,143,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="109">
             <TextBox.Text>
@@ -59,24 +59,16 @@
             </TextBox.Text>
         </TextBox>
         <Button x:Name="nuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="44,260,0,0" VerticalAlignment="Top" Height="25" Width="115" FontSize="14" FontWeight="Bold" Click="nuevoButton_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Nuevo.png" Stretch="Uniform" AlignmentX="Left" TileMode="None"/>
-            </Button.Background>
+
         </Button>
         <Button x:Name="guardrButton" Content="Guardar" HorizontalAlignment="Left" Margin="234,260,0,0" VerticalAlignment="Top" Height="25" Width="115" FontSize="14" FontWeight="Bold" Click="guardrButton_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Save.png" Stretch="Uniform" AlignmentX="Left" TileMode="None"/>
-            </Button.Background>
+
         </Button>
         <Button x:Name="eliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="421,260,0,0" VerticalAlignment="Top" Height="25" Width="115" FontSize="14" FontWeight="Bold" Click="eliminarButton_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Eliminar.png" Stretch="Uniform" AlignmentX="Left" TileMode="None"/>
-            </Button.Background>
+
         </Button>
         <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="214,31,0,0" VerticalAlignment="Top" Height="25" Width="116" FontSize="14" FontWeight="Bold" Click="buscarButton_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Buscar.png" Stretch="Uniform" AlignmentX="Left" TileMode="None"/>
-            </Button.Background>
+
         </Button>
         <DatePicker x:Name="fechaDatePicker" HorizontalAlignment="Left" Margin="425,33,0,0" VerticalAlignment="Top" Width="119">
             <DatePicker.SelectedDate>
@@ -87,5 +79,9 @@
                 </Binding>
             </DatePicker.SelectedDate>
         </DatePicker>
+        <ComboBox x:Name="descripcionComboBox" HorizontalAlignment="Left" Margin="98,106,0,0" VerticalAlignment="Top" Width="120"
+                  SelectedValue="{Binding Descripcion,Mode=TwoWay}">
+            
+        </ComboBox>
     </Grid>
 </Window>

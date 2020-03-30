@@ -20,23 +20,28 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
     public partial class rVehiculo : Window
     {
         Vehiculos vehiculos = new Vehiculos();
+        
         public rVehiculo()
         {
             InitializeComponent();
-            List<string> clientes = new List<string>
-            {
-                "Julio","Ericsson"
-            };
-            clienteComboBox.ItemsSource = clientes;
 
-            List<string> tipoVehiculo = new List<string>
+
+            List<string> cliente = new List<string>
             {
-                "Carros","Camionetas","Jeepetas","Motores","Camiones",
+                "Julio","Martin","Pedro","Guillen"
             };
-            tipovehiculoComboBox.ItemsSource = tipoVehiculo;
+            this.clienteComboBox.ItemsSource = cliente;
+
+            List<string> tVehiculo = new List<string>
+            {
+                "Carro","Camionetas","Jeepetas","Motores","Camiones"
+            };
+            this.tipovehiculoComboBox.ItemsSource = tVehiculo;
+
 
             this.DataContext = vehiculos;
             idTextBox.Text = "0";
+           
         }
 
         private void LimpiarCampos()
@@ -94,6 +99,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             return paso;
         }
         
+       
 
         private void LLenar()
         {
@@ -165,12 +171,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             LimpiarCampos();
         }
 
-        private void LlenaCombo()
-        {
-            clienteComboBox.ItemsSource = ClienteBLL.GetList(c => true);
-            clienteComboBox.DisplayMemberPath = "Nombre";
-            clienteComboBox.SelectedValuePath = "PersonaId";
-        }
+       
 
     }
 }

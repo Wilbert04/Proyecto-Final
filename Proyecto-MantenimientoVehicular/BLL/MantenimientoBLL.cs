@@ -1,12 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Proyecto_MantenimientoVehicular.DAL;
+using Proyecto_MantenimientoVehicular.Entidades;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 
 namespace Proyecto_MantenimientoVehicular.BLL
 {
-    public class Mantenimiento
+    public class MantenimientoBLL
     {
         public static bool Guardar(Mantenimiento mantenimiento)
         {
@@ -15,8 +17,8 @@ namespace Proyecto_MantenimientoVehicular.BLL
 
             try
             {
-                //if (db.mantenimientos.Add(mantenimiento) != null)
-                //    paso = db.SaveChanges() > 0;
+                if (db.mantenimientos.Add(mantenimiento) != null)
+                    paso = db.SaveChanges() > 0;
             }
             catch (Exception)
             {
@@ -26,8 +28,11 @@ namespace Proyecto_MantenimientoVehicular.BLL
             {
                 db.Dispose();
             }
+
             return paso;
+            
         }
+       
 
         public static bool Modificar(Mantenimiento mantenimiento)
         {
@@ -36,6 +41,15 @@ namespace Proyecto_MantenimientoVehicular.BLL
 
             try
             {
+
+                db.Database.ExecuteSqlRaw($"Delete From LLamadaDetalle Where LlamadaId = {mantenimiento.MantenimientoId}");
+
+                foreach (var item in mantenimiento.DMantenimiento)
+                {
+                    db.Entry(item).State = EntityState.Added;
+                }
+
+
                 db.Entry(mantenimiento).State = EntityState.Modified;
                 paso = db.SaveChanges() > 0;
             }
@@ -70,38 +84,20 @@ namespace Proyecto_MantenimientoVehicular.BLL
             {
                 db.Dispose();
             }
+
             return paso;
         }
 
 
-        //public static Mantenimiento Buscar(int id)
-        //{
-
-        //    Contexto db = new Contexto();
-        //    Mantenimiento mantenimiento = new Mantenimiento();
-
-        //    try
-        //    {
-        //        mantenimiento = db.mantenimientos.Find(id);
-        //    }
-        //    catch (Exception)
-        //    {
-        //        throw;
-        //    }
-        //    finally
-        //    {
-        //        db.Dispose();
-        //    }
-        //    return mantenimiento;
-        //}
-
-        public static List<Mantenimiento> GetList(Expression<Func<Mantenimiento, bool>> mantenimiento)
+        public static Mantenimiento Buscar(int id)
         {
-            List<Mantenimiento> Lista = new List<Mantenimiento>();
+            Mantenimiento mantenimiento = new Mantenimiento();
             Contexto db = new Contexto();
+            
+
             try
             {
-                //Lista = db.mantenimientos.Where(mantenimiento).ToList();
+                mantenimiento = db.mantenimientos.Include(o => o.DMantenimiento).Where(o => o.MantenimientoId == id).SingleOrDefault();
             }
 
             catch (Exception)
@@ -112,8 +108,29 @@ namespace Proyecto_MantenimientoVehicular.BLL
             {
                 db.Dispose();
             }
-            return Lista;
-
+            return mantenimiento;
         }
+
+        public static List<Mantenimiento> GetList(Expression<Func<Mantenimiento,bool>> mantenimiento)
+        {
+            List<Mantenimiento> Lista = new List<Mantenimiento>();
+            Contexto db = new Contexto();
+
+            try
+            {
+                Lista = db.mantenimientos.Where(mantenimiento).ToList();
+            }
+            catch(Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                db.Dispose();
+            }
+
+            return Lista;
+        }
+       
     }
 }

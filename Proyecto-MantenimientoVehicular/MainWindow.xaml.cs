@@ -29,8 +29,10 @@ namespace Proyecto_MantenimientoVehicular
                 menuprimcipal.ShowDialog();
                 this.Close();
             }
-
-            //IniciarSesion();
+            else
+            {
+                IniciarSesion();
+            }
 
         }
 
