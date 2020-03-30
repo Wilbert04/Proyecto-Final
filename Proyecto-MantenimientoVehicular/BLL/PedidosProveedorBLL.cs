@@ -75,27 +75,27 @@ namespace Proyecto_MantenimientoVehicular.BLL
             return paso;
         }
 
+        public static PedidosProveedor Buscar(int id)
+        {
+            PedidosProveedor pedidosproveedor = new PedidosProveedor();
+            Contexto db = new Contexto();
 
-        //public static PedidosProveedores Buscar(int id)
-        //{
+            try
+            {
+                pedidosproveedor = db.pedidosProveedor.Include(o => o.DPedidos).Where(o => o.PedidoId == id).SingleOrDefault();
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                db.Dispose();
+            }
 
-        //    Contexto db = new Contexto();
-        //    PedidosProveedores pedidosProveedores = new PedidosProveedores();
+            return pedidosproveedor;
 
-        //    try
-        //    {
-        //        pedidosProveedores = db.pedidosProveedores.Find(id);
-        //    }
-        //    catch (Exception)
-        //    {
-        //        throw;
-        //    }
-        //    finally
-        //    {
-        //        db.Dispose();
-        //    }
-        //    return pedidosProveedores;
-        //}
+        }
 
         public static List<PedidosProveedor> GetList(Expression<Func<PedidosProveedor, bool>> pedidos)
         {
