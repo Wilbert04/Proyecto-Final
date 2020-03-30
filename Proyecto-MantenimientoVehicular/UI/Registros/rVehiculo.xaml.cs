@@ -24,24 +24,36 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
         public rVehiculo()
         {
             InitializeComponent();
+            LlenaCombo();
+            ListaCliente();
 
-
-            List<string> cliente = new List<string>
-            {
-                "Julio","Martin","Pedro","Guillen"
-            };
-            this.clienteComboBox.ItemsSource = cliente;
-
-            List<string> tVehiculo = new List<string>
+        List<string> tVehiculo = new List<string>
             {
                 "Carro","Camionetas","Jeepetas","Motores","Camiones"
             };
             this.tipovehiculoComboBox.ItemsSource = tVehiculo;
 
-
+            
             this.DataContext = vehiculos;
             idTextBox.Text = "0";
            
+        }
+
+
+
+        private void ListaCliente()
+        {
+            List<Clientes> listacliente = ClienteBLL.GetList(a => true);
+            this.DataContext = listacliente;
+        }
+
+        private void LlenaCombo()
+        {
+            clienteComboBox.ItemsSource = ClienteBLL.GetList(a => true);
+            clienteComboBox.DisplayMemberPath = "Nombre";
+            clienteComboBox.SelectedValuePath = "ClienteId";
+            
+
         }
 
         private void LimpiarCampos()

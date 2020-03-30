@@ -11,12 +11,15 @@ namespace Proyecto_MantenimientoVehicular.Entidades
         [Key]
         public int MantenimientoId { get; set; }
         public DateTime ProximoMantemiento { get; set; }
-        public string Vehiculo { get; set; }
-        public string Cliente { get; set; }
+        public int VehiculoId { get; set; }
+        public int ClienteId { get; set; }
         public decimal SubTotal { get; set; }
         public decimal Itebis { get; set; }
         public decimal Total { get; set; }
         public DateTime Fecha { get; set; }
+
+        
+        
 
         [ForeignKey("MantenimientoId")]
         public virtual List<DetalleMantenimiento> DMantenimiento { get; set; } = new List<DetalleMantenimiento>();
@@ -25,8 +28,8 @@ namespace Proyecto_MantenimientoVehicular.Entidades
         {
             MantenimientoId = 0;
             ProximoMantemiento = DateTime.Now;
-            Vehiculo = string.Empty;
-            Cliente = string.Empty;
+            VehiculoId = 0;
+            ClienteId = 0;
             SubTotal = 0;
             Itebis = 0;
             Total = 0;

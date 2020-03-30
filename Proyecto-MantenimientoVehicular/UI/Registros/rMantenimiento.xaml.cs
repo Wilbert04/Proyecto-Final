@@ -26,19 +26,20 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             InitializeComponent();
             ProximoMantenimiento();
             LlenaComboBox();
+            ListaCliente();
+            ListaVehiculo();
+            idTextBox1.Text = "0";
+            //List<string> cliente = new List<string>
+            //{
+            //    "Julio","Martin","Pedro","Guillen"
+            //};
+            //this.clienteComboBox.ItemsSource = cliente;
 
-
-            List<string> cliente = new List<string>
-            {
-                "Julio","Martin","Pedro","Guillen"
-            };
-            this.clienteComboBox.ItemsSource = cliente;
-
-            List<string> Vehiculo = new List<string>
-            {
-                "Nissan Frotier","Toyota Hilux","Hyundai Tucson"
-            };
-            this.vehiculoComboBox.ItemsSource = Vehiculo;
+            //List<string> Vehiculo = new List<string>
+            //{
+            //    "Nissan Frotier","Toyota Hilux","Hyundai Tucson"
+            //};
+            //this.vehiculoComboBox.ItemsSource = Vehiculo;
 
             //List<string> articulo = new List<string>
             //{
@@ -47,8 +48,8 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             //this.articuloComboBox.ItemsSource = articulo;
 
 
-            ProximoMantenimiento();
-            idTextBox1.Text = "0";
+            
+           
             this.DataContext = mantenimiento;
         }
 
@@ -59,11 +60,11 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             vehiculoComboBox.Text = string.Empty;
             articuloComboBox.Text = string.Empty;
             cantidadTextBox.Text = string.Empty;
-            precioTextBox.Text = "0";
-            importeTextBox1.Text = "0";
-            subtotalTextBox.Text = "0";
-            itebisTextBox.Text = "0";
-            totalTextBox.Text = "0";
+            precioTextBox.Text = string.Empty;
+            importeTextBox1.Text = string.Empty; ;
+            subtotalTextBox.Text = string.Empty; ;
+            itebisTextBox.Text = string.Empty; ;
+            totalTextBox.Text = string.Empty;
             fechaDatePicker.SelectedDate = DateTime.Now;
             proxmantDatePicker.SelectedDate = DateTime.Now;
                 
@@ -93,35 +94,27 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             bool paso = false;
 
 
-            if (string.IsNullOrWhiteSpace(clienteComboBox.Text))
-            {
-                MessageBox.Show("Debe elegir un Cliente", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
-                paso = false;
-            }
+            //if (string.IsNullOrWhiteSpace(clienteComboBox.Text))
+            //{
+            //    MessageBox.Show("Debe elegir un Cliente", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
+            //    paso = false;
+            //}
 
-            if (string.IsNullOrWhiteSpace(descripcionTextBox.Text))
-            {
-                MessageBox.Show("Este campo es Obligatorio", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
-                paso = false;
-            }
+            //if (string.IsNullOrWhiteSpace(descripcionTextBox.Text))
+            //{
+            //    MessageBox.Show("Este campo es Obligatorio", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
+            //    paso = false;
+            //}
 
-            if (string.IsNullOrWhiteSpace(vehiculoComboBox.Text))
-            {
-                MessageBox.Show("Campo Obligatorio", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
-                paso = false;
-            }
+            //if (string.IsNullOrWhiteSpace(vehiculoComboBox.Text))
+            //{
+            //    MessageBox.Show("Campo Obligatorio", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
+            //    paso = false;
+            //}
 
-            if (string.IsNullOrWhiteSpace(descripcionTextBox.Text))
-            {
-                MessageBox.Show("Campo Obligatorio", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
-                paso = false;
-            }
 
-            if (string.IsNullOrWhiteSpace(descripcionTextBox.Text))
-            {
-                MessageBox.Show("Campo Obligatorio", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
-                paso = false;
-            }
+
+
 
             return paso;
         }
@@ -216,13 +209,13 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
 
 
                 mantenimiento.DMantenimiento.Add(new DetalleMantenimiento(
-                    mantenimiento.MantenimientoId, Convert.ToInt32(idTextBox1.Text),
-                   articuloComboBox.Text, descripcionTextBox.Text, Convert.ToDecimal(cantidadTextBox.Text), Convert.ToDecimal(precioTextBox.Text),
-                   Convert.ToDecimal(importeTextBox1.Text)));
+                mantenimiento.MantenimientoId, Convert.ToInt32(idTextBox1.Text),
+                Convert.ToInt32(articuloComboBox.SelectedValue), descripcionTextBox.Text, Convert.ToInt32(cantidadTextBox.Text), Convert.ToDecimal(precioTextBox.Text),
+                Convert.ToDecimal(importeTextBox1.Text)));
                 Llenar();
 
                 articuloComboBox.Text = " ";
-                descripcionTextBox.Text = " ";
+                
                 cantidadTextBox.Clear();
                 precioTextBox.Clear();
                 importeTextBox1.Clear();
@@ -235,86 +228,108 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
         private void LlenaComboBox()
         {
             ArticuloBLL articulos = new ArticuloBLL();
-            //ClienteBLL cliente = new ClienteBLL();
-            //VehiculoBLL vehiculos = new VehiculoBLL();
+            ClienteBLL cliente = new ClienteBLL();
+            VehiculoBLL vehiculos = new VehiculoBLL();
 
             articuloComboBox.ItemsSource = ArticuloBLL.GetList(a => true);
             articuloComboBox.DisplayMemberPath = "Descripcion";
-            articuloComboBox.SelectedValuePath = "Descripcion";
+            articuloComboBox.SelectedValuePath = "ArticuloId";
 
-            //vehiculoComboBox.ItemsSource = VehiculoBLL.GetList(t => true);
-            //vehiculoComboBox.DisplayMemberPath = "VehiculoId";
-            //vehiculoComboBox.SelectedValuePath = "Descripcion";
+            vehiculoComboBox.ItemsSource = VehiculoBLL.GetList(t => true);
+            vehiculoComboBox.DisplayMemberPath = "Descripcion";
+            vehiculoComboBox.SelectedValuePath = "VehiculoId";
 
-            //clienteComboBox.ItemsSource = ClienteBLL.GetList(v => true);
-            //clienteComboBox.DisplayMemberPath = "ClienteId";
-            //clienteComboBox.SelectedValuePath = "Nombre";
+            clienteComboBox.ItemsSource = ClienteBLL.GetList(v => true);
+            clienteComboBox.DisplayMemberPath = "Nombre";
+            clienteComboBox.SelectedValuePath = "ClienteId";
 
 
+        }
+
+
+        private void ListaCliente()
+        {
+            List<Clientes> listacliente = ClienteBLL.GetList(a => true);
+            this.DataContext = listacliente;
+        }
+
+        private void ListaVehiculo()
+        {
+            List<Clientes> listavehiculo = ClienteBLL.GetList(a => true);
+            this.DataContext = listavehiculo;
         }
 
         private void articuloComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Articulos articulos = (Articulos)articuloComboBox.SelectedItem;
-            precioTextBox.Text = Convert.ToString(articulos.Precio);
+            Articulos buscarArt = articuloComboBox.SelectedItem as Articulos;
+
+            if (buscarArt != null)
+            {
+                precioTextBox.Text = Convert.ToString(buscarArt.Precio);
+            }
         }
+
+
+        private decimal ToDecimal(object valor)
+        {
+            decimal retorno = 0;
+            decimal.TryParse(valor.ToString(), out retorno);
+
+            return Convert.ToDecimal(retorno);
+        }
+
 
         private void cantidadTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            CalcularImporte();
-            CalcularItbis();
-            CalcularTotal();
-            CalcularSubtotal();
+            if (cantidadTextBox.Text != string.Empty)
+            {
+                CalcularImporte();
+                CalcularSubtotal();
+                CalcularItbis();
+                CalcularTotal();
+                
+            }
         }
 
         private void CalcularImporte()      //   Calculo de Importe
         {
-            if (cantidadTextBox.Text != "0")
-            {
-                importeTextBox1.Text = Convert.ToString(ArticuloBLL.CalcularImporte(Convert.ToDecimal(cantidadTextBox.Text), Convert.ToDecimal(precioTextBox.Text)));
-            }
-            else
-                importeTextBox1.Text = "0";
-        }
 
-        private void CalcularItbis()
-        {
-            {
-                itebisTextBox.Text = Convert.ToString(ArticuloBLL.CalcularItbis(Convert.ToDecimal(subtotalTextBox.Text)));
-            }
+            ArticuloBLL BLL = new ArticuloBLL();
+
+            decimal cantidad, precio;
+            cantidad = ToDecimal(cantidadTextBox.Text);
+            precio = ToDecimal(precioTextBox.Text);
+            importeTextBox1.Text = ArticuloBLL.CalcularImporte(cantidad, precio).ToString("0.##");
+
+         
         }
 
         private void CalcularSubtotal()
         {
-            if (importeTextBox1.Text != "0")
-            {
-                subtotalTextBox.Text = Convert.ToString(ArticuloBLL.CalcularSubtotal(Convert.ToDecimal(importeTextBox1.Text)));
-            }
+            ArticuloBLL bll = new ArticuloBLL();
+
+            decimal importe = ToDecimal(importeTextBox1.Text);
+
+            subtotalTextBox.Text = ArticuloBLL.CalcularSubtotal(importe).ToString("0.##");
+
+        }
+
+        private void CalcularItbis()
+        {
+            
+            decimal subtotal = ToDecimal(subtotalTextBox.Text);
+
+            itebisTextBox.Text = ArticuloBLL.CalcularItbis(subtotal).ToString("0.##");
         }
 
         private void CalcularTotal()
         {
-            if (subtotalTextBox.Text != "0"  && itebisTextBox.Text != "0")
-            {
-                totalTextBox.Text = Convert.ToString(ArticuloBLL.CalcularTotal(Convert.ToDecimal(subtotalTextBox.Text), Convert.ToDecimal(itebisTextBox.Text)));
-            }
-        }
+            decimal subtotal, itbis;
+            subtotal = ToDecimal(subtotalTextBox.Text);
+            itbis = ToDecimal(itebisTextBox.Text);
 
-        private void Total()
-        {
-            List<DetalleMantenimiento> detalles = (List<DetalleMantenimiento>)detalleDataGrid.ItemsSource;
-
-            decimal Total = 0;
-            //decimal Itebis;
-
-            //Itebis = 0.18M;
-
-            foreach (var item in detalles)
-            {
-                Total += item.Importe;
-            }
-
-            //TotalnumericUpDown.Value;
+            totalTextBox.Text = ArticuloBLL.CalcularTotal(subtotal, itbis).ToString("0.##");
+        
         }
 
 

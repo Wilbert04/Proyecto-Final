@@ -125,7 +125,12 @@ namespace Proyecto_MantenimientoVehicular.BLL
 
         public static Decimal CalcularImporte(decimal cantidad, decimal precio)
         {
-            return cantidad * precio;
+            decimal Importe;
+
+            Importe = cantidad * precio;
+
+
+            return Importe;
         }
 
         public static Decimal CalcularSubtotal(decimal importe)
@@ -135,7 +140,8 @@ namespace Proyecto_MantenimientoVehicular.BLL
 
 
         public static Decimal CalcularTotal(decimal subtotal, decimal itbis)
-        {
+        {   
+
             return subtotal + itbis;
         }
     }

@@ -138,6 +138,12 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
         {
             LimpiarCampos();
         }
+
+       
+
+
+
+
     }
 
 

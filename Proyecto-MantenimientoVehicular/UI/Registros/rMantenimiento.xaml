@@ -26,12 +26,12 @@
         <TextBox x:Name="idTextBox1" HorizontalAlignment="Left" Margin="127,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
         <DatePicker x:Name="fechaDatePicker" HorizontalAlignment="Left" Margin="570,40,0,0" VerticalAlignment="Top" Width="113"/>
         <ComboBox x:Name="clienteComboBox" HorizontalAlignment="Left" Margin="88,113,0,0" VerticalAlignment="Top" Width="105"
-                  SelectedValue="{Binding Cliente,Mode=TwoWay}">
+                  SelectedValue="{Binding ClienteId,Mode=TwoWay}">
 
         </ComboBox>
 
         <ComboBox x:Name="vehiculoComboBox" HorizontalAlignment="Left" Margin="570,113,0,0" VerticalAlignment="Top" Width="109"
-                  SelectedValue="{Binding Vehiculo,Mode=TwoWay}">
+                  SelectedValue="{Binding VehiculoId,Mode=TwoWay}">
         </ComboBox>
 
         <DatePicker x:Name="proxmantDatePicker" HorizontalAlignment="Left" Margin="332,425,0,0" VerticalAlignment="Top">
@@ -47,10 +47,8 @@
                   >
         </ComboBox>
 
-        <TextBox x:Name="cantidadTextBox" HorizontalAlignment="Left" Margin="273,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" TextChanged="cantidadTextBox_TextChanged">
-        </TextBox>
-        <TextBox x:Name="precioTextBox" HorizontalAlignment="Left" Margin="415,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="91">
-        </TextBox>
+        <TextBox x:Name="cantidadTextBox" HorizontalAlignment="Left" Margin="273,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" TextChanged="cantidadTextBox_TextChanged"/>
+        <TextBox x:Name="precioTextBox" HorizontalAlignment="Left" Margin="415,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="91"/>
         <TextBox x:Name="importeTextBox1" HorizontalAlignment="Left" Margin="569,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86"/>
         
         <DataGrid x:Name="detalleDataGrid" Margin="19,207,19,164">

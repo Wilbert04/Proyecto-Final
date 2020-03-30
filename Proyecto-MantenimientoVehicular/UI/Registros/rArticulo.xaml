@@ -11,7 +11,7 @@
         <Label Content="Descripcion" HorizontalAlignment="Left" Margin="21,107,0,0" VerticalAlignment="Top"/>
         <Label Content="Cantidad" HorizontalAlignment="Left" Margin="21,139,0,0" VerticalAlignment="Top"/>
         <Label Content="Precio/U" HorizontalAlignment="Left" Margin="23,167,0,0" VerticalAlignment="Top"/>
-        <Label Content="Existencia" HorizontalAlignment="Left" Margin="339,106,0,0" VerticalAlignment="Top"/>
+        <Label Content="Existencia" HorizontalAlignment="Left" Margin="274,106,0,0" VerticalAlignment="Top"/>
         <Label Content="Fecha" HorizontalAlignment="Left" Margin="378,31,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="idTextBox" HorizontalAlignment="Left" Margin="100,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">
             <TextBox.Text>
@@ -22,16 +22,7 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBox x:Name="descripcionTextBox" HorizontalAlignment="Left" Margin="362,190,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="206">
-            <!--<TextBox.Text>
-                <Binding Path="Descripcion" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
-                    <Binding.ValidationRules>
-                        <ExceptionValidationRule/>
-                    </Binding.ValidationRules>
-                </Binding>
-            </TextBox.Text>-->
-        </TextBox>
-        <TextBox x:Name="cantidadTextBox" HorizontalAlignment="Left" Margin="101,143,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="109">
+        <TextBox x:Name="cantidadTextBox" HorizontalAlignment="Left" Margin="101,143,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="94">
             <TextBox.Text>
                 <Binding Path="Cantidad" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -40,7 +31,7 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBox x:Name="precioTextBox" HorizontalAlignment="Left" Margin="102,173,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="107">
+        <TextBox x:Name="precioTextBox" HorizontalAlignment="Left" Margin="102,173,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="92">
             <TextBox.Text>
                 <Binding Path="Precio" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -49,7 +40,7 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBox x:Name="existenciaTextBox" HorizontalAlignment="Left" Margin="409,111,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120">
+        <TextBox x:Name="existenciaTextBox" HorizontalAlignment="Left" Margin="341,111,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120">
             <TextBox.Text>
                 <Binding Path="Existencia" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -79,9 +70,9 @@
                 </Binding>
             </DatePicker.SelectedDate>
         </DatePicker>
-        <ComboBox x:Name="descripcionComboBox" HorizontalAlignment="Left" Margin="98,106,0,0" VerticalAlignment="Top" Width="120"
+        <ComboBox x:Name="descripcionComboBox" HorizontalAlignment="Left" Margin="98,106,0,0" VerticalAlignment="Top" Width="147"
                   SelectedValue="{Binding Descripcion,Mode=TwoWay}">
-            
+
         </ComboBox>
     </Grid>
 </Window>

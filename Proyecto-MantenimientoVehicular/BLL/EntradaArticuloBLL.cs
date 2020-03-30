@@ -8,17 +8,25 @@ using System.Linq.Expressions;
 
 namespace Proyecto_MantenimientoVehicular.BLL
 {
+    
     public class EntradaArticuloBLL
     {
         public static bool Guardar(EntradaArticulos entradaArticulos)
         {
             bool paso = false;
             Contexto db = new Contexto();
-
+            Articulos articulos = new Articulos();
+          
             try
             {
                 if (db.entradaArticulos.Add(entradaArticulos) != null)
+                {
+                   
+
+                    //db.articulos.Find(entradaArticulos.ArticuloId).Cantidad += entradaArticulos.Cantidad;
                     paso = db.SaveChanges() > 0;
+
+                }
             }
             catch (Exception)
             {

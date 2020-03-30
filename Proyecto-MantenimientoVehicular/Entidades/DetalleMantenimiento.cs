@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Proyecto_MantenimientoVehicular.Entidades
 {
@@ -7,18 +8,22 @@ namespace Proyecto_MantenimientoVehicular.Entidades
         [Key]
         public int Id { get; set; }
         public int MantenimientoId { get; set; }
-        public string ArticuloId { get; set; }
+        public int ArticuloId { get; set; }
         public string Descripcion { get; set; }
-        public decimal Cantidad { get; set; }
+        public int Cantidad { get; set; }
         public decimal Precio { get; set; }
         public decimal Importe { get; set; }
+
+
+        [ForeignKey("ArticuloId")]
+        public virtual Articulos Articulos { get; set; }
 
         public DetalleMantenimiento()
         {
             
         }
 
-        public DetalleMantenimiento(int id, int mantenimientoId, string articuloId, string descripcion, decimal cantidad, decimal precio, decimal importe)
+        public DetalleMantenimiento(int id, int mantenimientoId, int articuloId, string descripcion, int cantidad, decimal precio, decimal importe)
         {
             Id = id;
             MantenimientoId = mantenimientoId;

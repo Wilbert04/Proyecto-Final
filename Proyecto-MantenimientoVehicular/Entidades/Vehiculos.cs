@@ -8,21 +8,23 @@ namespace Proyecto_MantenimientoVehicular.Entidades
     {
         [Key]
         public int VehiculoId { get; set; }
-        public string ClienteId { get; set; }
+        public int ClienteId { get; set; }
         public string TipoVehiculo { get; set; }
         public string Descripcion { get; set; }
-        public int Placa { get; set; }
+        public string Placa { get; set; }
         public int Año { get; set; }
         public DateTime Fecha { get; set; }
 
-        
+        [ForeignKey("ClienteId")]
+        public virtual Clientes Clientes { get; set; }
+
         public Vehiculos()
         {
             VehiculoId = 0;
-            ClienteId = string.Empty;
+            ClienteId = 0;
             TipoVehiculo = string.Empty;
             Descripcion = string.Empty;
-            Placa = 0;
+            Placa = string.Empty;
             Año = 0;
             Fecha = DateTime.Now;
         }

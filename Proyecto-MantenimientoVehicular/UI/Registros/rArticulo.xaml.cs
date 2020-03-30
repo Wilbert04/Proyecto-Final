@@ -23,23 +23,34 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
         public rArticulo()
         {
             InitializeComponent();
-
-            List<string> articulo = new List<string>
-            {
-                "Neumarico","Filtro/Aire","Correa"
-            };
-            this.descripcionComboBox.ItemsSource = articulo;
-
-
+            LlenaCombo();
+            ListaEntrada();
+            idTextBox.Text = "0";
 
 
             this.DataContext = articulos;
         }
 
+
+        private void ListaEntrada()
+        {
+            List<EntradaArticulos> entradaArticulos = EntradaArticuloBLL.GetList(a => true);
+            this.DataContext = entradaArticulos;
+        }
+
+        private void LlenaCombo()
+        {
+            descripcionComboBox.ItemsSource = EntradaArticuloBLL.GetList(a => true);
+            descripcionComboBox.DisplayMemberPath = "Descripcion";
+            descripcionComboBox.SelectedValuePath = "EntradaArticuloId";
+
+        }
+
+
         private void LimpiarCampos()
         {
             idTextBox.Text = string.Empty;
-            descripcionTextBox.Text = string.Empty;
+            
             cantidadTextBox.Text = string.Empty;
             precioTextBox.Text = string.Empty;
             existenciaTextBox.Text = string.Empty;
@@ -57,7 +68,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
         {
             bool paso = true;
 
-            if (string.IsNullOrWhiteSpace(descripcionTextBox.Text))
+            if (string.IsNullOrWhiteSpace(descripcionComboBox.Text))
             {
                 MessageBox.Show("Campo Obligatorio!!", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
                 paso = false;
@@ -156,6 +167,8 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             LimpiarCampos();
         }
 
+
+       
 
 
 

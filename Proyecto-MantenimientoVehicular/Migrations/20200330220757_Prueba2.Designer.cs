@@ -9,8 +9,8 @@ using Proyecto_MantenimientoVehicular.DAL;
 namespace Proyecto_MantenimientoVehicular.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20200329223857_Septima")]
-    partial class Septima
+    [Migration("20200330220757_Prueba2")]
+    partial class Prueba2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -29,6 +29,9 @@ namespace Proyecto_MantenimientoVehicular.Migrations
 
                     b.Property<string>("Descripcion")
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("EntradaArticuloId")
+                        .HasColumnType("INTEGER");
 
                     b.Property<decimal>("Existencia")
                         .HasColumnType("TEXT");
@@ -79,11 +82,11 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("ArticuloId")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("ArticuloId")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<decimal>("Cantidad")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Cantidad")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Descripcion")
                         .HasColumnType("TEXT");
@@ -98,6 +101,8 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ArticuloId");
 
                     b.HasIndex("MantenimientoId");
 
@@ -135,9 +140,6 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("ArticuloId")
-                        .HasColumnType("INTEGER");
-
                     b.Property<decimal>("Cantidad")
                         .HasColumnType("TEXT");
 
@@ -158,8 +160,8 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Cliente")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("ClienteId")
+                        .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("TEXT");
@@ -176,8 +178,8 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                     b.Property<decimal>("Total")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Vehiculo")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("VehiculoId")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("MantenimientoId");
 
@@ -265,8 +267,8 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                     b.Property<int>("Año")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("ClienteId")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("ClienteId")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Descripcion")
                         .HasColumnType("TEXT");
@@ -274,19 +276,27 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Placa")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Placa")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("TipoVehiculo")
                         .HasColumnType("TEXT");
 
                     b.HasKey("VehiculoId");
 
+                    b.HasIndex("ClienteId");
+
                     b.ToTable("vehiculos");
                 });
 
             modelBuilder.Entity("Proyecto_MantenimientoVehicular.Entidades.DetalleMantenimiento", b =>
                 {
+                    b.HasOne("Proyecto_MantenimientoVehicular.Entidades.Articulos", "Articulos")
+                        .WithMany()
+                        .HasForeignKey("ArticuloId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Proyecto_MantenimientoVehicular.Entidades.Mantenimiento", null)
                         .WithMany("DMantenimiento")
                         .HasForeignKey("MantenimientoId")
@@ -299,6 +309,15 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                     b.HasOne("Proyecto_MantenimientoVehicular.Entidades.PedidosProveedor", null)
                         .WithMany("DPedidos")
                         .HasForeignKey("PedidoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Proyecto_MantenimientoVehicular.Entidades.Vehiculos", b =>
+                {
+                    b.HasOne("Proyecto_MantenimientoVehicular.Entidades.Clientes", "Clientes")
+                        .WithMany()
+                        .HasForeignKey("ClienteId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

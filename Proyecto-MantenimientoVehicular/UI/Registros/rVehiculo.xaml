@@ -35,24 +35,13 @@
 
         <Label Content="Cliente" HorizontalAlignment="Left" Margin="30,102,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="clienteComboBox" HorizontalAlignment="Left" Margin="110,104,0,0" VerticalAlignment="Top" Width="126"
-                  SelectedValue="{Binding Path=Cliente,Mode=TwoWay}">
-            <!--<ComboBoxItem>Leo</ComboBoxItem>
-            <ComboBoxItem>Ericsson</ComboBoxItem>-->
-            
+                          SelectedValue="{Binding ClienteId,Mode=TwoWay}">
         </ComboBox>
 
         <Label Content="Tipo de Vehiculo" HorizontalAlignment="Left" Margin="322,158,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="tipovehiculoComboBox" HorizontalAlignment="Left" Margin="426,161,0,0" VerticalAlignment="Top" Width="120"
                   SelectedValue="{Binding TipoVehiculo, Mode=TwoWay}">
-            <!--<ComboBoxItem>Carro</ComboBoxItem>
-            <ComboBoxItem>Camionetas</ComboBoxItem>
-            <ComboBoxItem>Jeepetas</ComboBoxItem>
-            <ComboBoxItem>Motores</ComboBoxItem>
-            <ComboBoxItem>Camiones</ComboBoxItem>-->
-            
-            
-
-
+          
         </ComboBox>
         <Label Content="Descripcion" HorizontalAlignment="Left" Margin="28,158,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="descripcionTextBox" HorizontalAlignment="Left" Margin="111,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200">
