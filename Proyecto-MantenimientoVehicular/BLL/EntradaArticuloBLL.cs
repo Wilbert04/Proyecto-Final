@@ -23,12 +23,14 @@ namespace Proyecto_MantenimientoVehicular.BLL
                 if (db.entradaArticulos.Add(entradaArticulos) != null)
                 {
 
+                    Articulos articulos = BLL.ArticuloBLL.Buscar(entradaArticulos.ArticuloId);
 
-                    Articulos articulo = db.articulos.Find(entradaArticulos.ArticuloId) as Articulos;
+                    articulos.Existencia += entradaArticulos.Cantidad;
 
-                    articulo.Existencia += entradaArticulos.Cantidad;
+                    BLL.ArticuloBLL.Modificar(articulos);
 
-                    paso = db.SaveChanges() > 0;
+                    db.SaveChanges();
+                    paso = true;
                     
 
                 }
@@ -59,16 +61,22 @@ namespace Proyecto_MantenimientoVehicular.BLL
                 BLL.ArticuloBLL.Modificar(articulos);
 
                 db.Entry(entradaArticulos).State = EntityState.Modified;
-                paso = db.SaveChanges() > 0;
+                
+                if(db.SaveChanges() > 0)
+                {
+                    paso = true;
+                }
+
+                db.Dispose();
             }
+
+
+
             catch (Exception)
             {
                 throw;
             }
-            finally
-            {
-                db.Dispose();
-            }
+            
             return paso;
         }
 
@@ -119,6 +127,7 @@ namespace Proyecto_MantenimientoVehicular.BLL
             try
             {
                 entradaArticulos = db.entradaArticulos.Find(id);
+                db.Dispose();
 
 
             }
@@ -126,10 +135,7 @@ namespace Proyecto_MantenimientoVehicular.BLL
             {
                 throw;
             }
-            finally
-            {
-                db.Dispose();
-            }
+           
             return entradaArticulos;
         }
 

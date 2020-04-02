@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="rArticulo" Height="350" Width="600">
     <Grid>
-        <Label Content="ArticuloId" HorizontalAlignment="Left" Margin="23,30,0,0" VerticalAlignment="Top"/>
-        <Label Content="Articulo" HorizontalAlignment="Left" Margin="21,107,0,0" VerticalAlignment="Top"/>
+        <Label Content="ArtículoId" HorizontalAlignment="Left" Margin="23,30,0,0" VerticalAlignment="Top"/>
+        <Label Content="Artículo" HorizontalAlignment="Left" Margin="21,107,0,0" VerticalAlignment="Top"/>
         <Label Content="Precio/U" HorizontalAlignment="Left" Margin="20,144,0,0" VerticalAlignment="Top"/>
         <Label Content="Existencia" HorizontalAlignment="Left" Margin="20,181,0,0" VerticalAlignment="Top"/>
         <Label Content="Fecha" HorizontalAlignment="Left" Margin="378,31,0,0" VerticalAlignment="Top"/>
@@ -69,7 +69,7 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <Label Content="Categoria" HorizontalAlignment="Left" Margin="305,107,0,0" VerticalAlignment="Top"/>
+        <Label Content="Categoría" HorizontalAlignment="Left" Margin="305,107,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="categoriaComboBox" HorizontalAlignment="Left" Margin="373,110,0,0" VerticalAlignment="Top" Width="149"
                   SelectedValue="{Binding Categoria, Mode=TwoWay}">
         </ComboBox>

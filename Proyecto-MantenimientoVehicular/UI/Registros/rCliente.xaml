@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_MantenimientoVehicular.UI.Registros"
         mc:Ignorable="d"
-        Title="rCliente" Height="375" Width="600">
+        Title="rCliente" Height="375" Width="575">
     <Grid>
-        <Label Content="ClienteId" HorizontalAlignment="Left" Margin="22,25,0,0" VerticalAlignment="Top"/>
-        <Label Content="Nombre" HorizontalAlignment="Left" Margin="21,118,0,0" VerticalAlignment="Top"/>
-        <Label Content="Telefono" HorizontalAlignment="Left" Margin="22,151,0,0" VerticalAlignment="Top"/>
-        <Label Content="Cedula" HorizontalAlignment="Left" Margin="24,185,0,0" VerticalAlignment="Top"/>
-        <Label Content="Direccion" HorizontalAlignment="Left" Margin="303,119,0,0" VerticalAlignment="Top"/>
-        <Label Content="Email" HorizontalAlignment="Left" Margin="306,147,0,0" VerticalAlignment="Top"/>
+        <Label Content="ClienteId" HorizontalAlignment="Left" Margin="22,26,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nombre" HorizontalAlignment="Left" Margin="18,118,0,0" VerticalAlignment="Top"/>
+        <Label Content="Teléfono" HorizontalAlignment="Left" Margin="19,151,0,0" VerticalAlignment="Top"/>
+        <Label Content="Cédula" HorizontalAlignment="Left" Margin="301,117,0,0" VerticalAlignment="Top"/>
+        <Label Content="Dirección" HorizontalAlignment="Left" Margin="16,184,0,0" VerticalAlignment="Top"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="305,146,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="idTextBox" HorizontalAlignment="Left" Margin="84,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80">
             <TextBox.Text>
                 <Binding Path="ClienteId" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
@@ -22,7 +22,7 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBox x:Name="nombreTextBox" HorizontalAlignment="Left" Margin="88,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202">
+        <TextBox x:Name="nombreTextBox" HorizontalAlignment="Left" Margin="85,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202">
             <TextBox.Text>
                 <Binding Path="Nombre" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -31,7 +31,7 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBox x:Name="telefonoTextBox" HorizontalAlignment="Left" Margin="88,157,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="202">
+        <TextBox x:Name="telefonoTextBox" HorizontalAlignment="Left" Margin="86,157,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="202">
             <TextBox.Text>
                 <Binding Path="Telefono" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -41,7 +41,7 @@
             </TextBox.Text>
         </TextBox>
 
-        <TextBox x:Name="cedulaTextBox" HorizontalAlignment="Left" Margin="88,188,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="202">
+        <TextBox x:Name="cedulaTextBox" HorizontalAlignment="Left" Margin="353,120,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="202">
             <TextBox.Text>
                 <Binding Path="Cedula" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -50,7 +50,7 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBox x:Name="direccionTextBox" HorizontalAlignment="Left" Margin="366,125,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="202">
+        <TextBox x:Name="direccionTextBox" HorizontalAlignment="Left" Margin="85,190,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="202">
             <TextBox.Text>
                 <Binding Path="Direccion" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -59,7 +59,7 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBox x:Name="emailTextBox" HorizontalAlignment="Left" Margin="365,154,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="202">
+        <TextBox x:Name="emailTextBox" HorizontalAlignment="Left" Margin="353,151,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="202">
             <TextBox.Text>
                 <Binding Path="Email" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -69,20 +69,20 @@
             </TextBox.Text>
         </TextBox>
 
-        <Button x:Name="nuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="40,277,0,0" VerticalAlignment="Top" Height="40" Width="117" Click="nuevoButton_Click">
-            
+        <Button x:Name="nuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="24,279,0,0" VerticalAlignment="Top" Height="40" Width="117" Click="nuevoButton_Click">
+
         </Button>
-        <Button x:Name="guardarButton" Content="Guardar" HorizontalAlignment="Left" Margin="200,274,0,0" VerticalAlignment="Top" Height="43" Width="125" Click="guardarButton_Click">
-           
+        <Button x:Name="guardarButton" Content="Guardar" HorizontalAlignment="Left" Margin="165,277,0,0" VerticalAlignment="Top" Height="43" Width="125" Click="guardarButton_Click">
+
         </Button>
-        <Button x:Name="eliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="356,275,0,0" VerticalAlignment="Top" Height="40" Width="121" Click="eliminarButton_Click">
-           
+        <Button x:Name="eliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="315,275,0,0" VerticalAlignment="Top" Height="43" Width="118" Click="eliminarButton_Click">
+
         </Button>
         <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="180,25,0,0" VerticalAlignment="Top" Height="30" Width="89" Click="buscarButton_Click">
-            
+
         </Button>
-        <Label Content="Fecha" HorizontalAlignment="Left" Margin="325,27,0,0" VerticalAlignment="Top"/>
-        <DatePicker x:Name="fechaDatePicker" HorizontalAlignment="Left" Margin="367,29,0,0" VerticalAlignment="Top" Width="117">
+        <Label Content="Fecha" HorizontalAlignment="Left" Margin="386,26,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="fechaDatePicker" HorizontalAlignment="Left" Margin="433,27,0,0" VerticalAlignment="Top" Width="117">
             <DatePicker.SelectedDate>
                 <Binding Path="Fecha" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>

@@ -35,9 +35,9 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
 
             nombreTextBox1.Text = string.Empty;
             telefonoTextBox1.Text = string.Empty;
-            provinciaTextBox1.Text = string.Empty;
-            ciudadTextBox1.Text = string.Empty;
-            calleTextBox1.Text = string.Empty;
+            emailTextBox.Text = string.Empty;
+            rncTextBox.Text = string.Empty;
+            direccionTextBox.Text = string.Empty;
             fechaDatePicker.SelectedDate = DateTime.Now;
         }
 
@@ -64,19 +64,19 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
                 paso = false;
             }
 
-            if (string.IsNullOrWhiteSpace(provinciaTextBox1.Text))
+            if (string.IsNullOrWhiteSpace(direccionTextBox.Text))
             {
                 MessageBox.Show("Este Campo es Obligatorio");
                 paso = false;
             }
 
-            if (string.IsNullOrWhiteSpace(ciudadTextBox1.Text))
+            if (string.IsNullOrWhiteSpace(rncTextBox.Text))
             {
                 MessageBox.Show("Este Campo es Obligatorio");
                 paso = false;
             }
 
-            if (string.IsNullOrWhiteSpace(calleTextBox1.Text))
+            if (string.IsNullOrWhiteSpace(emailTextBox.Text))
             {
                 MessageBox.Show("Este Campo es Obligatorio");
                 paso = false;
@@ -155,5 +155,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
                 MessageBox.Show("No Eliminado", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
+       
     }
 }

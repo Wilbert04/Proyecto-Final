@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_MantenimientoVehicular.UI.Registros"
         mc:Ignorable="d"
-        Title="rEntradaArticulo" Height="350" Width="510">
+        Title="rEntradaArticulo" Height="310" Width="490">
     <Grid>
-        <Label Content="EntradaId" HorizontalAlignment="Left" Margin="18,31,0,0" VerticalAlignment="Top"/>
-        <Label Content="Articulo" HorizontalAlignment="Left" Margin="20,116,0,0" VerticalAlignment="Top"/>
-        <Label Content="Cantidad" HorizontalAlignment="Left" Margin="21,156,0,0" VerticalAlignment="Top"/>
-        <Label Content="Fecha" HorizontalAlignment="Left" Margin="317,31,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="IdTextbox" HorizontalAlignment="Left" Margin="94,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82">
+        <Label Content="EntradaId" HorizontalAlignment="Left" Margin="18,28,0,0" VerticalAlignment="Top"/>
+        <Label Content="Artículo" HorizontalAlignment="Left" Margin="26,107,0,0" VerticalAlignment="Top"/>
+        <Label Content="Cantidad" HorizontalAlignment="Left" Margin="26,142,0,0" VerticalAlignment="Top"/>
+        <Label Content="Fecha" HorizontalAlignment="Left" Margin="322,28,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="IdTextbox" HorizontalAlignment="Left" Margin="88,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82">
             <TextBox.Text>
                 <Binding Path="EntradaArticuloId" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -20,7 +20,7 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBox x:Name="CantidadTextbox" HorizontalAlignment="Left" Margin="89,161,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="75">
+        <TextBox x:Name="CantidadTextbox" HorizontalAlignment="Left" Margin="92,147,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="83">
             <TextBox.Text>
                 <Binding Path="Cantidad" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -29,19 +29,19 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <Button x:Name="nuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="30,242,0,0" VerticalAlignment="Top" Height="33" Width="115" FontSize="14" FontWeight="Bold" Click="nuevoButton_Click">
+        <Button x:Name="nuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="22,240,0,0" VerticalAlignment="Top" Height="33" Width="115" FontSize="14" FontWeight="Bold" Click="nuevoButton_Click">
 
         </Button>
-        <Button x:Name="guardarButton" Content="Guardar" HorizontalAlignment="Left" Margin="203,242,0,0" VerticalAlignment="Top" Height="33" Width="115" FontSize="14" FontWeight="Bold" Click="guardarButton_Click">
+        <Button x:Name="guardarButton" Content="Guardar" HorizontalAlignment="Left" Margin="159,238,0,0" VerticalAlignment="Top" Height="33" Width="114" FontSize="14" FontWeight="Bold" Click="guardarButton_Click">
 
         </Button>
-        <Button x:Name="eliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="357,242,0,0" VerticalAlignment="Top" Height="33" Width="115" FontSize="14" FontWeight="Bold" Click="eliminarButton_Click">
+        <Button x:Name="eliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="292,237,0,0" VerticalAlignment="Top" Height="33" Width="115" FontSize="14" FontWeight="Bold" Click="eliminarButton_Click">
 
         </Button>
-        <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="189,31,0,0" VerticalAlignment="Top" Height="26" Width="90" FontSize="14" FontWeight="Bold" Click="buscarButton_Click">
+        <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="181,29,0,0" VerticalAlignment="Top" Height="26" Width="90" FontSize="14" FontWeight="Bold" Click="buscarButton_Click">
 
         </Button>
-        <DatePicker x:Name="FechaPicker" HorizontalAlignment="Left" Margin="364,33,0,0" VerticalAlignment="Top" Width="100">
+        <DatePicker x:Name="FechaPicker" HorizontalAlignment="Left" Margin="369,30,0,0" VerticalAlignment="Top" Width="100">
             <DatePicker.SelectedDate>
                 <Binding Path="Fecha" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -50,9 +50,9 @@
                 </Binding>
             </DatePicker.SelectedDate>
         </DatePicker>
-        <ComboBox x:Name="articuloComboBox" HorizontalAlignment="Left" Margin="88,117,0,0" VerticalAlignment="Top" Width="120"
+        <ComboBox x:Name="articuloComboBox" HorizontalAlignment="Left" Margin="92,108,0,0" VerticalAlignment="Top" Width="136"
                   SelectedValue="{Binding ArticuloId, Mode=TwoWay}">
-            
+
         </ComboBox>
     </Grid>
 </Window>

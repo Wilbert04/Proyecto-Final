@@ -6,7 +6,7 @@
         xmlns:PasswordHelper="clr-namespace:Proyecto_MantenimientoVehicular.Entidades"
         xmlns:local="clr-namespace:Proyecto_MantenimientoVehicular.UI.Registros"
         mc:Ignorable="d"
-        Title="rUsuarios" Height="450" Width="670">
+        Title="rUsuarios" Height="450" Width="650">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50*"/>

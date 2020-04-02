@@ -18,16 +18,25 @@ namespace Proyecto_MantenimientoVehicular.BLL
             try
             {
                 if (db.mantenimientos.Add(mantenimiento) != null)
-                    paso = db.SaveChanges() > 0;
+                {
+                    foreach (var item in mantenimiento.DMantenimiento)
+                    {
+                        var articulo = db.articulos.Find(item.ArticuloId);
+                        articulo.Existencia -= item.Cantidad;
+                    }
+
+                    db.SaveChanges();
+                    paso = true;
+                }
+
+                db.Dispose();
+      
             }
             catch (Exception)
             {
                 throw;
             }
-            finally
-            {
-                db.Dispose();
-            }
+           
 
             return paso;
             
