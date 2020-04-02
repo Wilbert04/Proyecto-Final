@@ -38,6 +38,15 @@ namespace Proyecto_MantenimientoVehicular.BLL
 
             try
             {
+                db.Database.ExecuteSqlRaw($"Delete From LLamadaDetalle Where LlamadaId = {pedidosProveedor.PedidoId}");
+
+                foreach (var item in pedidosProveedor.DPedidos)
+                {
+                    db.Entry(item).State = EntityState.Added;
+                }
+
+
+
                 db.Entry(pedidosProveedor).State = EntityState.Modified;
                 paso = db.SaveChanges() > 0;
             }

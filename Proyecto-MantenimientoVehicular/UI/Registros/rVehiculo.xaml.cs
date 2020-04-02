@@ -141,6 +141,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             if (paso)
             {
                 MessageBox.Show("Guardado", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
+                LimpiarCampos();
             }
             else
             {

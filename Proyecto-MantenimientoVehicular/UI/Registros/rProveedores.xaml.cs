@@ -23,55 +23,60 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
         public rProveedores()
         {
             InitializeComponent();
+            IdTextBox.Text = "0";
+
+            this.DataContext = proveedores;
+
         }
 
         private void LimpiarCampos()
         {
-            idTextBox.Text = "0";
-            nombreTextBox.Text = string.Empty;
-            telefonoTextBox.Text = string.Empty;
-            provinciaTextBox.Text = string.Empty;
-            ciudadTextBox.Text = string.Empty;
-            calleTextBox.Text = string.Empty;
+            IdTextBox.Text = "0";
+
+            nombreTextBox1.Text = string.Empty;
+            telefonoTextBox1.Text = string.Empty;
+            provinciaTextBox1.Text = string.Empty;
+            ciudadTextBox1.Text = string.Empty;
+            calleTextBox1.Text = string.Empty;
             fechaDatePicker.SelectedDate = DateTime.Now;
         }
 
-
         private bool ExisteEnLaBaseDatos()
         {
-            Proveedores proveedores = ProveedoresBLL.Buscar((int)Convert.ToInt32(idTextBox.Text));
+            Proveedores proveedores = ProveedoresBLL.Buscar((int)Convert.ToInt32(IdTextBox.Text));
             return (proveedores != null);
         }
+
 
         private bool ValidarCampos()
         {
             bool paso = true;
 
-            if (string.IsNullOrWhiteSpace(nombreTextBox.Text))
+            if (string.IsNullOrWhiteSpace(nombreTextBox1.Text))
             {
                 MessageBox.Show("Este Campo es Obligatorio");
                 paso = false;
             }
 
-            if (string.IsNullOrWhiteSpace(telefonoTextBox.Text))
+            if (string.IsNullOrWhiteSpace(telefonoTextBox1.Text))
             {
                 MessageBox.Show("Este Campo es Obligatorio");
                 paso = false;
             }
 
-            if (string.IsNullOrWhiteSpace(provinciaTextBox.Text))
+            if (string.IsNullOrWhiteSpace(provinciaTextBox1.Text))
             {
                 MessageBox.Show("Este Campo es Obligatorio");
                 paso = false;
             }
 
-            if (string.IsNullOrWhiteSpace(ciudadTextBox.Text))
+            if (string.IsNullOrWhiteSpace(ciudadTextBox1.Text))
             {
                 MessageBox.Show("Este Campo es Obligatorio");
                 paso = false;
             }
 
-            if (string.IsNullOrWhiteSpace(calleTextBox.Text))
+            if (string.IsNullOrWhiteSpace(calleTextBox1.Text))
             {
                 MessageBox.Show("Este Campo es Obligatorio");
                 paso = false;
@@ -79,7 +84,6 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
 
             return paso;
         }
-
 
         private void Llenar()
         {
@@ -89,13 +93,12 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
 
         private void guardarButton_Click(object sender, RoutedEventArgs e)
         {
-
             bool paso = false;
 
             if (!ValidarCampos())
                 return;
 
-            if (idTextBox.Text == "0")
+            if (IdTextBox.Text == "0")
                 paso = ProveedoresBLL.Guardar(proveedores);
 
             else
@@ -110,6 +113,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             if (paso)
             {
                 MessageBox.Show("Guardado", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
+                LimpiarCampos();
             }
             else
             {
@@ -120,7 +124,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
 
         private void buscarButton_Click(object sender, RoutedEventArgs e)
         {
-            Proveedores proveedorlocal = ProveedoresBLL.Buscar(proveedores.ProveedoresId);
+            Proveedores proveedorlocal = ProveedoresBLL.Buscar(proveedores.ProveedorId);
 
             if (proveedorlocal != null)
             {
@@ -134,9 +138,14 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             }
         }
 
+        private void nuevoButton_Click(object sender, RoutedEventArgs e)
+        {
+            LimpiarCampos();
+        }
+
         private void eliminarButton_Click(object sender, RoutedEventArgs e)
         {
-            if (ProveedoresBLL.Eliminar(proveedores.ProveedoresId))
+            if (ProveedoresBLL.Eliminar(proveedores.ProveedorId))
             {
                 LimpiarCampos();
                 MessageBox.Show("Eliminado", "Exito", MessageBoxButton.OK, MessageBoxImage.Exclamation);
@@ -146,11 +155,5 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
                 MessageBox.Show("No Eliminado", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-
-        private void nuevoButton_Click(object sender, RoutedEventArgs e)
-        {
-            LimpiarCampos();
-        }
-
     }
 }

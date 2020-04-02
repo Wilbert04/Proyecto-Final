@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
+
 namespace Proyecto_MantenimientoVehicular.BLL
 {
     
@@ -15,27 +16,30 @@ namespace Proyecto_MantenimientoVehicular.BLL
         {
             bool paso = false;
             Contexto db = new Contexto();
-            Articulos articulos = new Articulos();
+            
           
             try
             {
                 if (db.entradaArticulos.Add(entradaArticulos) != null)
                 {
-                   
 
-                    //db.articulos.Find(entradaArticulos.ArticuloId).Cantidad += entradaArticulos.Cantidad;
+
+                    Articulos articulo = db.articulos.Find(entradaArticulos.ArticuloId) as Articulos;
+
+                    articulo.Existencia += entradaArticulos.Cantidad;
+
                     paso = db.SaveChanges() > 0;
+                    
 
                 }
+
+                db.Dispose();
             }
             catch (Exception)
             {
                 throw;
             }
-            finally
-            {
-                db.Dispose();
-            }
+           
             return paso;
         }
 
@@ -46,6 +50,14 @@ namespace Proyecto_MantenimientoVehicular.BLL
 
             try
             {
+                EntradaArticulos EntArt = BLL.EntradaArticuloBLL.Buscar(entradaArticulos.EntradaArticuloId);
+                decimal resta;
+                resta = entradaArticulos.Cantidad - EntArt.Cantidad;
+
+                Articulos articulos = BLL.ArticuloBLL.Buscar(entradaArticulos.ArticuloId);
+                articulos.Existencia += resta;
+                BLL.ArticuloBLL.Modificar(articulos);
+
                 db.Entry(entradaArticulos).State = EntityState.Modified;
                 paso = db.SaveChanges() > 0;
             }
@@ -63,36 +75,52 @@ namespace Proyecto_MantenimientoVehicular.BLL
 
         public static bool Eliminar(int id)
         {
-            bool paso = false;
+            
+            bool paso = true;
             Contexto db = new Contexto();
 
             try
             {
-                var eliminar = db.entradaArticulos.Find(id);
-                db.Entry(eliminar).State = EntityState.Deleted;
-                paso = db.SaveChanges() > 0;
+                EntradaArticulos entradaArticulos = db.entradaArticulos.Find(id);
+
+                if (entradaArticulos != null)
+                {
+                    Articulos articulos = BLL.ArticuloBLL.Buscar(entradaArticulos.EntradaArticuloId);
+                    articulos.Existencia -= entradaArticulos.Cantidad;
+                    BLL.ArticuloBLL.Modificar(articulos);
+
+                    db.Entry(entradaArticulos).State = EntityState.Deleted;
+                }
+
+                if (db.SaveChanges() > 0)
+                {
+                    paso = true;
+                    db.Dispose();
+                }
+
+                
+                
             }
             catch (Exception)
             {
                 throw;
             }
-            finally
-            {
-                db.Dispose();
-            }
+           
             return paso;
         }
 
 
         public static EntradaArticulos Buscar(int id)
         {
-
+            
             Contexto db = new Contexto();
             EntradaArticulos entradaArticulos = new EntradaArticulos();
 
             try
             {
                 entradaArticulos = db.entradaArticulos.Find(id);
+
+
             }
             catch (Exception)
             {

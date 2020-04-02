@@ -1,9 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Proyecto_MantenimientoVehicular.Entidades;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Proyecto_MantenimientoVehicular.DAL
 {
-    public class Contexto : DbContext
+    class Contexto : DbContext
     {
         public DbSet<Usuarios> usuarios { get; set; }
         public DbSet<Clientes> clientes { get; set; }
@@ -17,7 +20,8 @@ namespace Proyecto_MantenimientoVehicular.DAL
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlite(@"Data Source = Mantenimiento11.db");
+            optionsBuilder.UseSqlite(@"Data Source = Mantenimiento31.db");
         }
+
     }
 }

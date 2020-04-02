@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Proyecto_MantenimientoVehicular.Migrations
 {
-    public partial class Prueba2 : Migration
+    public partial class Prueva27 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,9 +13,8 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                 {
                     ArticuloId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    EntradaArticuloId = table.Column<int>(nullable: false),
-                    Descripcion = table.Column<string>(nullable: true),
-                    Cantidad = table.Column<decimal>(nullable: false),
+                    Articulo = table.Column<string>(nullable: true),
+                    Categoria = table.Column<string>(nullable: true),
                     Existencia = table.Column<decimal>(nullable: false),
                     Precio = table.Column<decimal>(nullable: false),
                     Fecha = table.Column<DateTime>(nullable: false)
@@ -49,7 +48,7 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                 {
                     EntradaArticuloId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Descripcion = table.Column<string>(nullable: true),
+                    ArticuloId = table.Column<int>(nullable: false),
                     Cantidad = table.Column<decimal>(nullable: false),
                     Fecha = table.Column<DateTime>(nullable: false)
                 },
@@ -67,6 +66,7 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                     ProximoMantemiento = table.Column<DateTime>(nullable: false),
                     VehiculoId = table.Column<int>(nullable: false),
                     ClienteId = table.Column<int>(nullable: false),
+                    Servicios = table.Column<string>(nullable: true),
                     SubTotal = table.Column<decimal>(nullable: false),
                     Itebis = table.Column<decimal>(nullable: false),
                     Total = table.Column<decimal>(nullable: false),
@@ -83,7 +83,9 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                 {
                     PedidoId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Proveedor = table.Column<string>(nullable: true),
+                    ProveedoresId = table.Column<int>(nullable: false),
+                    Categoria = table.Column<string>(nullable: true),
+                    Nota = table.Column<string>(nullable: true),
                     Fecha = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
@@ -95,7 +97,7 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                 name: "proveedores",
                 columns: table => new
                 {
-                    ProveedoresId = table.Column<int>(nullable: false)
+                    ProveedorId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Nombre = table.Column<string>(nullable: true),
                     Telefono = table.Column<string>(nullable: true),
@@ -106,7 +108,7 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_proveedores", x => x.ProveedoresId);
+                    table.PrimaryKey("PK_proveedores", x => x.ProveedorId);
                 });
 
             migrationBuilder.CreateTable(
@@ -167,12 +169,6 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                 {
                     table.PrimaryKey("PK_DetalleMantenimiento", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_DetalleMantenimiento_articulos_ArticuloId",
-                        column: x => x.ArticuloId,
-                        principalTable: "articulos",
-                        principalColumn: "ArticuloId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
                         name: "FK_DetalleMantenimiento_mantenimientos_MantenimientoId",
                         column: x => x.MantenimientoId,
                         principalTable: "mantenimientos",
@@ -187,9 +183,9 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     PedidoId = table.Column<int>(nullable: false),
-                    ArticuloId = table.Column<int>(nullable: false),
-                    Descripcion = table.Column<string>(nullable: true),
-                    Cantidad = table.Column<decimal>(nullable: false)
+                    ProveedorId = table.Column<int>(nullable: false),
+                    Articulo = table.Column<string>(nullable: true),
+                    Unidad = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -201,11 +197,6 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                         principalColumn: "PedidoId",
                         onDelete: ReferentialAction.Cascade);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_DetalleMantenimiento_ArticuloId",
-                table: "DetalleMantenimiento",
-                column: "ArticuloId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_DetalleMantenimiento_MantenimientoId",
@@ -226,6 +217,9 @@ namespace Proyecto_MantenimientoVehicular.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "articulos");
+
+            migrationBuilder.DropTable(
                 name: "DetalleMantenimiento");
 
             migrationBuilder.DropTable(
@@ -242,9 +236,6 @@ namespace Proyecto_MantenimientoVehicular.Migrations
 
             migrationBuilder.DropTable(
                 name: "vehiculos");
-
-            migrationBuilder.DropTable(
-                name: "articulos");
 
             migrationBuilder.DropTable(
                 name: "mantenimientos");

@@ -22,14 +22,11 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<decimal>("Cantidad")
+                    b.Property<string>("Articulo")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Descripcion")
+                    b.Property<string>("Categoria")
                         .HasColumnType("TEXT");
-
-                    b.Property<int>("EntradaArticuloId")
-                        .HasColumnType("INTEGER");
 
                     b.Property<decimal>("Existencia")
                         .HasColumnType("TEXT");
@@ -100,8 +97,6 @@ namespace Proyecto_MantenimientoVehicular.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ArticuloId");
-
                     b.HasIndex("MantenimientoId");
 
                     b.ToTable("DetalleMantenimiento");
@@ -113,16 +108,16 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("ArticuloId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<decimal>("Cantidad")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Descripcion")
+                    b.Property<string>("Articulo")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("PedidoId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ProveedorId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Unidad")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
@@ -138,10 +133,10 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<decimal>("Cantidad")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("ArticuloId")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<string>("Descripcion")
+                    b.Property<decimal>("Cantidad")
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("Fecha")
@@ -170,6 +165,9 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                     b.Property<DateTime>("ProximoMantemiento")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Servicios")
+                        .HasColumnType("TEXT");
+
                     b.Property<decimal>("SubTotal")
                         .HasColumnType("TEXT");
 
@@ -190,11 +188,17 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("Categoria")
+                        .HasColumnType("TEXT");
+
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Proveedor")
+                    b.Property<string>("Nota")
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("ProveedoresId")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("PedidoId");
 
@@ -203,7 +207,7 @@ namespace Proyecto_MantenimientoVehicular.Migrations
 
             modelBuilder.Entity("Proyecto_MantenimientoVehicular.Entidades.Proveedores", b =>
                 {
-                    b.Property<int>("ProveedoresId")
+                    b.Property<int>("ProveedorId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -225,7 +229,7 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                     b.Property<string>("Telefono")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("ProveedoresId");
+                    b.HasKey("ProveedorId");
 
                     b.ToTable("proveedores");
                 });
@@ -289,12 +293,6 @@ namespace Proyecto_MantenimientoVehicular.Migrations
 
             modelBuilder.Entity("Proyecto_MantenimientoVehicular.Entidades.DetalleMantenimiento", b =>
                 {
-                    b.HasOne("Proyecto_MantenimientoVehicular.Entidades.Articulos", "Articulos")
-                        .WithMany()
-                        .HasForeignKey("ArticuloId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Proyecto_MantenimientoVehicular.Entidades.Mantenimiento", null)
                         .WithMany("DMantenimiento")
                         .HasForeignKey("MantenimientoId")

@@ -13,12 +13,15 @@ namespace Proyecto_MantenimientoVehicular.Entidades
         public DateTime ProximoMantemiento { get; set; }
         public int VehiculoId { get; set; }
         public int ClienteId { get; set; }
+        public string Servicios { get; set; }
         public decimal SubTotal { get; set; }
         public decimal Itebis { get; set; }
         public decimal Total { get; set; }
         public DateTime Fecha { get; set; }
 
         
+
+       
         
 
         [ForeignKey("MantenimientoId")]

@@ -40,7 +40,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Consultas
 
                     case 1:
                         int ID = Convert.ToInt32(criterioTextBox.Text);
-                        listado = ProveedoresBLL.GetList(p => p.ProveedoresId == ID);
+                        listado = ProveedoresBLL.GetList(p => p.ProveedorId == ID);
                         break;
 
                     case 2:

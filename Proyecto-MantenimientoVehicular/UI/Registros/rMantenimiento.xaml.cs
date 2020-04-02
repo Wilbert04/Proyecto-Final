@@ -1,5 +1,4 @@
 ﻿using Proyecto_MantenimientoVehicular.BLL;
-using Proyecto_MantenimientoVehicular.DAL;
 using Proyecto_MantenimientoVehicular.Entidades;
 using System;
 using System.Collections.Generic;
@@ -29,29 +28,27 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             ListaCliente();
             ListaVehiculo();
             idTextBox1.Text = "0";
-            //List<string> cliente = new List<string>
-            //{
-            //    "Julio","Martin","Pedro","Guillen"
-            //};
-            //this.clienteComboBox.ItemsSource = cliente;
 
-            //List<string> Vehiculo = new List<string>
-            //{
-            //    "Nissan Frotier","Toyota Hilux","Hyundai Tucson"
-            //};
-            //this.vehiculoComboBox.ItemsSource = Vehiculo;
-
-            //List<string> articulo = new List<string>
-            //{
-            //    "Neumarico","Filtro/Aire","Correa"
-            //};
-            //this.articuloComboBox.ItemsSource = articulo;
+            List<string> servicios = new List<string>
+            {
+                "Limpieza y ajuste de frenos","Ajuste de freno de estacionamiento","Rotación y balanceo de ruedas","Alineamiento de ruedas",
+                "Afinamiento de motor", "Lubricación y engrase general","Limpieza y ajuste de frenos","Ajuste de freno de estacionamiento",
+                "Cambio de Aceite de Transmision CVT y Filtro","Cambio de Aceite de Transmision Automatica y Filtro","Cambio de Filtro de Gasolina",
+                "Cambio de Bujías","Limpieza de Inyectores"
+            };
+            this.serviciosComboBox.ItemsSource = servicios;
 
 
-            
-           
             this.DataContext = mantenimiento;
         }
+
+        private void ProximoMantenimiento()
+        {
+
+            proxmantDatePicker.DisplayDate = Convert.ToDateTime(fechaDatePicker.SelectedDate).AddMonths(3);
+
+        }
+
 
         private void LimpiarCampos()
         {
@@ -59,46 +56,34 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             descripcionTextBox.Text = string.Empty;
             vehiculoComboBox.Text = string.Empty;
             articuloComboBox.Text = string.Empty;
-            cantidadTextBox.Text = string.Empty;
-            precioTextBox.Text = string.Empty;
-            importeTextBox1.Text = string.Empty; ;
-            subtotalTextBox.Text = string.Empty; ;
-            itebisTextBox.Text = string.Empty; ;
-            totalTextBox.Text = string.Empty;
+            cantidadTextBox.Text = "0";
+            precioTextBox.Text = "0";
+            importeTextBox1.Text = "0";
+            subtotalTextBox.Text = "0";
+            itebisTextBox.Text = "0";
+            totalTextBox.Text = "0";
             fechaDatePicker.SelectedDate = DateTime.Now;
-            proxmantDatePicker.SelectedDate = DateTime.Now;
-                
+            proxmantDatePicker.SelectedDate = fechaDatePicker.DisplayDate.AddMonths(3);
+
         }
 
 
-
-        private void ProximoMantenimiento()
-        {
-
-            DateTime ProximoMant = fechaDatePicker.DisplayDate;
-
-            proxmantDatePicker.SelectedDate = ProximoMant.AddMonths(3);
-        }
-
-
-        private bool ExisteEnBaseDatos()
+        private bool ExisteEnLaBaseDatos()
         {
             Mantenimiento mantenimiento = MantenimientoBLL.Buscar((int)Convert.ToInt32(idTextBox1.Text));
             return (mantenimiento != null);
-
         }
-
 
         private bool ValidarCampos()
         {
-            bool paso = false;
+            bool paso = true;
 
 
-            //if (string.IsNullOrWhiteSpace(clienteComboBox.Text))
-            //{
-            //    MessageBox.Show("Debe elegir un Cliente", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
-            //    paso = false;
-            //}
+            if (string.IsNullOrWhiteSpace(clienteComboBox.Text))
+            {
+                MessageBox.Show("Debe elegir un Cliente", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
+                paso = false;
+            }
 
             //if (string.IsNullOrWhiteSpace(descripcionTextBox.Text))
             //{
@@ -112,48 +97,16 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             //    paso = false;
             //}
 
-
-
-
-
             return paso;
         }
 
-
-        private void Llenar()
+            private void Llenar()
         {
             this.DataContext = null;
             this.DataContext = mantenimiento;
         }
 
-        private void guadarButton_Click(object sender, RoutedEventArgs e)
-        {
-            bool paso = false;
-
-            if (!ValidarCampos())
-                return;
-
-            if (idTextBox1.Text == "0")
-                paso = MantenimientoBLL.Guardar(mantenimiento);
-
-            else
-            {
-                if (!ExisteEnBaseDatos())
-                {
-                    MessageBox.Show("Llmada No Existe", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-                paso = MantenimientoBLL.Modificar(mantenimiento);
-            }
-
-            if (paso)
-            {
-                MessageBox.Show("¡¡Guardado!!", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-            else
-            {
-                MessageBox.Show("¡¡No Guardado!!", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-        }
+        
 
         private void buscarButton_Click(object sender, RoutedEventArgs e)
         {
@@ -163,14 +116,11 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             {
                 mantenimiento = mantenimientolocal;
                 Llenar();
-
             }
             else
             {
                 LimpiarCampos();
-                MessageBox.Show("Llamada no Encontrada!!");
-
-
+                MessageBox.Show("No Encontrado", "Salir", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
         }
 
@@ -179,14 +129,17 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             if (MantenimientoBLL.Eliminar(mantenimiento.MantenimientoId))
             {
                 LimpiarCampos();
-                MessageBox.Show("Eliminado", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
-
+                MessageBox.Show("Eliminado", "Exito", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
             else
             {
-                MessageBox.Show("No Eliminado!!");
+                MessageBox.Show("No Eliminado", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
+        
+
+       
 
         private void removerButton_Click(object sender, RoutedEventArgs e)
         {
@@ -214,16 +167,15 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
                 Convert.ToDecimal(importeTextBox1.Text)));
                 Llenar();
 
-                articuloComboBox.Text = " ";
-                
-                cantidadTextBox.Clear();
-                precioTextBox.Clear();
-                importeTextBox1.Clear();
+                //articuloComboBox.Text = " ";
+
+                ////cantidadTextBox.Clear();
+                //precioTextBox.Clear();
+                //importeTextBox1.Clear();
 
             }
 
         }
-
 
         private void LlenaComboBox()
         {
@@ -232,7 +184,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             VehiculoBLL vehiculos = new VehiculoBLL();
 
             articuloComboBox.ItemsSource = ArticuloBLL.GetList(a => true);
-            articuloComboBox.DisplayMemberPath = "Descripcion";
+            articuloComboBox.DisplayMemberPath = "Articulo";
             articuloComboBox.SelectedValuePath = "ArticuloId";
 
             vehiculoComboBox.ItemsSource = VehiculoBLL.GetList(t => true);
@@ -246,14 +198,13 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
 
         }
 
-
-        private void ListaCliente()
+        private void ListaCliente()       //Lista para llenar ComboBox Cliente
         {
             List<Clientes> listacliente = ClienteBLL.GetList(a => true);
             this.DataContext = listacliente;
         }
 
-        private void ListaVehiculo()
+        private void ListaVehiculo()     //Lista para llenar ComboBox Vehiculo
         {
             List<Clientes> listavehiculo = ClienteBLL.GetList(a => true);
             this.DataContext = listavehiculo;
@@ -266,9 +217,9 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             if (buscarArt != null)
             {
                 precioTextBox.Text = Convert.ToString(buscarArt.Precio);
+                disponibleTextBox.Text = Convert.ToString(buscarArt.Existencia);
             }
         }
-
 
         private decimal ToDecimal(object valor)
         {
@@ -278,7 +229,6 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             return Convert.ToDecimal(retorno);
         }
 
-
         private void cantidadTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (cantidadTextBox.Text != string.Empty)
@@ -287,9 +237,10 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
                 CalcularSubtotal();
                 CalcularItbis();
                 CalcularTotal();
-                
+
             }
         }
+
 
         private void CalcularImporte()      //   Calculo de Importe
         {
@@ -301,10 +252,10 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             precio = ToDecimal(precioTextBox.Text);
             importeTextBox1.Text = ArticuloBLL.CalcularImporte(cantidad, precio).ToString("0.##");
 
-         
+
         }
 
-        private void CalcularSubtotal()
+        private void CalcularSubtotal()   // Calculo de Subtotal
         {
             ArticuloBLL bll = new ArticuloBLL();
 
@@ -314,24 +265,59 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
 
         }
 
-        private void CalcularItbis()
+        private void CalcularItbis()          // Calculo de Itebis
         {
-            
+
             decimal subtotal = ToDecimal(subtotalTextBox.Text);
 
             itebisTextBox.Text = ArticuloBLL.CalcularItbis(subtotal).ToString("0.##");
         }
 
-        private void CalcularTotal()
+        private void CalcularTotal()           // Calculo de Total
         {
             decimal subtotal, itbis;
             subtotal = ToDecimal(subtotalTextBox.Text);
             itbis = ToDecimal(itebisTextBox.Text);
 
             totalTextBox.Text = ArticuloBLL.CalcularTotal(subtotal, itbis).ToString("0.##");
-        
+
         }
 
+        private void guardarButton_Click(object sender, RoutedEventArgs e)
+        {
 
+            bool paso = false;
+
+            if (!ValidarCampos())
+                return;
+
+            if (idTextBox1.Text == "0")
+                paso = MantenimientoBLL.Guardar(mantenimiento);
+
+            else
+            {
+                if (!ExisteEnLaBaseDatos())
+                {
+                    MessageBox.Show("No se puede modificar, no existe!!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                paso = MantenimientoBLL.Modificar(mantenimiento);
+            }
+
+            if (paso)
+            {
+                MessageBox.Show("Guardado", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
+                LimpiarCampos();
+            }
+            else
+            {
+                MessageBox.Show("No se Guardo", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+
+            }
+        }
+
+        private void nuevoButton_Click(object sender, RoutedEventArgs e)
+        {
+            LimpiarCampos();
+        }
     }
 }

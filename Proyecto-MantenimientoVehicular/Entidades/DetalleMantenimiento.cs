@@ -15,8 +15,7 @@ namespace Proyecto_MantenimientoVehicular.Entidades
         public decimal Importe { get; set; }
 
 
-        [ForeignKey("ArticuloId")]
-        public virtual Articulos Articulos { get; set; }
+ 
 
         public DetalleMantenimiento()
         {

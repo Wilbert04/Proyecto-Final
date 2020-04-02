@@ -7,16 +7,16 @@ namespace Proyecto_MantenimientoVehicular.Entidades
     {
         [Key]
         public int EntradaArticuloId { get; set; }
-        //public int ArticuloId { get; set; }
-        public string Descripcion { get; set; }
+        public int ArticuloId { get; set; }
+        
         public decimal Cantidad { get; set; }
         public DateTime Fecha { get; set; }
 
         public EntradaArticulos()
         {
             EntradaArticuloId = 0;
-            //ArticuloId = 0;
-            Descripcion = string.Empty;
+            ArticuloId = 0;
+           
             Cantidad = 0;
             Fecha = DateTime.Now;
         }

@@ -1,4 +1,5 @@
-﻿using Proyecto_MantenimientoVehicular.UI.Consultas;
+﻿using Proyecto_MantenimientoVehicular.Entidades;
+using Proyecto_MantenimientoVehicular.UI.Consultas;
 using Proyecto_MantenimientoVehicular.UI.Registros;
 using System.Windows;
 
@@ -97,6 +98,10 @@ namespace Proyecto_MantenimientoVehicular.UI.Menu
             consulta.ShowDialog();
         }
 
-       
+        private void registrarpedidosproveedor_Click(object sender, RoutedEventArgs e)
+        {
+            rPedidoProveedor registo = new rPedidoProveedor();
+            registo.ShowDialog();
+        }
     }
 }

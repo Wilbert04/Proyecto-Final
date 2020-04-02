@@ -24,17 +24,29 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
         public rEntradaArticulo()
         {
             InitializeComponent();
+            LlenaComboArticulo();
             this.DataContext = entradaArticulos;
+            IdTextbox.Text = "0";
+                 
         }
 
         private void LimpiarCampos()
         {
-            IdTextbox.Text = string.Empty;
-            descripcionTextBox.Text = string.Empty;
-            CantidadTextbox.Text = string.Empty;
+            IdTextbox.Text = "0";
+            articuloComboBox.Text = string.Empty;
+            CantidadTextbox.Text = "0";
             FechaPicker.SelectedDate = DateTime.Now;
         }
 
+        private void LlenaComboArticulo()
+        {
+            ArticuloBLL articuloBLL = new ArticuloBLL();
+
+            articuloComboBox.ItemsSource = ArticuloBLL.GetList(a => true);
+            articuloComboBox.DisplayMemberPath = "Articulo";
+            articuloComboBox.SelectedValuePath = "ArticuloId";
+
+        }
 
         private bool ExisteEnLaBaseDatos()
         {
@@ -49,7 +61,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
 
            
 
-            if (string.IsNullOrWhiteSpace(descripcionTextBox.Text))
+            if (string.IsNullOrWhiteSpace(articuloComboBox.Text))
             {
                 MessageBox.Show("Campo Obligatorio!!", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
                 paso = false;
@@ -97,6 +109,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             if (paso)
             {
                 MessageBox.Show("Guardado", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
+                LimpiarCampos();
             }
             else
             {

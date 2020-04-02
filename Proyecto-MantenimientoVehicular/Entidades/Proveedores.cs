@@ -6,7 +6,7 @@ namespace Proyecto_MantenimientoVehicular.Entidades
     public class Proveedores
     {
         [Key]
-        public int ProveedoresId { get; set; }
+        public int ProveedorId { get; set; }
         public string Nombre { get; set; }
         public string Telefono { get; set; }
         public string Provincia { get; set; }
@@ -16,7 +16,7 @@ namespace Proyecto_MantenimientoVehicular.Entidades
 
         public Proveedores()
         {
-            ProveedoresId = 0;
+            ProveedorId = 0;
             Nombre = string.Empty;
             Telefono = string.Empty;
             Provincia = string.Empty;

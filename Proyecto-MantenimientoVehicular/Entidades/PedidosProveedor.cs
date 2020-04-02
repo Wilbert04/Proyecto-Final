@@ -9,7 +9,10 @@ namespace Proyecto_MantenimientoVehicular.Entidades
     {
         [Key]
         public int PedidoId { get; set; }
-        public string Proveedor { get; set; }
+
+        public int ProveedoresId { get; set; }
+        public string Categoria { get; set; }
+        public string Nota { get; set; }
         public DateTime Fecha { get; set; }
 
 
@@ -20,7 +23,9 @@ namespace Proyecto_MantenimientoVehicular.Entidades
         public PedidosProveedor()
         {
             PedidoId = 0;
-            Proveedor = string.Empty;
+            ProveedoresId = 0;
+             Categoria = string.Empty;
+            Nota =  string.Empty;
             Fecha = DateTime.Now;
 
 

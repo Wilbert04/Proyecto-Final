@@ -17,6 +17,8 @@
                 <MenuItem x:Name="registroproveedor" Header="Registrar Proveedor" Click="registroproveedor_Click"/>
                 <MenuItem x:Name="registrarentradaart" Header="Registrar Entrada Articulo" Click="registrarentradaart_Click"/>
                 <MenuItem x:Name="registrarmantenimiento" Header="Registrar Mantenimiento" Click="registrarmantenimiento_Click"/>
+                <MenuItem x:Name="registrarpedidosproveedor" Header="Registrar Pedidos" Click="registrarpedidosproveedor_Click"/>
+
             </MenuItem>
             <MenuItem Header="Consultas">
                 <MenuItem x:Name="consultaCliente" Header="Consultar Cliente" Click="consultaCliente_Click"/>

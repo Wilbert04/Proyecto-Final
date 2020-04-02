@@ -23,8 +23,17 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
         public rArticulo()
         {
             InitializeComponent();
-            LlenaCombo();
+
+            List<string> categorias = new List<string>
+            {
+                "A-Piezas Desgatables","B-Consumibles","C-Elementos de Regulacion","D-Piezas Moviles",
+                "E-Componentes Electronicos", "F-Piezas Estructurales"
+            };
+            this.categoriaComboBox.ItemsSource = categorias;
+
             ListaEntrada();
+            
+            
             idTextBox.Text = "0";
 
 
@@ -38,22 +47,16 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             this.DataContext = entradaArticulos;
         }
 
-        private void LlenaCombo()
-        {
-            descripcionComboBox.ItemsSource = EntradaArticuloBLL.GetList(a => true);
-            descripcionComboBox.DisplayMemberPath = "Descripcion";
-            descripcionComboBox.SelectedValuePath = "EntradaArticuloId";
-
-        }
+        
 
 
         private void LimpiarCampos()
         {
-            idTextBox.Text = string.Empty;
+            idTextBox.Text = "0";
             
-            cantidadTextBox.Text = string.Empty;
-            precioTextBox.Text = string.Empty;
-            existenciaTextBox.Text = string.Empty;
+           
+            precioTextBox.Text = "0.0";
+            existenciaTextBox.Text = "0";
             fechaDatePicker.SelectedDate = DateTime.Now;
         }
 
@@ -68,17 +71,13 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
         {
             bool paso = true;
 
-            if (string.IsNullOrWhiteSpace(descripcionComboBox.Text))
+            if (string.IsNullOrWhiteSpace(articuloTextBox.Text))
             {
                 MessageBox.Show("Campo Obligatorio!!", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
                 paso = false;
             }
 
-            if (string.IsNullOrWhiteSpace(cantidadTextBox.Text))
-            {
-                MessageBox.Show("Campo Obligatorio!!", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
-                paso = false;
-            }
+            
 
             if (string.IsNullOrWhiteSpace(precioTextBox.Text))
             {
@@ -125,6 +124,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             if (paso)
             {
                 MessageBox.Show("Guardado", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
+                LimpiarCampos();
             }
             else
             {
@@ -155,6 +155,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             {
                 LimpiarCampos();
                 MessageBox.Show("Eliminado", "Exito", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+               
             }
             else
             {
@@ -170,7 +171,8 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
 
        
 
+        
 
-
+       
     }
 }

@@ -43,7 +43,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Consultas
                         break;
 
                     case 2:
-                        listado = ArticuloBLL.GetList(p => p.Descripcion.Contains(criterioTextBox.Text));
+                        listado = ArticuloBLL.GetList(p => p.Articulo.Contains(criterioTextBox.Text));
                         break;
 
                     case 3:
