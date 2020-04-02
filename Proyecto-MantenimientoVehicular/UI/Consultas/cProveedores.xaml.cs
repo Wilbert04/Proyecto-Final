@@ -53,7 +53,8 @@ namespace Proyecto_MantenimientoVehicular.UI.Consultas
 
 
                     case 4:
-                        listado = ProveedoresBLL.GetList(p => p.Provincia.Contains(criterioTextBox.Text));
+                        int RNC = Convert.ToInt32(criterioTextBox.Text);
+                        listado = ProveedoresBLL.GetList(p => p.RNC == Convert.ToString(RNC));
                         break;
 
 

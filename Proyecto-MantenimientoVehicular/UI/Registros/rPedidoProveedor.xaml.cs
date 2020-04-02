@@ -42,7 +42,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             proveedorComboBox.Text = string.Empty;
             articuloTextBox.Text = string.Empty;
             categoriaComboBox.Text = string.Empty;
-            notaTextBox.Text = "****        ****";
+            notaTextBox.Text = "****                        ****";
             unidadTextBox.Text = "0";
 
 

@@ -53,8 +53,8 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
         private void LimpiarCampos()
         {
             idTextBox.Text = "0";
-            
-           
+            articuloTextBox.Text = string.Empty;
+            categoriaComboBox.Text = string.Empty;
             precioTextBox.Text = "0.0";
             existenciaTextBox.Text = "0";
             fechaDatePicker.SelectedDate = DateTime.Now;

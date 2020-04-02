@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_MantenimientoVehicular.UI.Registros"
         mc:Ignorable="d"
-        Title="rPedidoProveedor" Height="600" Width="720">
+        Title="rPedidoProveedor" Height="600" Width="740">
     <Grid>
         <Label Content="PedidoId" HorizontalAlignment="Left" Margin="27,34,0,0" VerticalAlignment="Top" FontSize="14"/>
         <TextBox x:Name="IdTextbox" HorizontalAlignment="Left" Margin="108,42,0,0"   TextWrapping="Wrap" VerticalAlignment="Top" Width="72">
@@ -55,7 +55,7 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <Button x:Name="agregarButton" Content="+" HorizontalAlignment="Left" Margin="649,170,0,0" VerticalAlignment="Top" Width="52" FontSize="16" FontWeight="Normal" Click="agregarButton_Click" Height="32">
+        <Button x:Name="agregarButton" Content="+" HorizontalAlignment="Left" Margin="665,170,0,0" VerticalAlignment="Top" Width="52" FontSize="16" FontWeight="Normal" Click="agregarButton_Click" Height="32">
 
         </Button>
         <DataGrid x:Name="detalleDataGrid" Margin="17,208,17,141">

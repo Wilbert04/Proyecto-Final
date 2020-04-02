@@ -57,6 +57,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             vehiculoComboBox.Text = string.Empty;
             articuloComboBox.Text = string.Empty;
             cantidadTextBox.Text = "0";
+            disponibleTextBox.Text = "0";
             precioTextBox.Text = "0";
             importeTextBox1.Text = "0";
             subtotalTextBox.Text = "0";
@@ -167,11 +168,11 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
                 Convert.ToDecimal(importeTextBox1.Text)));
                 Llenar();
 
-                //articuloComboBox.Text = " ";
-
-                ////cantidadTextBox.Clear();
-                //precioTextBox.Clear();
-                //importeTextBox1.Clear();
+                articuloComboBox.Text = " ";
+                disponibleTextBox.Text = "0";
+                cantidadTextBox.Text = "0";
+                precioTextBox.Text = "0";
+                importeTextBox1.Text ="0";
 
             }
 
@@ -318,6 +319,12 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
         private void nuevoButton_Click(object sender, RoutedEventArgs e)
         {
             LimpiarCampos();
+        }
+
+        private void agregararticuloButton_Click(object sender, RoutedEventArgs e)
+        {
+            rArticulo registro = new rArticulo();
+            registro.ShowDialog(); 
         }
     }
 }

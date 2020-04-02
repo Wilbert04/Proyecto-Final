@@ -58,11 +58,12 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
 
         private void LimpiarCampos()
         {
+            idTextBox.Text = "0";
             clienteComboBox.Text = string.Empty;
             descripcionTextBox.Text = string.Empty;
             clienteComboBox.Text = string.Empty;
             placaTextBox.Text = string.Empty;
-            añoTextBox.Text = string.Empty;
+            añoTextBox.Text = "0";
             tipovehiculoComboBox.Text = string.Empty;
             fechaDatePicker.SelectedDate = DateTime.Now;
         }

@@ -53,7 +53,7 @@
             </DataGrid.ItemsSource>
         </DataGrid>
         <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="247,32,0,0" VerticalAlignment="Top" Height="37" Width="105" Click="buscarButton_Click"/>
-        <Button x:Name="agregararticuloButton" Content="+" HorizontalAlignment="Left" Margin="221,233,0,0" VerticalAlignment="Top" Height="21" Width="20" FontWeight="Bold"/>
+        <Button x:Name="agregararticuloButton" Content="+" HorizontalAlignment="Left" Margin="221,233,0,0" VerticalAlignment="Top" Height="21" Width="20" FontWeight="Bold" Click="agregararticuloButton_Click"/>
         <Button x:Name="agregarButton" Content="+" HorizontalAlignment="Left" Margin="792,217,0,0" VerticalAlignment="Top" Width="48" Height="36" FontSize="18" FontWeight="Bold" Click="agregarButton_Click"/>
         <Label Content="Subtotal" HorizontalAlignment="Left" Margin="705,486,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontWeight="Bold" FontSize="14"/>
         <Label Content="ITEBIS" HorizontalAlignment="Left" Margin="714,508,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontWeight="Bold" FontSize="14"/>

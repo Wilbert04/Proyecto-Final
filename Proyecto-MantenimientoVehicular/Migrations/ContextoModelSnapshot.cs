@@ -211,10 +211,10 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Calle")
+                    b.Property<string>("Direccion")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Ciudad")
+                    b.Property<string>("Email")
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("Fecha")
@@ -223,7 +223,7 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                     b.Property<string>("Nombre")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Provincia")
+                    b.Property<string>("RNC")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Telefono")

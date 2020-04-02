@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Proyecto_MantenimientoVehicular.Migrations
 {
-    public partial class Prueva27 : Migration
+    public partial class prueba29 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -101,9 +101,9 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Nombre = table.Column<string>(nullable: true),
                     Telefono = table.Column<string>(nullable: true),
-                    Provincia = table.Column<string>(nullable: true),
-                    Ciudad = table.Column<string>(nullable: true),
-                    Calle = table.Column<string>(nullable: true),
+                    Email = table.Column<string>(nullable: true),
+                    Direccion = table.Column<string>(nullable: true),
+                    RNC = table.Column<string>(nullable: true),
                     Fecha = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
