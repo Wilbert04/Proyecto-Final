@@ -9,8 +9,8 @@ using Proyecto_MantenimientoVehicular.DAL;
 namespace Proyecto_MantenimientoVehicular.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20200403165543_Prueba36")]
-    partial class Prueba36
+    [Migration("20200403223703_MigracionMV")]
+    partial class MigracionMV
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_MantenimientoVehicular.UI.Consultas"
         mc:Ignorable="d"
-        Title="cCliente" Height="450" Width="800">
+        Title="Consultar clientes" Height="450" Width="800">
     <Grid>
         <Label Content="Desde" HorizontalAlignment="Left" Margin="7,20,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Label Content="Hasta" HorizontalAlignment="Left" Margin="125,20,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
@@ -23,7 +23,7 @@
         <TextBox x:Name="criterioTextBox" HorizontalAlignment="Left" Margin="425,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="191" Height="20"/>
         <Button x:Name="consultarButton" Content="    Consultar" HorizontalAlignment="Left" Margin="652,38,0,0" VerticalAlignment="Top" Width="122" Height="36" Click="consultarButton_Click" FontSize="14" FontWeight="Bold" BorderBrush="#FF020000">
             <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Buscar1.png" Stretch="Uniform" AlignmentX="Left"/>
+                <ImageBrush ImageSource="C:\Users\Asus\Documents\Estudios\Sem 1-2020\Aplicada I\Proyecto-Final\Proyecto-Final\Proyecto-MantenimientoVehicular\UI\Imagenes\Buscar1.png" Stretch="Uniform" AlignmentX="Left"/>
             </Button.Background>
         </Button>
         <DataGrid x:Name="consultarDataGrid" Margin="10,80,20,20" ItemsSource="{Binding}" AutoGenerateColumns="False" >

@@ -22,7 +22,7 @@
         <TextBox x:Name="criterioTextBox" HorizontalAlignment="Left" Margin="445,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" Height="22"/>
         <Button x:Name="consultarButton" Content="    Consultar" HorizontalAlignment="Left" Margin="653,30,0,0" VerticalAlignment="Top" Width="128" Height="44" Click="consultarButton_Click" FontSize="14" FontWeight="Bold" BorderBrush="#FF020000">
             <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/BUscar1.png" Stretch="Uniform" AlignmentX="Left"/>
+                <ImageBrush ImageSource="C:\Users\Asus\Documents\Estudios\Sem 1-2020\Aplicada I\Proyecto-Final\Proyecto-Final\Proyecto-MantenimientoVehicular\UI\Imagenes\Buscar1.png" Stretch="Uniform" AlignmentX="Left"/>
             </Button.Background>
         </Button>
         <DataGrid x:Name="consultarDataGrid" Margin="14,86,22,23" ItemsSource="{Binding}" AutoGenerateColumns="False" >
