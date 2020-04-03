@@ -80,5 +80,5 @@ Diagrama de base de datos
 Colabolarodes
 =============
 
-Wilbert Smith Antigua
+Wilbert Smith Antigua 
 Erisson Silverio Nuñes
