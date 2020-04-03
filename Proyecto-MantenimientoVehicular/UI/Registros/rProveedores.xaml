@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_MantenimientoVehicular.UI.Registros"
         mc:Ignorable="d"
-        Title="rProveedores" Height="410" Width="520">
+        Title="Registro de Proveedores" Height="410" Width="520">
     <Grid>
 
         <Label Content="ProveedorId" HorizontalAlignment="Left" Margin="22,32,0,0" VerticalAlignment="Top"/>
@@ -36,17 +36,25 @@
                 </Binding>
             </DatePicker.SelectedDate>
         </DatePicker>
-        <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="197,30,0,0" VerticalAlignment="Top" Height="31" Width="89" Click="buscarButton_Click">
-
+        <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="197,30,0,0" VerticalAlignment="Top" Height="31" Width="89" Click="buscarButton_Click" FontWeight="Bold">
+            <Button.Background>
+                <ImageBrush ImageSource="/UI/Imagenes/BUscar.png" Stretch="Uniform" AlignmentX="Left"/>
+            </Button.Background>
         </Button>
-        <Button x:Name="nuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="24,316,0,0" VerticalAlignment="Top" Height="40" Width="111" Click="nuevoButton_Click">
-
+        <Button x:Name="nuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="24,316,0,0" VerticalAlignment="Top" Height="40" Width="111" Click="nuevoButton_Click" FontWeight="Bold">
+            <Button.Background>
+                <ImageBrush ImageSource="/UI/Imagenes/Nuevo.png" Stretch="Uniform" AlignmentX="Left"/>
+            </Button.Background>
         </Button>
-        <Button x:Name="guardarButton" Content="Guardar" HorizontalAlignment="Left" Margin="160,315,0,0" VerticalAlignment="Top" Height="40" Width="117" Click="guardarButton_Click">
-
+        <Button x:Name="guardarButton" Content="Guardar" HorizontalAlignment="Left" Margin="160,315,0,0" VerticalAlignment="Top" Height="40" Width="124" Click="guardarButton_Click" FontWeight="Bold">
+            <Button.Background>
+                <ImageBrush ImageSource="/UI/Imagenes/Save.png" Stretch="Uniform" AlignmentX="Left"/>
+            </Button.Background>
         </Button>
-        <Button x:Name="eliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="304,314,0,0" VerticalAlignment="Top" Height="40" Width="107" Click="eliminarButton_Click">
-
+        <Button x:Name="eliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="304,314,0,0" VerticalAlignment="Top" Height="40" Width="123" Click="eliminarButton_Click" FontWeight="Bold">
+            <Button.Background>
+                <ImageBrush ImageSource="/UI/Imagenes/Eliminar.png" Stretch="Uniform" AlignmentX="Left"/>
+            </Button.Background>
         </Button>
         <TextBox x:Name="nombreTextBox1" HorizontalAlignment="Left" Margin="84,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="335" PreviewTextInput="nombreTextBox1_PreviewTextInput">
             <TextBox.Text>
@@ -89,7 +97,7 @@
                 <Binding Path="Direccion" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
                         <ExceptionValidationRule/>
-                    </Binding.ValidationRules>   
+                    </Binding.ValidationRules>
                 </Binding>
             </TextBox.Text>
         </TextBox>

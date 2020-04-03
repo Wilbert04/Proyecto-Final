@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_MantenimientoVehicular.UI.Registros"
         mc:Ignorable="d"
-        Title="rArticulo" Height="350" Width="600">
+        Title="Registro de Articulos" Height="350" Width="600">
     <Grid>
         <Label Content="ArtículoId" HorizontalAlignment="Left" Margin="23,30,0,0" VerticalAlignment="Top"/>
         <Label Content="Artículo" HorizontalAlignment="Left" Margin="21,107,0,0" VerticalAlignment="Top"/>
@@ -39,17 +39,25 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <Button x:Name="nuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="44,260,0,0" VerticalAlignment="Top" Height="25" Width="115" FontSize="14" FontWeight="Bold" Click="nuevoButton_Click">
-
+        <Button x:Name="nuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="44,260,0,0" VerticalAlignment="Top" Height="41" Width="124" FontSize="14" FontWeight="Bold" Click="nuevoButton_Click" BorderBrush="Gray">
+            <Button.Background>
+                <ImageBrush ImageSource="/UI/Imagenes/Nuevo.png" Stretch="Uniform" AlignmentX="Left"/>
+            </Button.Background>
         </Button>
-        <Button x:Name="guardrButton" Content="Guardar" HorizontalAlignment="Left" Margin="234,260,0,0" VerticalAlignment="Top" Height="25" Width="115" FontSize="14" FontWeight="Bold" Click="guardrButton_Click">
-
+        <Button x:Name="guardrButton" Content="Guardar" HorizontalAlignment="Center" Margin="0,260,0,0" VerticalAlignment="Top" Height="41" Width="142" FontSize="14" FontWeight="Bold" Click="guardrButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/UI/Imagenes/Save.png" Stretch="Uniform" AlignmentX="Left"/>
+            </Button.Background>
         </Button>
-        <Button x:Name="eliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="421,260,0,0" VerticalAlignment="Top" Height="25" Width="115" FontSize="14" FontWeight="Bold" Click="eliminarButton_Click">
-
+        <Button x:Name="eliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="421,260,0,0" VerticalAlignment="Top" Height="41" Width="134" FontSize="14" FontWeight="Bold" Click="eliminarButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/UI/Imagenes/Eliminar.png" Stretch="Uniform" AlignmentX="Left"/>
+            </Button.Background>
         </Button>
-        <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="214,31,0,0" VerticalAlignment="Top" Height="25" Width="116" FontSize="14" FontWeight="Bold" Click="buscarButton_Click">
-
+        <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="224,29,0,0" VerticalAlignment="Top" Height="31" Width="109" FontSize="14" FontWeight="Bold" Click="buscarButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/UI/Imagenes/Buscar.png" Stretch="Uniform" AlignmentX="Left"/>
+            </Button.Background>
         </Button>
         <DatePicker x:Name="fechaDatePicker" HorizontalAlignment="Left" Margin="425,33,0,0" VerticalAlignment="Top" Width="119">
             <DatePicker.SelectedDate>
