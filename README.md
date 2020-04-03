@@ -34,7 +34,7 @@ Cliente
 
 Entrada Articulo
 ----------------
-Este es el registro entra articulo, para darle uso antes debe crear un articulo
+Este es el registro entra articulo, para darle uso antes debe crear un articulo.
 
 <img width="357" alt="Registro entrada articulo" src="https://user-images.githubusercontent.com/59939364/78411802-97e46400-75d6-11ea-8e23-11c03ef672be.PNG">
 
@@ -65,4 +65,8 @@ Usuario
 
 <img width="477" alt="Registro usuario" src="https://user-images.githubusercontent.com/59939364/78412269-5bb20300-75d8-11ea-99c6-d70912b959a8.PNG">
 
+Consultas
+=========
 
+Todas las consultas estan desarrollada con este estilo.
+<img width="586" alt="Consultas" src="https://user-images.githubusercontent.com/59939364/78412402-d844e180-75d8-11ea-8af3-ead0bf885ed4.PNG">
