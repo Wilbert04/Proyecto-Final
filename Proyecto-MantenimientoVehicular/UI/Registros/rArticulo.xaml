@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_MantenimientoVehicular.UI.Registros"
         mc:Ignorable="d"
-        Title="rArticulo" Height="350" Width="600">
+        Title="Registro de Articulos" Height="350" Width="600">
     <Grid>
         <Label Content="ArtículoId" HorizontalAlignment="Left" Margin="23,30,0,0" VerticalAlignment="Top"/>
         <Label Content="Artículo" HorizontalAlignment="Left" Margin="21,107,0,0" VerticalAlignment="Top"/>

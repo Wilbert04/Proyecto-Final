@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_MantenimientoVehicular.UI.Registros"
         mc:Ignorable="d"
-        Title="rPedidoProveedor" Height="600" Width="740">
+        Title="Registro de Pedidos" Height="600" Width="740">
     <Grid>
         <Label Content="PedidoId" HorizontalAlignment="Left" Margin="27,34,0,0" VerticalAlignment="Top" FontSize="14"/>
         <TextBox x:Name="IdTextbox" HorizontalAlignment="Left" Margin="108,42,0,0"   TextWrapping="Wrap" VerticalAlignment="Top" Width="72" PreviewTextInput="IdTextbox_PreviewTextInput">
