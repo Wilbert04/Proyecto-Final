@@ -38,22 +38,22 @@
         </DatePicker>
         <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="197,30,0,0" VerticalAlignment="Top" Height="31" Width="89" Click="buscarButton_Click" FontWeight="Bold">
             <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/BUscar.png" Stretch="Uniform" AlignmentX="Left"/>
+                <ImageBrush ImageSource="C:\Users\Asus\Documents\Estudios\Sem 1-2020\Aplicada I\Proyecto-Final\Proyecto-Final\Proyecto-MantenimientoVehicular\UI\Imagenes\Buscar.png" Stretch="Uniform" AlignmentX="Left"/>
             </Button.Background>
         </Button>
         <Button x:Name="nuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="24,316,0,0" VerticalAlignment="Top" Height="40" Width="111" Click="nuevoButton_Click" FontWeight="Bold">
             <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Nuevo.png" Stretch="Uniform" AlignmentX="Left"/>
+                <ImageBrush ImageSource="C:\Users\Asus\Documents\Estudios\Sem 1-2020\Aplicada I\Proyecto-Final\Proyecto-Final\Proyecto-MantenimientoVehicular\UI\Imagenes\nuevo.png" Stretch="Uniform" AlignmentX="Left"/>
             </Button.Background>
         </Button>
         <Button x:Name="guardarButton" Content="Guardar" HorizontalAlignment="Left" Margin="160,315,0,0" VerticalAlignment="Top" Height="40" Width="124" Click="guardarButton_Click" FontWeight="Bold">
             <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Save.png" Stretch="Uniform" AlignmentX="Left"/>
+                <ImageBrush ImageSource="C:\Users\Asus\Documents\Estudios\Sem 1-2020\Aplicada I\Proyecto-Final\Proyecto-Final\Proyecto-MantenimientoVehicular\UI\Imagenes\Save.png" Stretch="Uniform" AlignmentX="Left"/>
             </Button.Background>
         </Button>
         <Button x:Name="eliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="304,314,0,0" VerticalAlignment="Top" Height="40" Width="123" Click="eliminarButton_Click" FontWeight="Bold">
             <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Eliminar.png" Stretch="Uniform" AlignmentX="Left"/>
+                <ImageBrush ImageSource="C:\Users\Asus\Documents\Estudios\Sem 1-2020\Aplicada I\Proyecto-Final\Proyecto-Final\Proyecto-MantenimientoVehicular\UI\Imagenes\Eliminar.png" Stretch="Uniform" AlignmentX="Left"/>
             </Button.Background>
         </Button>
         <TextBox x:Name="nombreTextBox1" HorizontalAlignment="Left" Margin="84,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="335" PreviewTextInput="nombreTextBox1_PreviewTextInput">
