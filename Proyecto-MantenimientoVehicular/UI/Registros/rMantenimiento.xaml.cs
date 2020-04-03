@@ -52,19 +52,21 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
 
         private void LimpiarCampos()
         {
-            clienteComboBox.Text = string.Empty;
+            clienteComboBox.Text = " ";
             descripcionTextBox.Text = string.Empty;
-            vehiculoComboBox.Text = string.Empty;
-            articuloComboBox.Text = string.Empty;
+            vehiculoComboBox.Text = " ";
+            articuloComboBox.Text = " ";
+            serviciosComboBox.Text = " ";
             cantidadTextBox.Text = "0";
             disponibleTextBox.Text = "0";
             precioTextBox.Text = "0";
             importeTextBox1.Text = "0";
-            subtotalTextBox.Text = "0";
+            
             itebisTextBox.Text = "0";
             totalTextBox.Text = "0";
             fechaDatePicker.SelectedDate = DateTime.Now;
-            proxmantDatePicker.SelectedDate = fechaDatePicker.DisplayDate.AddMonths(3);
+            proxmantDatePicker.SelectedDate = DateTime.Now;
+            detalleDataGrid.ItemsSource = string.Empty;
 
         }
 
@@ -153,26 +155,42 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
 
         private void agregarButton_Click(object sender, RoutedEventArgs e)
         {
+
+
+            if (disponibleTextBox.Text == "0.0")
+            {
+                MessageBox.Show("¡¡Articulo Agotado!!", "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                return;
+            }
+
+
             if (cantidadTextBox.Text == "0")
             {
                 MessageBox.Show("Debe elegir una Cantidad!!", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Exclamation);
 
             }
+
             else
             {
 
-
                 mantenimiento.DMantenimiento.Add(new DetalleMantenimiento(
-                mantenimiento.MantenimientoId, Convert.ToInt32(idTextBox1.Text),
-                Convert.ToInt32(articuloComboBox.SelectedValue), descripcionTextBox.Text, Convert.ToInt32(cantidadTextBox.Text), Convert.ToDecimal(precioTextBox.Text),
-                Convert.ToDecimal(importeTextBox1.Text)));
+                id: 0,
+                mantenimientoId: Convert.ToInt32(idTextBox1.Text),
+                articuloId: Convert.ToInt32(articuloComboBox.SelectedValue),
+                descripcion: descripcionTextBox.Text,
+                cantidad: Convert.ToInt32(cantidadTextBox.Text),
+                precio: Convert.ToDecimal(precioTextBox.Text),
+                importe: Convert.ToDecimal(importeTextBox1.Text)
+
+
+                    ));
                 Llenar();
 
                 articuloComboBox.Text = " ";
                 disponibleTextBox.Text = "0";
                 cantidadTextBox.Text = "0";
                 precioTextBox.Text = "0";
-                importeTextBox1.Text ="0";
+                
 
             }
 
@@ -262,14 +280,14 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
 
             decimal importe = ToDecimal(importeTextBox1.Text);
 
-            subtotalTextBox.Text = ArticuloBLL.CalcularSubtotal(importe).ToString("0.##");
+            subtotal2TextBox.Text = ArticuloBLL.CalcularSubtotal(importe).ToString("0.##");
 
         }
 
         private void CalcularItbis()          // Calculo de Itebis
         {
 
-            decimal subtotal = ToDecimal(subtotalTextBox.Text);
+            decimal subtotal = ToDecimal(subtotal2TextBox.Text);
 
             itebisTextBox.Text = ArticuloBLL.CalcularItbis(subtotal).ToString("0.##");
         }
@@ -277,7 +295,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
         private void CalcularTotal()           // Calculo de Total
         {
             decimal subtotal, itbis;
-            subtotal = ToDecimal(subtotalTextBox.Text);
+            subtotal = ToDecimal(subtotal2TextBox.Text);
             itbis = ToDecimal(itebisTextBox.Text);
 
             totalTextBox.Text = ArticuloBLL.CalcularTotal(subtotal, itbis).ToString("0.##");
@@ -291,6 +309,9 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
 
             if (!ValidarCampos())
                 return;
+
+            
+
 
             if (idTextBox1.Text == "0")
                 paso = MantenimientoBLL.Guardar(mantenimiento);

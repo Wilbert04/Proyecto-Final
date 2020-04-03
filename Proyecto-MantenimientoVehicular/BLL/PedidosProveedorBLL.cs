@@ -38,12 +38,20 @@ namespace Proyecto_MantenimientoVehicular.BLL
 
             try
             {
-                db.Database.ExecuteSqlRaw($"Delete From LLamadaDetalle Where LlamadaId = {pedidosProveedor.PedidoId}");
+                var anterior = PedidosProveedorBLL.Buscar(pedidosProveedor.PedidoId);
+
+                foreach (var item in anterior.DPedidos)
+                {
+                    if (!pedidosProveedor.DPedidos.Exists(d => d.Id == item.Id))
+                        db.Entry(item).State = EntityState.Deleted;
+                }
 
                 foreach (var item in pedidosProveedor.DPedidos)
                 {
-                    db.Entry(item).State = EntityState.Added;
+                    var estado = item.Id > 0 ? EntityState.Modified : EntityState.Added;
+                    db.Entry(item).State = estado;
                 }
+
 
 
 

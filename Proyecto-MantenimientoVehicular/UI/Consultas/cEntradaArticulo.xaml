@@ -7,26 +7,28 @@
         mc:Ignorable="d"
         Title="cEntradaArticulo" Height="450" Width="800">
     <Grid>
-        <Label Content="Desde" HorizontalAlignment="Left" Margin="7,20,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label Content="Hasta" HorizontalAlignment="Left" Margin="125,20,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label Content="Filtro" HorizontalAlignment="Left" Margin="246,21,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label Content="Criterio" HorizontalAlignment="Left" Margin="363,22,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <DatePicker x:Name="desdeDatePicker" HorizontalAlignment="Left" Margin="11,45,0,0" VerticalAlignment="Top" Width="108"/>
-        <DatePicker x:Name="hastaDatePicker" HorizontalAlignment="Left" Margin="131,45,0,0" VerticalAlignment="Top" Width="108"/>
-        <ComboBox x:Name="filtroComboBox" HorizontalAlignment="Left" Margin="251,46,0,0" VerticalAlignment="Top" Width="104">
+        <Label Content="Desde" HorizontalAlignment="Left" Margin="17,20,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Hasta" HorizontalAlignment="Left" Margin="143,20,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Filtro" HorizontalAlignment="Left" Margin="266,21,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Criterio" HorizontalAlignment="Left" Margin="388,47,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <DatePicker x:Name="desdeDatePicker" HorizontalAlignment="Left" Margin="19,49,0,0" VerticalAlignment="Top" Width="108"/>
+        <DatePicker x:Name="hastaDatePicker" HorizontalAlignment="Left" Margin="143,49,0,0" VerticalAlignment="Top" Width="108"/>
+        <ComboBox x:Name="filtroComboBox" HorizontalAlignment="Left" Margin="269,50,0,0" VerticalAlignment="Top" Width="104">
             <ComboBoxItem>Todos</ComboBoxItem>
             <ComboBoxItem>ID</ComboBoxItem>
-            <ComboBoxItem>Descripcion</ComboBoxItem>
-            
+            <ComboBoxItem>ArticuloId</ComboBoxItem>
+
         </ComboBox>
-        <TextBox x:Name="criterioTextBox" HorizontalAlignment="Left" Margin="367,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121"/>
-        <Button x:Name="consultarButton" Content="    Consultar" HorizontalAlignment="Left" Margin="497,37,0,0" VerticalAlignment="Top" Width="122" Height="35" Click="consultarButton_Click" FontSize="14" FontWeight="Bold" BorderBrush="#FF020000">
+        <TextBox x:Name="criterioTextBox" HorizontalAlignment="Left" Margin="445,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" Height="22"/>
+        <Button x:Name="consultarButton" Content="    Consultar" HorizontalAlignment="Left" Margin="653,30,0,0" VerticalAlignment="Top" Width="122" Height="44" Click="consultarButton_Click" FontSize="14" FontWeight="Bold" BorderBrush="#FF020000">
         </Button>
-        <DataGrid x:Name="consultarDataGrid" Margin="9,88,10,12" ItemsSource="{Binding}" AutoGenerateColumns="False" >
+        <DataGrid x:Name="consultarDataGrid" Margin="14,86,22,23" ItemsSource="{Binding}" AutoGenerateColumns="False" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="EntradaId"  Binding="{Binding EntradaArticuloId}"/>
-                <DataGridTextColumn Header="Descripcion"  Binding="{Binding Descripcion}"/>
-                
+                <DataGridTextColumn Header="ArticuloId"  Binding="{Binding ArticuloId}"/>
+                <DataGridTextColumn Header="Cantidad"  Binding="{Binding Cantidad}"/>
+                <DataGridTextColumn Header="Fecha"  Binding="{Binding Fecha}"/>
+
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

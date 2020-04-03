@@ -20,8 +20,24 @@
 
         <!--TextBox-->
 
-        <TextBox x:Name="idTextBox1" HorizontalAlignment="Left" Margin="149,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
-        <DatePicker x:Name="fechaDatePicker" HorizontalAlignment="Left" Margin="649,39,0,0" VerticalAlignment="Top" Width="113"/>
+        <TextBox x:Name="idTextBox1" HorizontalAlignment="Left" Margin="149,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75">
+            <TextBox.Text>
+                <Binding Path="MantenimientoId" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                    <Binding.ValidationRules>
+                        <ExceptionValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <DatePicker x:Name="fechaDatePicker" HorizontalAlignment="Left" Margin="649,39,0,0" VerticalAlignment="Top" Width="113">
+            <DatePicker.SelectedDate>
+                <Binding Path="Fecha" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                    <Binding.ValidationRules>
+                        <ExceptionValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </DatePicker.SelectedDate>
+        </DatePicker>
         <ComboBox x:Name="clienteComboBox" HorizontalAlignment="Left" Margin="26,123,0,0" VerticalAlignment="Top" Width="167"
                   SelectedValue="{Binding ClienteId,Mode=TwoWay}">
 
@@ -59,15 +75,6 @@
         <Label Content="ITEBIS" HorizontalAlignment="Left" Margin="714,508,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontWeight="Bold" FontSize="14"/>
         <Label Content="Total" HorizontalAlignment="Left" Margin="720,530,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontWeight="Bold" FontSize="14"/>
         <Button x:Name="removerButton" Content="Remover" HorizontalAlignment="Left" Margin="21,490,0,0" VerticalAlignment="Top" Height="27" Width="86" Click="removerButton_Click"/>
-        <TextBox x:Name="subtotalTextBox" HorizontalAlignment="Left" Margin="771,490,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" IsReadOnly="True">
-            <TextBox.Text>
-                <Binding Path="Subtotal" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
-                    <Binding.ValidationRules>
-                        <ExceptionValidationRule/>
-                    </Binding.ValidationRules>
-                </Binding>
-            </TextBox.Text>
-        </TextBox>
         <TextBox x:Name="itebisTextBox" HorizontalAlignment="Left" Margin="770,512,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="72" IsReadOnly="True">
             <TextBox.Text>
                 <Binding Path="Itebis" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
@@ -102,6 +109,19 @@
         <Label Content="Disp." HorizontalAlignment="Left" Margin="247,231,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Bell MT" FontSize="14"/>
         <TextBox x:Name="disponibleTextBox" HorizontalAlignment="Left" Margin="291,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="37" IsReadOnly="True"/>
         <Label Content="Servicios" HorizontalAlignment="Left" Margin="24,158,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Bell MT" FontSize="14" Height="29" Width="70"/>
-        <ComboBox x:Name="serviciosComboBox" HorizontalAlignment="Left" Margin="28,182,0,0" VerticalAlignment="Top" Width="163"/>
+        <ComboBox x:Name="serviciosComboBox" HorizontalAlignment="Left" Margin="28,182,0,0" VerticalAlignment="Top" Width="163"
+                  SelectedValue="{Binding Servicios, Mode=TwoWay}">
+        </ComboBox>
+        <TextBox x:Name="subtotal2TextBox" HorizontalAlignment="Left" Margin="771,491,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73" IsReadOnly="True">
+            <TextBox.Text>
+                <Binding Path="SubTotal" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                    <Binding.ValidationRules>
+                        <ExceptionValidationRule/>
+                    </Binding.ValidationRules>
+                    
+                    
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
     </Grid>
 </Window>

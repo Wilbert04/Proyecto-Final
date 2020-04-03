@@ -43,6 +43,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             articuloTextBox.Text = string.Empty;
             categoriaComboBox.Text = string.Empty;
             notaTextBox.Text = "****                        ****";
+            detalleDataGrid.ItemsSource = string.Empty;
             unidadTextBox.Text = "0";
 
 
@@ -72,24 +73,23 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
         {
             bool paso = true;
 
-            if (string.IsNullOrWhiteSpace(proveedorComboBox.Text))
+            if (string.IsNullOrWhiteSpace(categoriaComboBox.Text))
             {
-                MessageBox.Show("No se puede dejar campos vacios!!", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Debe Elegir un Proveedor!!", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                 paso = false;
             }
+
 
 
             if (string.IsNullOrWhiteSpace(categoriaComboBox.Text))
             {
-                MessageBox.Show("No se puede dejar campos vacios!!", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Debe Elegir una Categoria!!", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                 paso = false;
             }
 
 
 
-
-
-            return paso;
+           return paso;
 
         }
 
@@ -183,16 +183,23 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
         private void agregarButton_Click(object sender, RoutedEventArgs e)
         {
             Pedidos.DPedidos.Add(new DetallePedidos(
-               Pedidos.PedidoId, Convert.ToInt32(IdTextbox.Text),
-               Convert.ToInt32(proveedorComboBox.SelectedValue), articuloTextBox.Text, Convert.ToInt32(unidadTextBox.Text)
+                id: 0,
+                pedidoId: Convert.ToInt32(IdTextbox.Text),
+                proveedor: Convert.ToInt32(proveedorComboBox.SelectedValue),
+                articulo: articuloTextBox.Text,
+                unidad:Convert.ToInt32(unidadTextBox.Text)
                ));
 
             Llenar();
 
-
+           
             articuloTextBox.Clear();
             unidadTextBox.Clear();
             
+
+           
+
+
         }
     }
 }

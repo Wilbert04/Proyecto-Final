@@ -72,7 +72,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Consultas
             consultarDataGrid.ItemsSource = listado;
         }
 
-       
+        
     }
     
 }

@@ -16,41 +16,42 @@ using System.Windows.Shapes;
 namespace Proyecto_MantenimientoVehicular.UI.Consultas
 {
     /// <summary>
-    /// Interaction logic for cArticulo.xaml
+    /// Interaction logic for cMantenimiento.xaml
     /// </summary>
-    public partial class cArticulo : Window
+    public partial class cMantenimiento : Window
     {
-        public cArticulo()
+        public cMantenimiento()
         {
             InitializeComponent();
         }
 
         private void consultarButton_Click(object sender, RoutedEventArgs e)
         {
-            var listado = new List<Articulos>();
+            var listado = new List<Mantenimiento>();
 
             if (criterioTextBox.Text.Trim().Length > 0)
             {
                 switch (filtroComboBox.SelectedIndex)
                 {
                     case 0:
-                        listado = ArticuloBLL.GetList(p => true);
+                        listado = MantenimientoBLL.GetList(p => true);
                         break;
 
                     case 1:
                         int ID = Convert.ToInt32(criterioTextBox.Text);
-                        listado = ArticuloBLL.GetList(p => p.ArticuloId == ID);
+                        listado = MantenimientoBLL.GetList(p => p.MantenimientoId == ID);
                         break;
 
                     case 2:
-                        listado = ArticuloBLL.GetList(p => p.Articulo.Contains(criterioTextBox.Text));
+                        int clienteid = Convert.ToInt32(criterioTextBox.Text);
+                        listado = MantenimientoBLL.GetList(p => p.ClienteId == clienteid);
                         break;
 
                     case 3:
-                        int Precio = Convert.ToInt32(criterioTextBox.Text);
-                        listado = ArticuloBLL.GetList(p => p.Precio == Precio);
+                        int vehiculoid = Convert.ToInt32(criterioTextBox.Text);
+                        listado = MantenimientoBLL.GetList(p => p.VehiculoId == vehiculoid);
                         break;
-                        
+
                 }
 
                 listado = listado.Where(c => c.Fecha.Date >= desdeDatePicker.SelectedDate.Value && c.Fecha.Date <= hastaDatePicker.SelectedDate.Value).ToList();
@@ -58,10 +59,11 @@ namespace Proyecto_MantenimientoVehicular.UI.Consultas
             }
             else
             {
-                listado = ArticuloBLL.GetList(p => true);
+                listado = MantenimientoBLL.GetList(p => true);
             }
 
             consultarDataGrid.ItemsSource = listado;
         }
     }
+    
 }

@@ -6,23 +6,18 @@
         xmlns:local="clr-namespace:Proyecto_MantenimientoVehicular"
         xmlns:PH="clr-namespace:Proyecto_MantenimientoVehicular.Entidades"
         mc:Ignorable="d"
-        Title="Login" Height="400" Width="500">
+        Title="Login" Height="300" Width="400"  WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
-        <StackPanel>
-            <Label Content="Usuario" Margin="100,125,0,0" HorizontalAlignment="Left" FontWeight="Bold" FontFamily="Bell MT"/>
-            <TextBox x:Name="usuarioTextBox" TextWrapping="Wrap" Width="175" Height="20" HorizontalAlignment="Left" Margin="175,-28,0,0"/>
-            <Label Content="Contraseña" HorizontalAlignment="Left" Margin="100,10,0,0" Width="100" FontFamily="Bell MT" FontWeight="Bold"/>
-            <Button x:Name="iniciarSesionButton" Content="Iniciar Sesion" HorizontalAlignment="Left" Width="120" Height="30" Margin="205,25,0,0" Click="Button_Click" />
-            <Button x:Name="salirButton" Content="Salir" HorizontalAlignment="Left" Width="80" Height="30" Margin="224,13,0,0" Click="salirButton_Click" />
-            <PasswordBox x:Name="contraseñaPasswordBox" Width="176" HorizontalAlignment="Left" Margin="175,-222,0,0" Height="20"/>
+        <Label Content="Usuario" HorizontalAlignment="Left" Margin="70,113,0,0" VerticalAlignment="Top"/>
+        <Label Content="Contraseña" HorizontalAlignment="Left" Margin="70,142,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="usuarioTextBox1" HorizontalAlignment="Left" Margin="143,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172"/>
+        <PasswordBox x:Name="contraseñaPasswordBox1" HorizontalAlignment="Left" Margin="145,145,0,0" VerticalAlignment="Top" Width="169"/>
+        <Button x:Name="iniciarsesionButton" Content="Entrar" HorizontalAlignment="Left" Margin="137,196,0,0" VerticalAlignment="Top" Height="31" Width="75" Click="iniciarsesionButton_Click"/>
+        <Button x:Name="salirButton1" Content="Salir" HorizontalAlignment="Left" Margin="231,193,0,0" VerticalAlignment="Top" Height="32" Width="85" Click="salirButton1_Click"/>
 
 
 
 
 
-
-        </StackPanel>
-       
-        
     </Grid>
 </Window>

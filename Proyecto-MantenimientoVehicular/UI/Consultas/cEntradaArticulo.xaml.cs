@@ -43,9 +43,10 @@ namespace Proyecto_MantenimientoVehicular.UI.Consultas
                         listado = EntradaArticuloBLL.GetList(p => p.EntradaArticuloId == ID);
                         break;
 
-                    //case 2:
-                    //    listado = EntradaArticuloBLL.GetList(p => p.Articulo.Contains(criterioTextBox.Text));
-                    //    break;
+                    case 2:
+                        int articuoid = Convert.ToInt32(criterioTextBox.Text);
+                        listado = EntradaArticuloBLL.GetList(p => p.ArticuloId == articuoid);
+                        break;
 
                     
 

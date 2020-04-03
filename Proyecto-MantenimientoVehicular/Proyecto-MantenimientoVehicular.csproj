@@ -9,11 +9,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="login-logo-png-5.png" />
+    <None Remove="Logo.jpeg" />
+    <None Remove="UI\Menu\Logo.jpeg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.3">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="login-logo-png-5.png" />
+    <Resource Include="Logo.jpeg" />
+    <Resource Include="UI\Menu\Logo.jpeg" />
   </ItemGroup>
 
 </Project>

@@ -44,17 +44,17 @@ namespace Proyecto_MantenimientoVehicular.UI.Consultas
                         break;
 
                     case 2:
-                        listado = ProveedoresBLL.GetList(p => p.Nombre.Contains(criterioTextBox.Text));
+                        int rnc = Convert.ToInt32(criterioTextBox.Text);
+                        listado = ProveedoresBLL.GetList(p => p.RNC == Convert.ToString(rnc));
                         break;
 
                     case 3:
-                        listado = ProveedoresBLL.GetList(p => p.Telefono.Contains(criterioTextBox.Text));
+                        listado = ProveedoresBLL.GetList(p => p.Nombre.Contains(criterioTextBox.Text));
                         break;
 
 
                     case 4:
-                        int RNC = Convert.ToInt32(criterioTextBox.Text);
-                        listado = ProveedoresBLL.GetList(p => p.RNC == Convert.ToString(RNC));
+                        listado = ProveedoresBLL.GetList(p => p.Telefono.Contains(criterioTextBox.Text));
                         break;
 
 

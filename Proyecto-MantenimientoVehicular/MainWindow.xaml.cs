@@ -21,20 +21,7 @@ namespace Proyecto_MantenimientoVehicular
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (usuarioTextBox.Text == "Admin" && contraseñaPasswordBox.Password == "Admin")
-            {
-                wMenu menuprimcipal = new wMenu();
-                menuprimcipal.ShowDialog();
-                this.Close();
-            }
-            else
-            {
-                IniciarSesion();
-            }
-
-        }
+       
 
         public void IniciarSesion()
         {
@@ -42,8 +29,8 @@ namespace Proyecto_MantenimientoVehicular
             Expression<Func<Usuarios, bool>> filtro = x => true;
             List<Usuarios> usuario = new List<Usuarios>();
 
-            var username = usuarioTextBox.Text;
-            var password = contraseñaPasswordBox.Password;
+            var username = usuarioTextBox1.Text;
+            var password = contraseñaPasswordBox1.Password;
             filtro = x => x.Usuario.Equals(username);
             usuario = UsuarioBLL.GetList(filtro);
 
@@ -53,7 +40,7 @@ namespace Proyecto_MantenimientoVehicular
             {
                 if (usuario.Exists(x => x.Contraseña.Equals((password))))
                 {
-                    List<Usuarios> id = UsuarioBLL.GetList(U => U.Usuario == usuarioTextBox.Text);
+                    List<Usuarios> id = UsuarioBLL.GetList(U => U.Usuario == usuarioTextBox1.Text);
                     wMenu menuprincipal = new wMenu();
                     menuprincipal.Show();
                     this.Hide();
@@ -66,7 +53,7 @@ namespace Proyecto_MantenimientoVehicular
             }
             else
             {
-                if (usuarioTextBox.Text == string.Empty || contraseñaPasswordBox.Password == string.Empty)
+                if (usuarioTextBox1.Text == string.Empty || contraseñaPasswordBox1.Password == string.Empty)
                     MessageBox.Show("LLene todos los campos");
                 else if (!usuario.Exists(x => x.Usuario.Equals(username)))
                     MessageBox.Show("Nombre de usuarios o contraseñas incorrectos");
@@ -74,7 +61,24 @@ namespace Proyecto_MantenimientoVehicular
             }
         }
 
-        private void salirButton_Click(object sender, RoutedEventArgs e)
+       
+
+        private void iniciarsesionButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (usuarioTextBox1.Text == "Admin" && contraseñaPasswordBox1.Password == "Admin")
+            {
+                wMenu menuprimcipal = new wMenu();
+                menuprimcipal.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                IniciarSesion();
+            }
+
+        }
+
+        private void salirButton1_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }

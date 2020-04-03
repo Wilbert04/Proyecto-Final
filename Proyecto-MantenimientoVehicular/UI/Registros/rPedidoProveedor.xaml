@@ -22,7 +22,7 @@
         </Button>
         <Label Content="Proveedor" HorizontalAlignment="Left" Margin="18,116,0,0" VerticalAlignment="Top" FontSize="14"/>
         <ComboBox x:Name="proveedorComboBox" HorizontalAlignment="Left" Margin="100,118,0,0" VerticalAlignment="Top" Width="160" Height="26"
-                   >
+                   SelectedValue="{Binding ProveedoresId,Mode=TwoWay}">
 
         </ComboBox>
         <Label Content="Fecha" HorizontalAlignment="Left" Margin="486,35,0,0" VerticalAlignment="Top" FontSize="14"/>

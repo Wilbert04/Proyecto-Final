@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Proyecto_MantenimientoVehicular.Migrations
 {
-    public partial class prueba29 : Migration
+    public partial class prueba32 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

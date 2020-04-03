@@ -59,6 +59,12 @@ namespace Proyecto_MantenimientoVehicular.UI.Menu
             registro.ShowDialog();
         }
 
+        private void registrarpedidosproveedor_Click(object sender, RoutedEventArgs e)
+        {
+            rPedidoProveedor registo = new rPedidoProveedor();
+            registo.ShowDialog();
+        }
+
 
 
 
@@ -98,10 +104,17 @@ namespace Proyecto_MantenimientoVehicular.UI.Menu
             consulta.ShowDialog();
         }
 
-        private void registrarpedidosproveedor_Click(object sender, RoutedEventArgs e)
+        private void consultarmantenimiento_Click(object sender, RoutedEventArgs e)
         {
-            rPedidoProveedor registo = new rPedidoProveedor();
-            registo.ShowDialog();
+            cMantenimiento consulta = new cMantenimiento();
+            consulta.ShowDialog();
+
+        }
+
+        private void consultarpedido_Click(object sender, RoutedEventArgs e)
+        {
+            cPedido consulta = new cPedido();
+            consulta.ShowDialog();
         }
     }
 }
