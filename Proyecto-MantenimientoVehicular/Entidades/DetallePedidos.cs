@@ -8,7 +8,8 @@ namespace Proyecto_MantenimientoVehicular.Entidades
         [Key]
         public int Id { get; set; }
         public int PedidoId { get; set; }
-        public int ProveedorId { get; set; }
+        public string Proveedor { get; set; }
+        public string Categoria { get; set; }
         public string Articulo { get; set; }
         public int Unidad { get; set; }
 
@@ -21,11 +22,12 @@ namespace Proyecto_MantenimientoVehicular.Entidades
 
         }
 
-        public DetallePedidos(int id, int pedidoId, int proveedor, string articulo, int unidad)
+        public DetallePedidos(int id, int pedidoId, string proveedor,string categoria, string articulo, int unidad)
         {
             Id = id;
             PedidoId = pedidoId;
-            ProveedorId = proveedor;
+            Proveedor = proveedor;
+            Categoria = categoria;
             Articulo = articulo;
             Unidad = unidad;
         }

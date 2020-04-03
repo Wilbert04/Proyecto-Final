@@ -28,4 +28,8 @@
     <Resource Include="UI\Menu\Logo.jpeg" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
 </Project>

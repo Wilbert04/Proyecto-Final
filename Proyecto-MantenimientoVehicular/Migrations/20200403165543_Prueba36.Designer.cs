@@ -9,8 +9,8 @@ using Proyecto_MantenimientoVehicular.DAL;
 namespace Proyecto_MantenimientoVehicular.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20200402230244_prueba32")]
-    partial class prueba32
+    [Migration("20200403165543_Prueba36")]
+    partial class Prueba36
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -113,11 +113,14 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                     b.Property<string>("Articulo")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Categoria")
+                        .HasColumnType("TEXT");
+
                     b.Property<int>("PedidoId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("ProveedorId")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Proveedor")
+                        .HasColumnType("TEXT");
 
                     b.Property<int>("Unidad")
                         .HasColumnType("INTEGER");

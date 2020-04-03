@@ -186,5 +186,11 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
                 e.Handled = true;
         }
 
+        private void rncTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!char.IsDigit(e.Text, e.Text.Length - 1))
+                e.Handled = true;
+
+        }
     }
 }

@@ -70,6 +70,7 @@ namespace Proyecto_MantenimientoVehicular
                 wMenu menuprimcipal = new wMenu();
                 menuprimcipal.ShowDialog();
                 this.Close();
+                
             }
             else
             {

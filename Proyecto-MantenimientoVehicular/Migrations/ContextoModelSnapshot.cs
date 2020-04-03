@@ -111,11 +111,14 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                     b.Property<string>("Articulo")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Categoria")
+                        .HasColumnType("TEXT");
+
                     b.Property<int>("PedidoId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("ProveedorId")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Proveedor")
+                        .HasColumnType("TEXT");
 
                     b.Property<int>("Unidad")
                         .HasColumnType("INTEGER");

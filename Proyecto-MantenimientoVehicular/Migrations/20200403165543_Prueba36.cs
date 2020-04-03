@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Proyecto_MantenimientoVehicular.Migrations
 {
-    public partial class prueba32 : Migration
+    public partial class Prueba36 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -183,7 +183,8 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     PedidoId = table.Column<int>(nullable: false),
-                    ProveedorId = table.Column<int>(nullable: false),
+                    Proveedor = table.Column<string>(nullable: true),
+                    Categoria = table.Column<string>(nullable: true),
                     Articulo = table.Column<string>(nullable: true),
                     Unidad = table.Column<int>(nullable: false)
                 },

@@ -30,7 +30,7 @@ namespace Proyecto_MantenimientoVehicular.Entidades
         public Mantenimiento()
         {
             MantenimientoId = 0;
-            ProximoMantemiento = DateTime.Now;
+            ProximoMantemiento = DateTime.Now.AddMonths(3);
             VehiculoId = 0;
             ClienteId = 0;
             SubTotal = 0;

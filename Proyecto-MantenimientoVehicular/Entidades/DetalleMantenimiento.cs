@@ -1,5 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Collections.Generic;
+using System;
+
 
 namespace Proyecto_MantenimientoVehicular.Entidades
 {
@@ -32,5 +36,7 @@ namespace Proyecto_MantenimientoVehicular.Entidades
             Precio = precio;
             Importe = importe;
         }
+
+       
     }
 }

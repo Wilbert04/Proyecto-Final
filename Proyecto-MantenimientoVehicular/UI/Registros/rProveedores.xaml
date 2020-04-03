@@ -75,7 +75,7 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBox x:Name="rncTextBox" HorizontalAlignment="Left" Margin="84,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="76">
+        <TextBox x:Name="rncTextBox" HorizontalAlignment="Left" Margin="84,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="76" PreviewTextInput="rncTextBox_PreviewTextInput">
             <TextBox.Text>
                 <Binding Path="RNC" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>

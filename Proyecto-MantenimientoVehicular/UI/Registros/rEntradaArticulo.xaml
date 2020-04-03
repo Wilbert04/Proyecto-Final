@@ -20,7 +20,7 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBox x:Name="CantidadTextbox" HorizontalAlignment="Left" Margin="92,147,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="83">
+        <TextBox x:Name="CantidadTextbox" HorizontalAlignment="Left" Margin="92,147,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="83" PreviewTextInput="CantidadTextbox_PreviewTextInput">
             <TextBox.Text>
                 <Binding Path="Cantidad" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>

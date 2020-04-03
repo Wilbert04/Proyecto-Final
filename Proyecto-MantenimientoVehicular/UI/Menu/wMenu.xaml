@@ -15,30 +15,39 @@
                 <ImageBrush ImageSource="/UI/Menu/Logo.jpeg" Stretch="UniformToFill"/>
             </Menu.Background>
             <MenuItem Header="File"></MenuItem>
+
             <MenuItem Header="Registros">
-                <MenuItem x:Name="registrousuario" Header="Registrar Usuario" Click="registrousuario_Click"/>
-                <MenuItem x:Name="registrovehiculo" Header="Registrar Vehiculo" Click="registrovehiculo_Click"/>
-                <MenuItem x:Name="registroarticulo" Header="Registrar Articulo" Click="registroarticulo_Click"/>
+                <!--Registros-->
+
+                <MenuItem x:Name="registroarticulo" Header="Registrar Articulo" Click="registroarticulo_Click">
+                   
+                </MenuItem>
                 <MenuItem x:Name="registrarcliente" Header="Registrar Cliente" Click="registrarcliente_Click"/>
-                <MenuItem x:Name="registroproveedor" Header="Registrar Proveedor" Click="registroproveedor_Click"/>
                 <MenuItem x:Name="registrarentradaart" Header="Registrar Entrada de Articulo" Click="registrarentradaart_Click"/>
                 <MenuItem x:Name="registrarmantenimiento" Header="Registrar Mantenimiento" Click="registrarmantenimiento_Click"/>
+                <MenuItem x:Name="registroproveedor" Header="Registrar Proveedor" Click="registroproveedor_Click"/>
                 <MenuItem x:Name="registrarpedidosproveedor" Header="Registrar Pedidos a Proveedores" Click="registrarpedidosproveedor_Click"/>
+                <MenuItem x:Name="registrousuario" Header="Registrar Usuario" Click="registrousuario_Click"/>
+                <MenuItem x:Name="registrovehiculo" Header="Registrar Vehiculo" Click="registrovehiculo_Click"/>
 
             </MenuItem>
+
             <MenuItem Header="Consultas">
-                <MenuItem x:Name="consultaCliente" Header="Consultar Cliente" Click="consultaCliente_Click"/>
-                <MenuItem x:Name="consultaVehiculo" Header="Consultar Vehiculo" Click="consultaVehiculo_Click"/>
-                <MenuItem x:Name="consultaentradaarticulo" Header="Consultar Entrada Articulo" Click="consultaentradaarticulo_Click"/>
+                <!--Consultas-->
+
                 <MenuItem x:Name="consultararticulo" Header="Consultar Articulo" Click="consultararticulo_Click"/>
-                <MenuItem x:Name="consultaProveedores" Header="Consultar Proveedores" Click="consultaProveedores_Click"/>
-                <MenuItem x:Name="consultaUsuario" Header="Consultar Usuarios" Click="consultaUsuario_Click"/>
+                <MenuItem x:Name="consultaCliente" Header="Consultar Cliente" Click="consultaCliente_Click"/>
+                <MenuItem x:Name="consultaentradaarticulo" Header="Consultar Entrada de articulo" Click="consultaentradaarticulo_Click"/>
                 <MenuItem x:Name="consultarmantenimiento" Header="Consultar Mantenimiento" Click="consultarmantenimiento_Click"/>
+                <MenuItem x:Name="consultaProveedores" Header="Consultar Proveedor" Click="consultaProveedores_Click"/>
                 <MenuItem x:Name="consultarpedido" Header="Consultar Pedido a Proveedor" Click="consultarpedido_Click"/>
+                <MenuItem x:Name="consultaUsuario" Header="Consultar Usuarios" Click="consultaUsuario_Click"/>
+                <MenuItem x:Name="consultaVehiculo" Header="Consultar Vehiculo" Click="consultaVehiculo_Click"/>
+
             </MenuItem>
             <MenuItem Header="Ayuda"></MenuItem>
         </Menu>
-        
-        
+
+
     </Grid>
 </Window>

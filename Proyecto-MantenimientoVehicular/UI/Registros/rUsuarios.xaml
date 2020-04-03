@@ -16,7 +16,7 @@
 
         <StackPanel>
             <Label Content="UsuarioId" HorizontalAlignment="Left" Margin="25,35,0,0"/>
-            <TextBox x:Name="idTextBox" TextWrapping="Wrap" Width="73" HorizontalAlignment="Left" Margin="95,-25,0,0" Height="19">
+            <TextBox x:Name="idTextBox" TextWrapping="Wrap" Width="73" HorizontalAlignment="Left" Margin="95,-25,0,0" Height="19" PreviewTextInput="idTextBox_PreviewTextInput">
                 <TextBox.Text>
                     <Binding Path="UsuarioId" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                         <Binding.ValidationRules>
@@ -41,7 +41,7 @@
             </DatePicker>
 
             <Label Content="Nombre" HorizontalAlignment="Left" Margin="20,75,0,0"/>
-            <TextBox x:Name="nombreTextBox" TextWrapping="Wrap" Width="205" HorizontalAlignment="Left" Margin="90,-22,0,0">
+            <TextBox x:Name="nombreTextBox" TextWrapping="Wrap" Width="205" HorizontalAlignment="Left" Margin="90,-22,0,0" PreviewTextInput="nombreTextBox_PreviewTextInput">
                 <TextBox.Text>
                     <Binding Path="Nombre" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                         <Binding.ValidationRules>

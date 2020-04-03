@@ -185,7 +185,8 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             Pedidos.DPedidos.Add(new DetallePedidos(
                 id: 0,
                 pedidoId: Convert.ToInt32(IdTextbox.Text),
-                proveedor: Convert.ToInt32(proveedorComboBox.SelectedValue),
+                proveedor: Convert.ToString(proveedorComboBox.Text),
+                categoria: Convert.ToString(categoriaComboBox.Text),
                 articulo: articuloTextBox.Text,
                 unidad:Convert.ToInt32(unidadTextBox.Text)
                ));

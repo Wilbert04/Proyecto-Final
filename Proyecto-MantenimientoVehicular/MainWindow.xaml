@@ -6,14 +6,15 @@
         xmlns:local="clr-namespace:Proyecto_MantenimientoVehicular"
         xmlns:PH="clr-namespace:Proyecto_MantenimientoVehicular.Entidades"
         mc:Ignorable="d"
-        Title="Login" Height="300" Width="400"  WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Login" Height="350" Width="410"  WindowStartupLocation="CenterScreen" ResizeMode="NoResize" ShowInTaskbar="False">
     <Grid>
-        <Label Content="Usuario" HorizontalAlignment="Left" Margin="70,113,0,0" VerticalAlignment="Top"/>
-        <Label Content="Contraseña" HorizontalAlignment="Left" Margin="70,142,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="usuarioTextBox1" HorizontalAlignment="Left" Margin="143,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172"/>
-        <PasswordBox x:Name="contraseñaPasswordBox1" HorizontalAlignment="Left" Margin="145,145,0,0" VerticalAlignment="Top" Width="169"/>
-        <Button x:Name="iniciarsesionButton" Content="Entrar" HorizontalAlignment="Left" Margin="137,196,0,0" VerticalAlignment="Top" Height="31" Width="75" Click="iniciarsesionButton_Click"/>
-        <Button x:Name="salirButton1" Content="Salir" HorizontalAlignment="Left" Margin="231,193,0,0" VerticalAlignment="Top" Height="32" Width="85" Click="salirButton1_Click"/>
+        <Label Content="Usuario" HorizontalAlignment="Left" Margin="45,159,0,0" VerticalAlignment="Top"/>
+        <Label Content="Contraseña" HorizontalAlignment="Left" Margin="42,184,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="usuarioTextBox1" HorizontalAlignment="Left" Margin="122,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172"/>
+        <PasswordBox x:Name="contraseñaPasswordBox1" HorizontalAlignment="Left" Margin="121,189,0,0" VerticalAlignment="Top" Width="172"/>
+        <Button x:Name="iniciarsesionButton" Content="Iniciar Sesion" HorizontalAlignment="Center" Margin="0,223,0,0" VerticalAlignment="Top" Height="31" Width="124" Click="iniciarsesionButton_Click"/>
+        <Button x:Name="salirButton1" Content="Salir" HorizontalAlignment="Center" Margin="0,262,0,0" VerticalAlignment="Top" Height="29" Width="86" Click="salirButton1_Click"/>
+        <Image HorizontalAlignment="Center" Height="118" Margin="0,29,0,0" VerticalAlignment="Top" Width="122" Source="/login-logo-png-5.png"/>
 
 
 
