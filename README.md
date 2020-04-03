@@ -70,3 +70,15 @@ Consultas
 
 Todas las consultas estan desarrollada con este estilo.
 <img width="586" alt="Consultas" src="https://user-images.githubusercontent.com/59939364/78412402-d844e180-75d8-11ea-8af3-ead0bf885ed4.PNG">
+
+Diagrama de base de datos
+-------------------------
+
+<img width="501" alt="Diagrama" src="https://user-images.githubusercontent.com/59939364/78412733-1262b300-75da-11ea-97d4-0a617c81c1b5.PNG">
+
+
+Colabolarodes
+=============
+
+Wilbert Smith Antigua
+Erisson Silverio Nuñes
