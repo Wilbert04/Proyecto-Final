@@ -8,7 +8,7 @@
         Title="rVehiculo" Height="395" Width="565">
     <Grid>
         <Label Content="VehículoId" HorizontalAlignment="Left" Margin="34,34,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="idTextBox" HorizontalAlignment="Left" Margin="104,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93">
+        <TextBox x:Name="idTextBox" HorizontalAlignment="Left" Margin="104,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" PreviewTextInput="idTextBox_PreviewTextInput">
             <TextBox.Text>
                 <Binding Path="VehiculoId" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -44,7 +44,7 @@
 
         </ComboBox>
         <Label Content="Descripción" HorizontalAlignment="Left" Margin="25,151,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="descripcionTextBox" HorizontalAlignment="Left" Margin="100,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200">
+        <TextBox x:Name="descripcionTextBox" HorizontalAlignment="Left" Margin="100,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" PreviewTextInput="descripcionTextBox_PreviewTextInput">
             <TextBox.Text>
                 <Binding Path="Descripcion" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -64,7 +64,7 @@
             </TextBox.Text>
         </TextBox>
         <Label Content="Año" HorizontalAlignment="Left" Margin="25,210,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="añoTextBox" HorizontalAlignment="Left" Margin="100,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">
+        <TextBox x:Name="añoTextBox" HorizontalAlignment="Left" Margin="100,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" PreviewTextInput="añoTextBox_PreviewTextInput">
             <TextBox.Text>
                 <Binding Path="Año" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>

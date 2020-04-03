@@ -13,7 +13,7 @@
         <Label Content="Cédula" HorizontalAlignment="Left" Margin="301,117,0,0" VerticalAlignment="Top"/>
         <Label Content="Dirección" HorizontalAlignment="Left" Margin="16,184,0,0" VerticalAlignment="Top"/>
         <Label Content="Email" HorizontalAlignment="Left" Margin="305,146,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="idTextBox" HorizontalAlignment="Left" Margin="84,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80">
+        <TextBox x:Name="idTextBox" HorizontalAlignment="Left" Margin="84,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" PreviewTextInput="idTextBox_PreviewTextInput">
             <TextBox.Text>
                 <Binding Path="ClienteId" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -22,7 +22,7 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBox x:Name="nombreTextBox" HorizontalAlignment="Left" Margin="85,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202">
+        <TextBox x:Name="nombreTextBox" HorizontalAlignment="Left" Margin="85,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" PreviewTextInput="nombreTextBox_PreviewTextInput">
             <TextBox.Text>
                 <Binding Path="Nombre" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -31,7 +31,7 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBox x:Name="telefonoTextBox" HorizontalAlignment="Left" Margin="86,157,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="202">
+        <TextBox x:Name="telefonoTextBox" HorizontalAlignment="Left" Margin="86,157,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="202" PreviewTextInput="telefonoTextBox_PreviewTextInput">
             <TextBox.Text>
                 <Binding Path="Telefono" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -41,7 +41,7 @@
             </TextBox.Text>
         </TextBox>
 
-        <TextBox x:Name="cedulaTextBox" HorizontalAlignment="Left" Margin="353,120,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="202">
+        <TextBox x:Name="cedulaTextBox" HorizontalAlignment="Left" Margin="353,120,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="202" PreviewTextInput="cedulaTextBox_PreviewTextInput">
             <TextBox.Text>
                 <Binding Path="Cedula" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -50,7 +50,7 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBox x:Name="direccionTextBox" HorizontalAlignment="Left" Margin="85,190,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="202">
+        <TextBox x:Name="direccionTextBox" HorizontalAlignment="Left" Margin="85,190,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="202" PreviewTextInput="direccionTextBox_PreviewTextInput">
             <TextBox.Text>
                 <Binding Path="Direccion" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>

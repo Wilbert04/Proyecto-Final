@@ -152,7 +152,11 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             LimpiarCampos();
         }
 
-       
+        private void IdTextbox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!char.IsDigit(e.Text, e.Text.Length - 1))
+                e.Handled = true;
+        }
 
 
 

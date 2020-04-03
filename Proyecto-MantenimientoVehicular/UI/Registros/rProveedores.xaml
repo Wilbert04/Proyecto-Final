@@ -9,7 +9,7 @@
     <Grid>
 
         <Label Content="ProveedorId" HorizontalAlignment="Left" Margin="22,32,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="IdTextBox" HorizontalAlignment="Left" Margin="100,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="88">
+        <TextBox x:Name="IdTextBox" HorizontalAlignment="Left" Margin="100,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="88" PreviewTextInput="IdTextBox_PreviewTextInput">
             <TextBox.Text>
                 <Binding Path="ProveedorId" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -48,7 +48,7 @@
         <Button x:Name="eliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="304,314,0,0" VerticalAlignment="Top" Height="40" Width="107" Click="eliminarButton_Click">
 
         </Button>
-        <TextBox x:Name="nombreTextBox1" HorizontalAlignment="Left" Margin="84,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="335">
+        <TextBox x:Name="nombreTextBox1" HorizontalAlignment="Left" Margin="84,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="335" PreviewTextInput="nombreTextBox1_PreviewTextInput">
             <TextBox.Text>
                 <Binding Path="Nombre" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -57,7 +57,7 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBox x:Name="telefonoTextBox1" HorizontalAlignment="Left" Margin="83,247,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166">
+        <TextBox x:Name="telefonoTextBox1" HorizontalAlignment="Left" Margin="83,247,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" PreviewTextInput="telefonoTextBox1_PreviewTextInput">
             <TextBox.Text>
                 <Binding Path="Telefono" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -84,7 +84,7 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBox x:Name="direccionTextBox" HorizontalAlignment="Left" Margin="84,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272">
+        <TextBox x:Name="direccionTextBox" HorizontalAlignment="Left" Margin="84,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272" PreviewTextInput="direccionTextBox_PreviewTextInput">
             <TextBox.Text>
                 <Binding Path="Direccion" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>

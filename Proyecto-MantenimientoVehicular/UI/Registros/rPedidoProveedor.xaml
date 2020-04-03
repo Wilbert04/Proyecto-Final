@@ -8,7 +8,7 @@
         Title="rPedidoProveedor" Height="600" Width="740">
     <Grid>
         <Label Content="PedidoId" HorizontalAlignment="Left" Margin="27,34,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBox x:Name="IdTextbox" HorizontalAlignment="Left" Margin="108,42,0,0"   TextWrapping="Wrap" VerticalAlignment="Top" Width="72">
+        <TextBox x:Name="IdTextbox" HorizontalAlignment="Left" Margin="108,42,0,0"   TextWrapping="Wrap" VerticalAlignment="Top" Width="72" PreviewTextInput="IdTextbox_PreviewTextInput"> 
             <TextBox.Text>
                 <Binding Path="PedidoId" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -36,7 +36,7 @@
             </DatePicker.SelectedDate>
         </DatePicker>
         <Label Content="Artículo" HorizontalAlignment="Left" Margin="277,173,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.54,0.579" FontSize="14"/>
-        <TextBox x:Name="articuloTextBox" HorizontalAlignment="Left" Margin="336,178,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="154">
+        <TextBox x:Name="articuloTextBox" HorizontalAlignment="Left" Margin="336,178,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="154" PreviewTextInput="articuloTextBox_PreviewTextInput">
             <TextBox.Text>
                 <Binding Path="Articulo" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -46,7 +46,7 @@
             </TextBox.Text>
         </TextBox>
         <Label Content="Unidad" HorizontalAlignment="Left" Margin="499,172,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBox x:Name="unidadTextBox" HorizontalAlignment="Left" Margin="556,177,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="74" Height="19">
+        <TextBox x:Name="unidadTextBox" HorizontalAlignment="Left" Margin="556,177,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="74" Height="19" PreviewTextInput="unidadTextBox_PreviewTextInput">
             <TextBox.Text>
                 <Binding Path="Unidad" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
