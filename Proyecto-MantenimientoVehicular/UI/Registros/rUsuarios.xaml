@@ -6,69 +6,102 @@
         xmlns:PasswordHelper="clr-namespace:Proyecto_MantenimientoVehicular.Entidades"
         xmlns:local="clr-namespace:Proyecto_MantenimientoVehicular.UI.Registros"
         mc:Ignorable="d"
-        Title="Registro de Usuarios" Height="425" Width="535" WindowStyle="ToolWindow" ResizeMode="NoResize">
-    <Grid Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+        Title="Registro de Usuarios" Height="450" Width="650">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+        </Grid.RowDefinitions>
 
-        <TextBox x:Name="idTextBox" TextWrapping="Wrap" Width="72" HorizontalAlignment="Left" Margin="106,37,0,329" PreviewTextInput="idTextBox_PreviewTextInput">
-            <TextBox.Text>
-                <Binding Path="UsuarioId" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
-                    <Binding.ValidationRules>
-                        <ExceptionValidationRule/>
-                    </Binding.ValidationRules>
-                </Binding>
-            </TextBox.Text>
-        </TextBox>
 
-        <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Width="111" Margin="186,26,0,326" Click="buscarButton_Click" FontFamily="Book Antiqua" FontSize="14" FontWeight="Bold"/>
-        <DatePicker x:Name="fechaDatePicker" HorizontalAlignment="Left" Margin="406,37,0,326" Width="93">
-            <DatePicker.SelectedDate>
-                <Binding Path="Fecha" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
-                    <Binding.ValidationRules>
-                        <ExceptionValidationRule/>
-                    </Binding.ValidationRules>
-                </Binding>
-            </DatePicker.SelectedDate>
-        </DatePicker>
+        <StackPanel>
+            <Label Content="UsuarioId" HorizontalAlignment="Left" Margin="25,35,0,0"/>
+            <TextBox x:Name="idTextBox" TextWrapping="Wrap" Width="73" HorizontalAlignment="Left" Margin="95,-25,0,0" Height="19" PreviewTextInput="idTextBox_PreviewTextInput">
+                <TextBox.Text>
+                    <Binding Path="UsuarioId" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                        <Binding.ValidationRules>
+                            <ExceptionValidationRule/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
 
-        <Button x:Name="nuevoButton" Content="Nuevo" HorizontalAlignment="Left" Width="132" Margin="30,323,0,30" Click="nuevoButton_Click" FontFamily="Book Antiqua" FontSize="14" FontWeight="Bold"/>
-        <Button x:Name="guardarButton" Content="Guardar" HorizontalAlignment="Left" Margin="193,320,0,31" Width="136" Click="guardarButton_Click" FontFamily="Book Antiqua" FontSize="14" FontWeight="Bold"/>
-        <Button x:Name="eliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="357,317,0,33" Width="132" Click="eliminarButton_Click" FontFamily="Book Antiqua" FontSize="14" FontWeight="Bold"/>
-        <Label Content="Nombre de usuario" HorizontalAlignment="Left" Margin="25,217,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontSize="14" FontWeight="Bold" Height="26"/>
-        <Label Content="Nombre" HorizontalAlignment="Left" Margin="24,159,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontSize="14" FontWeight="Bold"/>
-        <Label Content="Tipo de Usuario" HorizontalAlignment="Left" Margin="28,88,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontSize="14" FontWeight="Bold"/>
-        <Label Content="UsuarioId" HorizontalAlignment="Left" Margin="31,34,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontSize="14" FontWeight="Bold"/>
-        <Label Content="Contraseña" HorizontalAlignment="Left" Margin="285,159,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontSize="14" FontWeight="Bold"/>
-        <Label Content="Confirmar contraseña" HorizontalAlignment="Left" Margin="286,218,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontSize="14" FontWeight="Bold"/>
-        <Label Content="Fecha" HorizontalAlignment="Left" Margin="361,36,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontSize="14" FontWeight="Bold"/>
-        <TextBox x:Name="nombreTextBox1" HorizontalAlignment="Left" Margin="29,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="239" Height="20" PreviewTextInput="nombreTextBox1_PreviewTextInput">
-            <TextBox.Text>
-                <Binding Path="Nombre" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
-                    <Binding.ValidationRules>
-                        <ExceptionValidationRule/>
-                    </Binding.ValidationRules>
-                </Binding>
-            </TextBox.Text>
+            <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Height="39" Width="111" Margin="180,-30,0,0" Click="buscarButton_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="C:\Users\Asus\Documents\Estudios\Sem 1-2020\Aplicada I\Proyecto-Final\Proyecto-Final\Proyecto-MantenimientoVehicular\UI\Imagenes\Buscar.png" Stretch="Uniform" AlignmentX="Left"/>
+                </Button.Background>
+            </Button>
+            <Label Content="Fecha" HorizontalAlignment="Left" Margin="370,-40,0,0" Height="26"/>
+            <DatePicker x:Name="fechaDatePicker" HorizontalAlignment="Left" Margin="428,-40,0,0" Height="26" Width="152">
+                <DatePicker.SelectedDate>
+                    <Binding Path="Fecha" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                        <Binding.ValidationRules>
+                            <ExceptionValidationRule/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </DatePicker.SelectedDate>
+            </DatePicker>
 
-        </TextBox>
-        <TextBox x:Name="usuarioTextBox1" HorizontalAlignment="Left" Margin="27,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" Height="20">
-            <TextBox.Text>
-                <Binding Path="Usuario" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
-                    <Binding.ValidationRules>
-                        <ExceptionValidationRule/>
-                    </Binding.ValidationRules>
-                </Binding>
-            </TextBox.Text>
-        </TextBox>
-        <ComboBox x:Name="tipousuarioComboBox" HorizontalAlignment="Left" Margin="32,117,0,0" VerticalAlignment="Top" Width="135"
-                  SelectedValue="{Binding TipoUsuario,Mode=TwoWay}" Height="27">
-        </ComboBox>
-        <PasswordBox x:Name="contraseñaPasswordBox1" HorizontalAlignment="Left" Margin="290,185,0,0" VerticalAlignment="Top" Width="208" Height="20"
-                     PasswordHelper:PasswordHelper.Attach="True"
-                     PasswordHelper:PasswordHelper.Password="{Binding Contraseña, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
-            
-        </PasswordBox>
-        <PasswordBox x:Name="confirmarPasswordBox1" HorizontalAlignment="Left" Margin="292,243,0,0" VerticalAlignment="Top" Width="205" Height="20"/>
+            <Label Content="Nombre" HorizontalAlignment="Left" Margin="20,75,0,0"/>
+            <TextBox x:Name="nombreTextBox" TextWrapping="Wrap" Width="205" HorizontalAlignment="Left" Margin="90,-22,0,0" PreviewTextInput="nombreTextBox_PreviewTextInput">
+                <TextBox.Text>
+                    <Binding Path="Nombre" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                        <Binding.ValidationRules>
+                            <ExceptionValidationRule/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
 
+            <Label Content="Usuario" HorizontalAlignment="Left" Margin="20,10,0,0"/>
+            <TextBox x:Name="usuarioTextBox" TextWrapping="Wrap" Width="205" HorizontalAlignment="Left" Margin="90,-25,0,0" Height="22">
+                <TextBox.Text>
+                    <Binding Path="Usuario" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                        <Binding.ValidationRules>
+                            <ExceptionValidationRule/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+
+            <Label Content="Contraseña" HorizontalAlignment="Left" Margin="350,-95,0,0" Height="30"/>
+            <Label Content="Confirmar" HorizontalAlignment="Left" Margin="355,-25,0,0" Height="26"/>
+
+            <PasswordBox x:Name="contraseñaPasswordBox" Width="145" HorizontalAlignment="Left" Margin="430,-99,0,0" Height="21"
+                         PasswordHelper:PasswordHelper.Attach="True"
+                         PasswordHelper:PasswordHelper.Password="{Binding Contraseña,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+
+            </PasswordBox>
+
+            <PasswordBox x:Name="confirmarPasswordBox" Width="145" HorizontalAlignment="Left" Margin="430,-30,0,0" Height="23"/>
+
+
+        </StackPanel>
+
+
+
+        <StackPanel Grid.Row="1">
+            <Label Content="T. de Usuario" HorizontalAlignment="Left" Margin="18,10,0,0"/>
+            <ComboBox x:Name="tipoComboBox" Width="186" HorizontalAlignment="Left" Margin="105,-23,0,0"
+                      SelectedValue="{Binding TipoUsuario, Mode=TwoWay}">
+            </ComboBox>
+
+            <Button x:Name="nuevoButton" Content="Nuevo" HorizontalAlignment="Left" Height="56" Width="151" Margin="50,90,0,0" Click="nuevoButton_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="C:\Users\Asus\Documents\Estudios\Sem 1-2020\Aplicada I\Proyecto-Final\Proyecto-Final\Proyecto-MantenimientoVehicular\UI\Imagenes\nuevo.png" Stretch="Uniform" AlignmentX="Left"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="guardarButton" Content="Guardar" HorizontalAlignment="Left" Margin="250,-55,0,0" Height="56" Width="150" Click="guardarButton_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="C:\Users\Asus\Documents\Estudios\Sem 1-2020\Aplicada I\Proyecto-Final\Proyecto-Final\Proyecto-MantenimientoVehicular\UI\Imagenes\Save.png" Stretch="Uniform" AlignmentX="Left"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="eliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="475,-60,0,0" Height="56" Width="141" Click="eliminarButton_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="C:\Users\Asus\Documents\Estudios\Sem 1-2020\Aplicada I\Proyecto-Final\Proyecto-Final\Proyecto-MantenimientoVehicular\UI\Imagenes\Eliminar.png" Stretch="Uniform" AlignmentX="Left"/>
+                </Button.Background>
+            </Button>
+        </StackPanel>
 
 
     </Grid>

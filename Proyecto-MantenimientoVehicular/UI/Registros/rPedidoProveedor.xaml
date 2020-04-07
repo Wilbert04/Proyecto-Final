@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_MantenimientoVehicular.UI.Registros"
         mc:Ignorable="d"
-        Title="Registro de Pedidos" Height="615" Width="760" WindowStyle="ToolWindow" ResizeMode="NoResize">
+        Title="Registro de Pedidos" Height="600" Width="740">
     <Grid>
-        <Label Content="PedidoId" HorizontalAlignment="Left" Margin="27,34,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bell MT" FontWeight="Bold"/>
+        <Label Content="PedidoId" HorizontalAlignment="Left" Margin="27,34,0,0" VerticalAlignment="Top" FontSize="14"/>
         <TextBox x:Name="IdTextbox" HorizontalAlignment="Left" Margin="108,42,0,0"   TextWrapping="Wrap" VerticalAlignment="Top" Width="72" PreviewTextInput="IdTextbox_PreviewTextInput">
             <TextBox.Text>
                 <Binding Path="PedidoId" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
@@ -17,16 +17,18 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="196,33,0,0" VerticalAlignment="Top" Width="110" FontSize="14" FontWeight="Bold" Click="buscarButton_Click" Height="33" FontFamily="Book Antiqua">
-
+        <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="196,33,0,0" VerticalAlignment="Top" Width="110" FontSize="14" FontWeight="Bold" Click="buscarButton_Click" Height="33">
+            <Button.Background>
+                <ImageBrush ImageSource="C:\Users\Asus\Documents\Estudios\Sem 1-2020\Aplicada I\Proyecto-Final\Proyecto-Final\Proyecto-MantenimientoVehicular\UI\Imagenes\Buscar.png" Stretch="Uniform" AlignmentX="Left"/>
+            </Button.Background>
         </Button>
-        <Label Content="Proveedor" HorizontalAlignment="Left" Margin="19,114,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bell MT" FontWeight="Bold"/>
-        <ComboBox x:Name="proveedorComboBox" HorizontalAlignment="Left" Margin="97,115,0,0" VerticalAlignment="Top" Width="164" Height="23"
+        <Label Content="Proveedor" HorizontalAlignment="Left" Margin="18,116,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <ComboBox x:Name="proveedorComboBox" HorizontalAlignment="Left" Margin="100,118,0,0" VerticalAlignment="Top" Width="160" Height="26"
                    SelectedValue="{Binding ProveedoresId,Mode=TwoWay}">
 
         </ComboBox>
-        <Label Content="Fecha" HorizontalAlignment="Left" Margin="554,35,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bell MT" FontWeight="Bold"/>
-        <DatePicker x:Name="fechaDatePicker" HorizontalAlignment="Left" Margin="606,38,0,0" VerticalAlignment="Top" Width="108">
+        <Label Content="Fecha" HorizontalAlignment="Left" Margin="486,35,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <DatePicker x:Name="fechaDatePicker" HorizontalAlignment="Left" Margin="539,38,0,0" VerticalAlignment="Top">
             <DatePicker.SelectedDate>
                 <Binding Path="Fecha" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -35,8 +37,8 @@
                 </Binding>
             </DatePicker.SelectedDate>
         </DatePicker>
-        <Label Content="Artículo" HorizontalAlignment="Left" Margin="187,188,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.54,0.579" FontSize="14" FontFamily="Bell MT" FontWeight="Bold"/>
-        <TextBox x:Name="articuloTextBox" HorizontalAlignment="Left" Margin="248,194,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="143" PreviewTextInput="articuloTextBox_PreviewTextInput">
+        <Label Content="Artículo" HorizontalAlignment="Left" Margin="277,173,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.54,0.579" FontSize="14"/>
+        <TextBox x:Name="articuloTextBox" HorizontalAlignment="Left" Margin="336,178,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="154" PreviewTextInput="articuloTextBox_PreviewTextInput">
             <TextBox.Text>
                 <Binding Path="Articulo" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -45,8 +47,8 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <Label Content="Unidad" HorizontalAlignment="Left" Margin="393,188,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bell MT" FontWeight="Bold"/>
-        <TextBox x:Name="unidadTextBox" HorizontalAlignment="Left" Margin="451,194,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="67" Height="19" PreviewTextInput="unidadTextBox_PreviewTextInput">
+        <Label Content="Unidad" HorizontalAlignment="Left" Margin="499,172,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox x:Name="unidadTextBox" HorizontalAlignment="Left" Margin="556,177,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="74" Height="19" PreviewTextInput="unidadTextBox_PreviewTextInput">
             <TextBox.Text>
                 <Binding Path="Unidad" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -55,34 +57,44 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <Button x:Name="agregarButton" Content="+" HorizontalAlignment="Left" Margin="656,187,0,0" VerticalAlignment="Top" Width="59" FontSize="16" FontWeight="Bold" Click="agregarButton_Click" Height="27">
-
+        <Button x:Name="agregarButton" HorizontalAlignment="Left" Margin="665,170,0,0" VerticalAlignment="Top" Width="52" FontSize="16" FontWeight="Normal" Click="agregarButton_Click" Height="32">
+            <Button.Background>
+                <ImageBrush ImageSource="C:\Users\Asus\Documents\Estudios\Sem 1-2020\Aplicada I\Proyecto-Final\Proyecto-Final\Proyecto-MantenimientoVehicular\UI\Imagenes\Agregar.png" Stretch="Uniform" />
+            </Button.Background>
         </Button>
-        <DataGrid x:Name="detalleDataGrid" Margin="17,221,28,144">
+        <DataGrid x:Name="detalleDataGrid" Margin="17,208,17,141">
             <DataGrid.ItemsSource>
                 <Binding Path="DPedidos" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay"/>
             </DataGrid.ItemsSource>
         </DataGrid>
-        <Button x:Name="removerButton" Content="Remover" HorizontalAlignment="Left" Margin="17,433,0,0" VerticalAlignment="Top" Width="125" FontSize="14" FontWeight="Bold" Click="removerButton_Click" Height="27" FontFamily="Book Antiqua">
-
+        <Button x:Name="removerButton" Content="Remover" HorizontalAlignment="Left" Margin="18,444,0,0" VerticalAlignment="Top" Width="125" FontSize="14" FontWeight="Bold" Click="removerButton_Click" Height="27">
+            <Button.Background>
+                <ImageBrush ImageSource="C:\Users\Asus\Documents\Estudios\Sem 1-2020\Aplicada I\Proyecto-Final\Proyecto-Final\Proyecto-MantenimientoVehicular\UI\Imagenes\Remover.png" Stretch="Uniform" AlignmentX="Left"/>
+            </Button.Background>
         </Button>
-        <Button x:Name="nuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="156,514,0,0" VerticalAlignment="Top" Height="41" Width="122" FontSize="14" FontWeight="Bold" Click="nuevoButton_Click" FontFamily="Book Antiqua">
-
+        <Button x:Name="nuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="19,525,0,0" VerticalAlignment="Top" Height="41" Width="122" FontSize="14" FontWeight="Bold" Click="nuevoButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="C:\Users\Asus\Documents\Estudios\Sem 1-2020\Aplicada I\Proyecto-Final\Proyecto-Final\Proyecto-MantenimientoVehicular\UI\Imagenes\nuevo.png" Stretch="Uniform" AlignmentX="Left"/>
+            </Button.Background>
         </Button>
-        <Button x:Name="guardarButton" Content="Guardar" HorizontalAlignment="Left" Margin="297,513,0,0" VerticalAlignment="Top" Height="41" Width="133" FontSize="14" FontWeight="Bold" Click="guardarButton_Click" FontFamily="Book Antiqua">
-
+        <Button x:Name="guardarButton" Content="Guardar" HorizontalAlignment="Left" Margin="160,524,0,0" VerticalAlignment="Top" Height="41" Width="133" FontSize="14" FontWeight="Bold" Click="guardarButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="C:\Users\Asus\Documents\Estudios\Sem 1-2020\Aplicada I\Proyecto-Final\Proyecto-Final\Proyecto-MantenimientoVehicular\UI\Imagenes\Save.png" Stretch="Uniform" AlignmentX="Left"/>
+            </Button.Background>
         </Button>
-        <Button x:Name="eliiminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="444,511,0,0" VerticalAlignment="Top" Width="132" Height="41" FontSize="14" FontWeight="Bold" Click="eliiminarButton_Click" FontFamily="Book Antiqua">
-
+        <Button x:Name="eliiminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="307,522,0,0" VerticalAlignment="Top" Width="132" Height="41" FontSize="14" FontWeight="Bold" Click="eliiminarButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="C:\Users\Asus\Documents\Estudios\Sem 1-2020\Aplicada I\Proyecto-Final\Proyecto-Final\Proyecto-MantenimientoVehicular\UI\Imagenes\Eliminar.png" Stretch="Uniform" AlignmentX="Left"/>
+            </Button.Background>
         </Button>
-        <Label Content="Categoría" HorizontalAlignment="Left" Margin="17,163,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontSize="14" FontWeight="Bold"/>
-        <ComboBox x:Name="categoriaComboBox" HorizontalAlignment="Left" Margin="19,191,0,0" VerticalAlignment="Top" Width="158"
-                  SelectedValue="{Binding Categoria, Mode=TwoWay}" Height="23">
+        <Label Content="Categoría" HorizontalAlignment="Left" Margin="18,172,0,0" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="14"/>
+        <ComboBox x:Name="categoriaComboBox" HorizontalAlignment="Left" Margin="99,177,0,0" VerticalAlignment="Top" Width="157"
+                  SelectedValue="{Binding Categoria, Mode=TwoWay}">
 
         </ComboBox>
 
-        <Label Content="Nota" HorizontalAlignment="Left" Margin="464,436,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontSize="14" FontWeight="Bold"/>
-        <TextBox x:Name="notaTextBox" HorizontalAlignment="Left" Margin="507,437,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="209" Height="22">
+        <Label Content="Nota" HorizontalAlignment="Left" Margin="451,459,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="notaTextBox" HorizontalAlignment="Left" Margin="494,461,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="209" Height="22">
             <TextBox.Text>
                 <Binding Path="Nota" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -91,27 +103,6 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <Label Content="Precio" HorizontalAlignment="Left" Margin="525,188,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bell MT" FontWeight="Bold"/>
-        <TextBox x:Name="precioTextBox" HorizontalAlignment="Left" Margin="574,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="66">
-            <TextBox.Text>
-                <Binding Path="Precio" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
-                    <Binding.ValidationRules>
-                        <ExceptionValidationRule/>
-                    </Binding.ValidationRules>   
-                </Binding>
-            </TextBox.Text>
-        </TextBox>
-        <Label Content="Fecha de entrega" HorizontalAlignment="Left" Margin="486,68,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bell MT" FontWeight="Bold"/>
-        <DatePicker HorizontalAlignment="Left" Margin="606,70,0,0" VerticalAlignment="Top" Width="108" Height="24">
-            <DatePicker.SelectedDate>
-                <Binding Path="FechaEntrega" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
-                    <Binding.ValidationRules>
-                        <ExceptionValidationRule/>
-                    </Binding.ValidationRules>   
-                </Binding>
-            </DatePicker.SelectedDate>
-        
-        </DatePicker>
 
     </Grid>
 </Window>
