@@ -77,7 +77,7 @@ Diagrama de base de datos
 <img width="501" alt="Diagrama" src="https://user-images.githubusercontent.com/59939364/78412733-1262b300-75da-11ea-97d4-0a617c81c1b5.PNG">
 
 
-Colabolarodes
+Colaboradores
 =============
 
 Wilbert Smith Antigua 
