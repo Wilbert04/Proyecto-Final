@@ -163,6 +163,8 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             if (!char.IsDigit(e.Text, e.Text.Length - 1))
                 e.Handled = true;
         }
+
+        
     }
 
 

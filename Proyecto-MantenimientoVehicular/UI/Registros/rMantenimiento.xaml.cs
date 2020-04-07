@@ -21,8 +21,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
     public partial class rMantenimiento : Window
     {
         Mantenimiento mantenimiento = new Mantenimiento();
-        //public List<DetalleMantenimiento> DetalleMant { get; set; }
-        //public List<Mantenimiento> listmantenimiento { get; set; }
+        
 
         public rMantenimiento()
         {
@@ -57,12 +56,11 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             cantidadTextBox.Text = "0";
             disponibleTextBox.Text = "0";
             precioTextBox.Text = "0";
-            //importeTextBox1.Text = "0";
+            subtotalTextBox2.Text = "0";
             totalTextBox.Text = "0";
             fechaDatePicker.SelectedDate = DateTime.Now;
-            proxmantDatePicker.SelectedDate = DateTime.Now;
-            //detalleDataGrid.ItemsSource = string.Empty;
-
+         
+            
         }
 
 
@@ -89,23 +87,17 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
                 paso = false;
             }
 
-            //if (string.IsNullOrWhiteSpace(vehiculoComboBox.Text))
-            //{
-            //    MessageBox.Show("Campo Obligatorio", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
-            //    paso = false;
-            //}
+           return paso;
 
-            return paso;
         }
 
-            private void Llenar()
+            private void Llenar()  // Pasando datos a la entidad
         {
             this.DataContext = null;
             this.DataContext = mantenimiento;
         }
 
         
-
         private void buscarButton_Click(object sender, RoutedEventArgs e)
         {
             Mantenimiento mantenimientolocal = MantenimientoBLL.Buscar(mantenimiento.MantenimientoId);
@@ -135,10 +127,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             }
         }
 
-        
-
-       
-
+ 
         private void removerButton_Click(object sender, RoutedEventArgs e)
         {
             if (detalleDataGrid.Columns.Count > 0 && detalleDataGrid.SelectedCells != null)
@@ -182,14 +171,14 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
                     ));
                 Llenar();
                 Calculos();
-                
-                
-                //Calculos();
 
-                //articuloComboBox.Text = " ";
-                //disponibleTextBox.Text = "0";
-                ////cantidadTextBox.Text = "0";
-                ////precioTextBox.Text = "0";
+
+                descripcionTextBox.Clear();
+                articuloComboBox.Text = string.Empty;
+                disponibleTextBox.Clear();
+                cantidadTextBox.Clear();
+                cantidadTextBox.Clear();
+                importeTextBox1.Clear();
                 
 
             }
@@ -197,7 +186,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
         }
 
 
-        private void Calculos()
+        private void Calculos()     // Realizando los Calculos del detalle
         {
             List<DetalleMantenimiento> ListDetalle = (List<DetalleMantenimiento>)detalleDataGrid.ItemsSource;
 
@@ -213,19 +202,16 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
                 Itebis += Subtotal * PorcientoItebis;
                 Total += item.Importe + Convert.ToDecimal(Itebis);
                 
-               
-
             }
 
             totalTextBox.Text = Convert.ToString(Total);
-            SubtotalTextBox.Text = Convert.ToString(Subtotal);
+            subtotalTextBox2.Text = Convert.ToString(Subtotal);
             itebisTextBox.Text = Convert.ToString(Itebis);
 
-            
         }
 
 
-        private void LlenaComboBox()
+        private void LlenaComboBox()      // Agregando Item a los ComboBox
         {
             ArticuloBLL articulos = new ArticuloBLL();
             ClienteBLL cliente = new ClienteBLL();
@@ -247,33 +233,18 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
         }
 
 
-
-        //private void Calculos()
-        //{
-           
-
-        //    decimal subTotal = DetalleMant.Select(x => x.Cantidad * x.Precio).Sum();
-        //    decimal itebis = (Decimal)this.listmantenimiento.Sum(x => x.SubTotal * (decimal)0.18);
-        //    decimal total = subTotal + itebis;
-
-            
-
-        //    subtotalTextBox.Text = subTotal.ToString();
-        //    itebisTextBox.Text = itebisTextBox.ToString();
-        //    totalTextBox.Text = total.ToString();
-        //}
-
-        private void ListaCliente()       //Lista para llenar ComboBox Cliente
+        private void ListaCliente()       //Lista para traer Cliente existente
         {
             List<Clientes> listacliente = ClienteBLL.GetList(a => true);
             this.DataContext = listacliente;
         }
 
-        private void ListaVehiculo()     //Lista para llenar ComboBox Vehiculo
+        private void ListaVehiculo()     //Lista para traer Vehiculo existente
         {
             List<Clientes> listavehiculo = ClienteBLL.GetList(a => true);
             this.DataContext = listavehiculo;
         }
+
 
         private void articuloComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -294,16 +265,13 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             return Convert.ToDecimal(retorno);
         }
 
+
         private void cantidadTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (cantidadTextBox.Text != string.Empty)
             {
                 CalcularImporte();
-                //CalcularItbis();
-                //CalcularSubtotal();
-                //CalcularTotal();
-                
-
+                     
             }
         }
 
@@ -321,33 +289,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
 
         }
 
-        //private void CalcularSubtotal()   // Calculo de Subtotal
-        //{
-        //    ArticuloBLL bll = new ArticuloBLL();
-
-        //    decimal importe = ToDecimal(importeTextBox1.Text);
-
-        //    subtotalTextBox.Text = ArticuloBLL.CalcularSubtotal(importe).ToString("0.##");
-
-        //}
-
-        //private void CalcularItbis()          // Calculo de Itebis
-        //{
-
-        //    decimal subtotal = ToDecimal(subtotalTextBox.Text);
-
-        //    itebisTextBox.Text = ArticuloBLL.CalcularItbis(subtotal).ToString("0.##");
-        //}
-
-        //private void CalcularTotal()           // Calculo de Total
-        //{
-        //    decimal subtotal, itbis;
-        //    subtotal = ToDecimal(subtotalTextBox.Text);
-        //    itbis = ToDecimal(itebisTextBox.Text);
-
-        //    totalTextBox.Text = ArticuloBLL.CalcularTotal(subtotal, itbis).ToString("0.##");
-
-        //}
+    
 
         private void guardarButton_Click(object sender, RoutedEventArgs e)
         {
@@ -356,8 +298,6 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
 
             if (!ValidarCampos())
                 return;
-
-            
 
 
             if (idTextBox1.Text == "0")

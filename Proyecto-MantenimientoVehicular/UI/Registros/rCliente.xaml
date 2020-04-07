@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_MantenimientoVehicular.UI.Registros"
         mc:Ignorable="d"
-        Title="Registro de Clientes" Height="375" Width="600">
+        Title="Registro de Clientes" Height="365" Width="600" ResizeMode="NoResize" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
     <Grid>
-        <Label Content="ClienteId" HorizontalAlignment="Left" Margin="22,26,0,0" VerticalAlignment="Top"/>
-        <Label Content="Nombre" HorizontalAlignment="Left" Margin="18,118,0,0" VerticalAlignment="Top"/>
-        <Label Content="Teléfono" HorizontalAlignment="Left" Margin="19,151,0,0" VerticalAlignment="Top"/>
-        <Label Content="Cédula" HorizontalAlignment="Left" Margin="301,117,0,0" VerticalAlignment="Top"/>
-        <Label Content="Dirección" HorizontalAlignment="Left" Margin="16,184,0,0" VerticalAlignment="Top"/>
-        <Label Content="Email" HorizontalAlignment="Left" Margin="305,146,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="idTextBox" HorizontalAlignment="Left" Margin="84,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" PreviewTextInput="idTextBox_PreviewTextInput">
+        <Label Content="ClienteId" HorizontalAlignment="Left" Margin="22,30,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontWeight="Bold" FontSize="14"/>
+        <Label Content="Nombre" HorizontalAlignment="Left" Margin="21,114,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontWeight="Bold" FontSize="14"/>
+        <Label Content="Teléfono" HorizontalAlignment="Left" Margin="21,147,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Cédula" HorizontalAlignment="Left" Margin="310,114,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontWeight="Bold" FontSize="14"/>
+        <Label Content="Dirección" HorizontalAlignment="Left" Margin="20,177,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="314,144,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontSize="14" FontWeight="Bold"/>
+        <TextBox x:Name="idTextBox" HorizontalAlignment="Left" Margin="94,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" PreviewTextInput="idTextBox_PreviewTextInput">
             <TextBox.Text>
                 <Binding Path="ClienteId" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -22,7 +22,7 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBox x:Name="nombreTextBox" HorizontalAlignment="Left" Margin="85,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" PreviewTextInput="nombreTextBox_PreviewTextInput">
+        <TextBox x:Name="nombreTextBox" HorizontalAlignment="Left" Margin="94,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" PreviewTextInput="nombreTextBox_PreviewTextInput">
             <TextBox.Text>
                 <Binding Path="Nombre" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -31,7 +31,7 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBox x:Name="telefonoTextBox" HorizontalAlignment="Left" Margin="86,157,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="202" PreviewTextInput="telefonoTextBox_PreviewTextInput">
+        <TextBox x:Name="telefonoTextBox" HorizontalAlignment="Left" Margin="94,152,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="202" PreviewTextInput="telefonoTextBox_PreviewTextInput">
             <TextBox.Text>
                 <Binding Path="Telefono" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -41,7 +41,7 @@
             </TextBox.Text>
         </TextBox>
 
-        <TextBox x:Name="cedulaTextBox" HorizontalAlignment="Left" Margin="353,120,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="202" PreviewTextInput="cedulaTextBox_PreviewTextInput">
+        <TextBox x:Name="cedulaTextBox" HorizontalAlignment="Left" Margin="364,118,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="202" PreviewTextInput="cedulaTextBox_PreviewTextInput">
             <TextBox.Text>
                 <Binding Path="Cedula" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -50,7 +50,7 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBox x:Name="direccionTextBox" HorizontalAlignment="Left" Margin="85,190,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="202" PreviewTextInput="direccionTextBox_PreviewTextInput">
+        <TextBox x:Name="direccionTextBox" HorizontalAlignment="Left" Margin="94,181,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="202" PreviewTextInput="direccionTextBox_PreviewTextInput">
             <TextBox.Text>
                 <Binding Path="Direccion" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -59,7 +59,7 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBox x:Name="emailTextBox" HorizontalAlignment="Left" Margin="353,151,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="202">
+        <TextBox x:Name="emailTextBox" HorizontalAlignment="Left" Margin="364,149,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="202">
             <TextBox.Text>
                 <Binding Path="Email" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -69,28 +69,20 @@
             </TextBox.Text>
         </TextBox>
 
-        <Button x:Name="nuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="24,279,0,0" VerticalAlignment="Top" Height="40" Width="117" Click="nuevoButton_Click" FontWeight="Bold">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Nuevo.png" Stretch="Uniform" AlignmentX="Left"/>
-            </Button.Background>
+        <Button x:Name="nuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="86,260,0,0" VerticalAlignment="Top" Height="40" Width="117" Click="nuevoButton_Click" FontWeight="Bold" FontFamily="Book Antiqua" FontSize="14">
+
         </Button>
-        <Button x:Name="guardarButton" Content="Guardar" HorizontalAlignment="Left" Margin="165,277,0,0" VerticalAlignment="Top" Height="43" Width="130" Click="guardarButton_Click" FontWeight="Bold">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Save.png" Stretch="Uniform" AlignmentX="Left"/>
-            </Button.Background>
+        <Button x:Name="guardarButton" Content="Guardar" HorizontalAlignment="Left" Margin="227,258,0,0" VerticalAlignment="Top" Height="43" Width="130" Click="guardarButton_Click" FontWeight="Bold" FontFamily="Book Antiqua" FontSize="14">
+
         </Button>
-        <Button x:Name="eliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="315,275,0,0" VerticalAlignment="Top" Height="43" Width="126" Click="eliminarButton_Click" FontWeight="Bold">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Eliminar.png" Stretch="Uniform" AlignmentX="Left"/>
-            </Button.Background>
+        <Button x:Name="eliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="377,256,0,0" VerticalAlignment="Top" Height="43" Width="126" Click="eliminarButton_Click" FontWeight="Bold" FontFamily="Book Antiqua" FontSize="14">
+
         </Button>
-        <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="186,25,0,0" VerticalAlignment="Top" Height="30" Width="89" Click="buscarButton_Click" FontWeight="Bold">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Buscar.png" Stretch="Uniform" AlignmentX="Left"/>
-            </Button.Background>
+        <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="183,25,0,0" VerticalAlignment="Top" Height="35" Width="94" Click="buscarButton_Click" FontWeight="Bold" FontFamily="Book Antiqua" FontSize="14">
+
         </Button>
-        <Label Content="Fecha" HorizontalAlignment="Left" Margin="386,26,0,0" VerticalAlignment="Top"/>
-        <DatePicker x:Name="fechaDatePicker" HorizontalAlignment="Left" Margin="433,27,0,0" VerticalAlignment="Top" Width="117">
+        <Label Content="Fecha" HorizontalAlignment="Left" Margin="385,29,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontWeight="Bold" FontSize="14"/>
+        <DatePicker x:Name="fechaDatePicker" HorizontalAlignment="Left" Margin="435,30,0,0" VerticalAlignment="Top" Width="104">
             <DatePicker.SelectedDate>
                 <Binding Path="Fecha" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>

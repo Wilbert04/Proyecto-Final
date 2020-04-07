@@ -117,6 +117,9 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                     b.Property<int>("PedidoId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<decimal>("Precio")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Proveedor")
                         .HasColumnType("TEXT");
 
@@ -195,6 +198,9 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("Fecha")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("FechaEntrega")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Nota")

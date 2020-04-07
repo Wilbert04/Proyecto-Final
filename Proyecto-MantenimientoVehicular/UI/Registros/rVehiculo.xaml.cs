@@ -40,7 +40,6 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
         }
 
 
-
         private void ListaCliente()
         {
             List<Clientes> listacliente = ClienteBLL.GetList(a => true);
@@ -53,7 +52,6 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             clienteComboBox.DisplayMemberPath = "Nombre";
             clienteComboBox.SelectedValuePath = "ClienteId";
             
-
         }
 
         private void LimpiarCampos()
@@ -111,8 +109,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
 
             return paso;
         }
-        
-       
+
 
         private void LLenar()
         {

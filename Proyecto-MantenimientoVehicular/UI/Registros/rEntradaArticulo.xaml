@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_MantenimientoVehicular.UI.Registros"
         mc:Ignorable="d"
-        Title="Registro de entrada Articulo" Height="320" Width="490">
+        Title="Registro de entrada Articulo" Height="320" Width="500" ResizeMode="NoResize">
     <Grid>
-        <Label Content="EntradaId" HorizontalAlignment="Left" Margin="18,28,0,0" VerticalAlignment="Top"/>
-        <Label Content="Artículo" HorizontalAlignment="Left" Margin="26,107,0,0" VerticalAlignment="Top"/>
-        <Label Content="Cantidad" HorizontalAlignment="Left" Margin="26,142,0,0" VerticalAlignment="Top"/>
-        <Label Content="Fecha" HorizontalAlignment="Left" Margin="322,28,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="IdTextbox" HorizontalAlignment="Left" Margin="88,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" PreviewTextInput="IdTextbox_PreviewTextInput">
+        <Label Content="EntradaId" HorizontalAlignment="Left" Margin="20,30,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontWeight="Bold" FontSize="14"/>
+        <Label Content="Artículo" HorizontalAlignment="Left" Margin="24,110,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontWeight="Bold" FontSize="14"/>
+        <Label Content="Cantidad" HorizontalAlignment="Left" Margin="23,144,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontWeight="Bold" FontSize="14"/>
+        <Label Content="Fecha" HorizontalAlignment="Left" Margin="326,32,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontWeight="Bold" FontSize="14"/>
+        <TextBox x:Name="IdTextbox" HorizontalAlignment="Left" Margin="96,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="77" PreviewTextInput="IdTextbox_PreviewTextInput">
             <TextBox.Text>
                 <Binding Path="EntradaArticuloId" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -20,7 +20,7 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBox x:Name="CantidadTextbox" HorizontalAlignment="Left" Margin="92,147,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="83" PreviewTextInput="CantidadTextbox_PreviewTextInput">
+        <TextBox x:Name="CantidadTextbox" HorizontalAlignment="Left" Margin="91,148,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="83" PreviewTextInput="CantidadTextbox_PreviewTextInput">
             <TextBox.Text>
                 <Binding Path="Cantidad" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -29,27 +29,19 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <Button x:Name="nuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="22,240,0,0" VerticalAlignment="Top" Height="33" Width="115" FontSize="14" FontWeight="Bold" Click="nuevoButton_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Nuevo.png" Stretch="Uniform" AlignmentX="Left"/>
-            </Button.Background>
+        <Button x:Name="nuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="43,227,0,0" VerticalAlignment="Top" Height="33" Width="115" FontSize="14" FontWeight="Bold" Click="nuevoButton_Click" FontFamily="Book Antiqua">
+
         </Button>
-        <Button x:Name="guardarButton" Content="Guardar" HorizontalAlignment="Left" Margin="159,238,0,0" VerticalAlignment="Top" Height="33" Width="120" FontSize="14" FontWeight="Bold" Click="guardarButton_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Save.png" Stretch="Uniform" AlignmentX="Left"/>
-            </Button.Background>
+        <Button x:Name="guardarButton" Content="Guardar" HorizontalAlignment="Left" Margin="180,225,0,0" VerticalAlignment="Top" Height="33" Width="120" FontSize="14" FontWeight="Bold" Click="guardarButton_Click" FontFamily="Book Antiqua">
+
         </Button>
-        <Button x:Name="eliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="302,237,0,0" VerticalAlignment="Top" Height="33" Width="123" FontSize="14" FontWeight="Bold" Click="eliminarButton_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Eliminar.png" Stretch="Uniform" AlignmentX="Left"/>
-            </Button.Background>
+        <Button x:Name="eliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="323,224,0,0" VerticalAlignment="Top" Height="33" Width="123" FontSize="14" FontWeight="Bold" Click="eliminarButton_Click" FontFamily="Book Antiqua">
+
         </Button>
-        <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="181,29,0,0" VerticalAlignment="Top" Height="26" Width="99" FontSize="14" FontWeight="Bold" Click="buscarButton_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/BUscar.png" Stretch="Uniform" AlignmentX="Left"/>
-            </Button.Background>
+        <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="183,23,0,0" VerticalAlignment="Top" Height="40" Width="105" FontSize="14" FontWeight="Bold" Click="buscarButton_Click" FontFamily="Book Antiqua">
+
         </Button>
-        <DatePicker x:Name="FechaPicker" HorizontalAlignment="Left" Margin="369,30,0,0" VerticalAlignment="Top" Width="100">
+        <DatePicker x:Name="FechaPicker" HorizontalAlignment="Left" Margin="374,32,0,0" VerticalAlignment="Top" Width="93">
             <DatePicker.SelectedDate>
                 <Binding Path="Fecha" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -58,9 +50,7 @@
                 </Binding>
             </DatePicker.SelectedDate>
         </DatePicker>
-        <ComboBox x:Name="articuloComboBox" HorizontalAlignment="Left" Margin="92,108,0,0" VerticalAlignment="Top" Width="136"
-                  SelectedValue="{Binding ArticuloId, Mode=TwoWay}">
-
-        </ComboBox>
+        <ComboBox x:Name="articuloComboBox" HorizontalAlignment="Left" Margin="90,114,0,0" VerticalAlignment="Top" Width="183"
+                  SelectedValue="{Binding ArticuloId, Mode=TwoWay}"/>
     </Grid>
 </Window>

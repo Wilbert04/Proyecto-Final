@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Proyecto_MantenimientoVehicular.Migrations
 {
-    public partial class Prueba36 : Migration
+    public partial class NuevaMigr : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -86,7 +86,8 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                     ProveedoresId = table.Column<int>(nullable: false),
                     Categoria = table.Column<string>(nullable: true),
                     Nota = table.Column<string>(nullable: true),
-                    Fecha = table.Column<DateTime>(nullable: false)
+                    Fecha = table.Column<DateTime>(nullable: false),
+                    FechaEntrega = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -186,7 +187,8 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                     Proveedor = table.Column<string>(nullable: true),
                     Categoria = table.Column<string>(nullable: true),
                     Articulo = table.Column<string>(nullable: true),
-                    Unidad = table.Column<int>(nullable: false)
+                    Unidad = table.Column<int>(nullable: false),
+                    Precio = table.Column<decimal>(nullable: false)
                 },
                 constraints: table =>
                 {

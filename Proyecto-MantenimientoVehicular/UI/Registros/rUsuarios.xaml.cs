@@ -21,7 +21,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             {
                 "Usuario","Administrador"
             };
-            this.tipoComboBox.ItemsSource = tipousuario;
+            this.tipousuarioComboBox.ItemsSource = tipousuario;
 
             idTextBox.Text = "0";
 
@@ -30,11 +30,11 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
 
         private void LimpiarCampos()
         {
-            nombreTextBox.Text = string.Empty;
-            usuarioTextBox.Text = string.Empty;
-            contraseñaPasswordBox.Password = string.Empty;
-            confirmarPasswordBox.Password = string.Empty;
-            tipoComboBox.Text = string.Empty;
+            nombreTextBox1.Text = string.Empty;
+            usuarioTextBox1.Text = string.Empty;
+            contraseñaPasswordBox1.Password = string.Empty;
+            confirmarPasswordBox1.Password = string.Empty;
+            tipousuarioComboBox.Text = string.Empty;
             fechaDatePicker.SelectedDate = DateTime.Now;
         }
 
@@ -48,13 +48,19 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
         {
             bool paso = true;
 
-            if (string.IsNullOrWhiteSpace(nombreTextBox.Text))
+            if (contraseñaPasswordBox1.Password != confirmarPasswordBox1.Password)
+            {
+                MessageBox.Show("La Contraseña no Coinciden","Error",MessageBoxButton.OK,MessageBoxImage.Exclamation);
+                paso = false;
+            }
+
+            if (string.IsNullOrWhiteSpace(nombreTextBox1.Text))
             {
                 MessageBox.Show("Este Campo es Obligatorio");
                 paso = false;
             }
 
-            if (string.IsNullOrWhiteSpace(usuarioTextBox.Text))
+            if (string.IsNullOrWhiteSpace(usuarioTextBox1.Text))
             {
                 MessageBox.Show("Este Campo es Obligatorio");
                 paso = false;
@@ -62,13 +68,13 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
 
             
 
-            if (string.IsNullOrWhiteSpace(contraseñaPasswordBox.Password))
+            if (string.IsNullOrWhiteSpace(contraseñaPasswordBox1.Password))
             {
                 MessageBox.Show("Este Campo es Obligatorio");
                 paso = false;
             }
 
-            if (string.IsNullOrWhiteSpace(confirmarPasswordBox.Password))
+            if (string.IsNullOrWhiteSpace(confirmarPasswordBox1.Password))
             {
                 MessageBox.Show("Este Campo es Obligatorio");
                 paso = false;
@@ -155,13 +161,12 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
                 e.Handled = true;
         }
 
-        private void nombreTextBox_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        private void nombreTextBox1_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
         {
             if (!System.Text.RegularExpressions.Regex.IsMatch(e.Text, "^[a-zA-Z]"))
             {
                 e.Handled = true;
             }
-
         }
     }
 }
