@@ -114,7 +114,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
 
             if (paso)
             {
-                MessageBox.Show("Guardado", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Proveedor Guardado", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
                 LimpiarCampos();
             }
             else
@@ -136,7 +136,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             else
             {
                 LimpiarCampos();
-                MessageBox.Show("No Encontrado", "Salir", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                MessageBox.Show("Proveedor No Encontrado", "Salir", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
         }
 
@@ -150,7 +150,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             if (ProveedoresBLL.Eliminar(proveedores.ProveedorId))
             {
                 LimpiarCampos();
-                MessageBox.Show("Eliminado", "Exito", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                MessageBox.Show("Proveedor Eliminado", "Exito", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
             else
             {

@@ -36,7 +36,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
                 "Limpieza y ajuste de frenos","Ajuste de freno de estacionamiento","Rotación y balanceo de ruedas","Alineamiento de ruedas",
                 "Afinamiento de motor", "Lubricación y engrase general","Limpieza y ajuste de frenos","Ajuste de freno de estacionamiento",
                 "Cambio de Aceite de Transmision CVT y Filtro","Cambio de Aceite de Transmision Automatica y Filtro","Cambio de Filtro de Gasolina",
-                "Cambio de Bujías","Limpieza de Inyectores"
+                "Cambio de Bujías","Limpieza de Inyectores","Cambio de piezas"
             };
             this.serviciosComboBox.ItemsSource = servicios;
 
@@ -62,7 +62,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             proxmantDatePicker.SelectedDate = DateTime.Now.AddMonths(3);
             detalleDataGrid.ItemsSource = string.Empty;
             itebisTextBox.Text = "0";
-            SubtotalTextBox.Text =  "0";
+            TextBoxSub.Text =  "0";
 
         }
 
@@ -115,7 +115,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             else
             {
                 LimpiarCampos();
-                MessageBox.Show("No Encontrado", "Salir", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                MessageBox.Show("Mantenimiento No Encontrado", "Salir", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
         }
 
@@ -124,7 +124,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             if (MantenimientoBLL.Eliminar(mantenimiento.MantenimientoId))
             {
                 LimpiarCampos();
-                MessageBox.Show("Eliminado", "Exito", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                MessageBox.Show("Mantenimiento Eliminado", "Exito", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
             else
             {
@@ -214,7 +214,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             }
 
             totalTextBox.Text = Convert.ToString(Total);
-            SubtotalTextBox.Text = Convert.ToString(Subtotal);
+            TextBoxSub.Text = Convert.ToString(Subtotal);
             itebisTextBox.Text = Convert.ToString(Itebis);
 
             
@@ -326,7 +326,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
 
             if (paso)
             {
-                MessageBox.Show("Guardado", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Mantenimiento Guardado", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
                 LimpiarCampos();
             }
             else

@@ -72,7 +72,7 @@
         <Button x:Name="removerButton" Content="Remover" HorizontalAlignment="Left" Margin="21,500,0,0" VerticalAlignment="Top" Height="27" Width="106" Click="removerButton_Click" FontWeight="Bold" FontFamily="Book Antiqua" FontSize="14">
 
         </Button>
-        <TextBox x:Name="itebisTextBox" HorizontalAlignment="Left" Margin="755,521,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="72" IsReadOnly="True">
+        <TextBox x:Name="itebisTextBox" HorizontalAlignment="Left" Margin="755,521,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" IsReadOnly="True">
             <TextBox.Text>
                 <Binding Path="Itebis" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -81,7 +81,7 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBox x:Name="totalTextBox" HorizontalAlignment="Left" Margin="755,542,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" IsReadOnly="True">
+        <TextBox x:Name="totalTextBox" HorizontalAlignment="Left" Margin="755,542,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" IsReadOnly="True">
             <TextBox.Text>
                 <Binding Path="Total" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -113,15 +113,16 @@
         <TextBox x:Name="disponibleTextBox" HorizontalAlignment="Left" Margin="291,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="37" IsReadOnly="True"/>
         <Label Content="Servicios" HorizontalAlignment="Left" Margin="29,93,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Bell MT" FontSize="14" Height="29" Width="70"/>
         <ComboBox x:Name="serviciosComboBox" HorizontalAlignment="Left" Margin="33,119,0,0" VerticalAlignment="Top" Width="352"/>
-        <Label Content="Subtotal" HorizontalAlignment="Left" Margin="694,497,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontSize="14" FontWeight="Bold"/>
-        <TextBox x:Name="SubtotalTextBox" HorizontalAlignment="Left" Margin="754,499,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="72">
+        <TextBox x:Name="TextBoxSub" HorizontalAlignment="Left" Margin="755,500,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" IsReadOnly="True">
             <TextBox.Text>
-                <Binding Path="Subtotal" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                <Binding Path="SubTotal" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
                         <ExceptionValidationRule/>
-                    </Binding.ValidationRules>   
+                    </Binding.ValidationRules>
+
                 </Binding>
             </TextBox.Text>
         </TextBox>
+        <Label Content="Subtotal" HorizontalAlignment="Left" Margin="694,499,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontSize="14" FontWeight="Bold"/>
     </Grid>
 </Window>

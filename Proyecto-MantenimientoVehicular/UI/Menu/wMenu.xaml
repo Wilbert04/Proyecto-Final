@@ -10,11 +10,11 @@
         <ImageBrush TileMode="None" Stretch="None"/>
     </Window.Background>
     <Grid>
-        <Menu Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+        <Menu Background="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}">
            
-            <MenuItem Header="File" Background="#FFEADA74" BorderBrush="#FF151414" FontFamily="Bell MT" FontSize="14" FontWeight="Bold"></MenuItem>
+            <MenuItem Header="File" Background="#FFFFFFFC" BorderBrush="#FF0D0F36" FontFamily="Bell MT" FontSize="14" FontWeight="Bold" Foreground="#FF0F215F"></MenuItem>
 
-            <MenuItem Header="Registros" Background="#FFEADA74" BorderBrush="#FF111111" FontFamily="Bell MT" FontSize="14" FontWeight="Bold">
+            <MenuItem Header="Registros" Background="#FFF5F4E8" BorderBrush="#FF0D0F36" FontFamily="Bell MT" FontSize="14" FontWeight="Bold" Foreground="#FF0F215F">
                 <!--Registros-->
 
                 <MenuItem x:Name="registroarticulo" Header="Registrar Articulo" Click="registroarticulo_Click">
@@ -30,7 +30,7 @@
 
             </MenuItem>
 
-            <MenuItem Header="Consultas" Background="#FFEADA74" BorderBrush="#FF171717" FontFamily="Bell MT" FontSize="14" FontWeight="Bold">
+            <MenuItem Header="Consultas" Background="White" BorderBrush="#FF0D0F36" FontFamily="Bell MT" FontSize="14" FontWeight="Bold" Foreground="#FF0F215F">
                 <!--Consultas-->
 
                 <MenuItem x:Name="consultararticulo" Header="Consultar Articulo" Click="consultararticulo_Click"/>
@@ -43,7 +43,7 @@
                 <MenuItem x:Name="consultaVehiculo" Header="Consultar Vehiculo" Click="consultaVehiculo_Click"/>
 
             </MenuItem>
-            <MenuItem Header="Ayuda" Background="#FFEADA74" BorderBrush="#FF191818" FontFamily="Bell MT" FontSize="14" FontWeight="Bold"></MenuItem>
+            <MenuItem Header="Ayuda" Background="White" BorderBrush="#FF0D0F36" FontFamily="Bell MT" FontSize="14" FontWeight="Bold" Foreground="#FF0F215F"></MenuItem>
         </Menu>
 
 

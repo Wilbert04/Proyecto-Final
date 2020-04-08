@@ -106,13 +106,13 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             if (PedidosProveedorBLL.Eliminar(Pedidos.PedidoId))
             {
                
-                MessageBox.Show("Eliminado", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Pedido Eliminado", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
                 Limpiar();
 
             }
             else
             {
-                MessageBox.Show("No Eliminado!!");
+                MessageBox.Show("No Eliminado");
             }
         }
 
@@ -138,7 +138,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             else
             {
                 Limpiar();
-                MessageBox.Show("Llamada no Encontrada!!");
+                MessageBox.Show("Pedido no Encontrado");
 
 
             }
@@ -166,12 +166,12 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
 
             if (paso)
             {
-                MessageBox.Show("¡¡Guardado!!", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Pedido Guardado", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
                 Limpiar();
             }
             else
             {
-                MessageBox.Show("¡¡No se pudo Guardar!!", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("No se pudo Guardar", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 

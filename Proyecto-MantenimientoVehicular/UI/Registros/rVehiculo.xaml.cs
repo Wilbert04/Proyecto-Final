@@ -138,7 +138,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
 
             if (paso)
             {
-                MessageBox.Show("Guardado", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Vehiculo Guardado", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
                 LimpiarCampos();
             }
             else
@@ -160,7 +160,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             else
             {
                 LimpiarCampos();
-                MessageBox.Show("No Encontrado", "Salir", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                MessageBox.Show("Vehiculo No Encontrado", "Salir", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
         }
 
@@ -169,7 +169,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             if (VehiculoBLL.Eliminar(vehiculos.VehiculoId))
             {
                 LimpiarCampos();
-                MessageBox.Show("Eliminado", "Exito", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                MessageBox.Show("Vehiculo Eliminado", "Exito", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
             else
             {

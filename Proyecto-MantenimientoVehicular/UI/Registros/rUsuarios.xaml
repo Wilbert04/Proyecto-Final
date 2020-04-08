@@ -12,8 +12,8 @@
         <Label Content="Tipo de usuario" HorizontalAlignment="Left" Margin="28,104,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontSize="14" FontWeight="Bold"/>
         <Label Content="Nombre" HorizontalAlignment="Left" Margin="28,172,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontSize="14" FontWeight="Bold"/>
         <Label Content="Nombre de usuario" HorizontalAlignment="Left" Margin="28,231,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontSize="14" FontWeight="Bold"/>
-        <Label Content="Contraseña" HorizontalAlignment="Left" Margin="297,172,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontSize="14" FontWeight="Bold"/>
-        <Label Content="Confirmar Contraseña" HorizontalAlignment="Left" Margin="296,231,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Contraseña" HorizontalAlignment="Left" Margin="285,172,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Confirmar Contraseña" HorizontalAlignment="Left" Margin="284,231,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontSize="14" FontWeight="Bold"/>
 
 
         <TextBox x:Name="nombreTextBox1" HorizontalAlignment="Left" Margin="31,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="239" PreviewTextInput="nombreTextBox1_PreviewTextInput_1">
@@ -25,11 +25,11 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <PasswordBox x:Name="contraseñaPasswordBox1" HorizontalAlignment="Left" Margin="300,200,0,0" VerticalAlignment="Top" Width="231"
+        <PasswordBox x:Name="contraseñaPasswordBox1" HorizontalAlignment="Left" Margin="288,200,0,0" VerticalAlignment="Top" Width="231"
                      PasswordHelper:PasswordHelper.Attach="True"
                      PasswordHelper:PasswordHelper.Password="{Binding Contraseña,Mode=TwoWay}">
         </PasswordBox>
-        <PasswordBox x:Name="confirmarPasswordBox1" HorizontalAlignment="Left" Margin="302,258,0,0" VerticalAlignment="Top" Width="230"/>
+        <PasswordBox x:Name="confirmarPasswordBox1" HorizontalAlignment="Left" Margin="290,258,0,0" VerticalAlignment="Top" Width="230"/>
         <TextBox x:Name="usuarioTextBox1" HorizontalAlignment="Left" Margin="34,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="236">
             <TextBox.Text>
                 <Binding Path="Usuario" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
@@ -56,9 +56,9 @@
         </TextBox>
 
 
-        <Button x:Name="buscarButton1" Content="Buscar" HorizontalAlignment="Left" Margin="206,32,0,0" VerticalAlignment="Top" Height="38" Width="80" FontFamily="Book Antiqua" FontSize="14" FontWeight="Bold"/>
-        <Button x:Name="nuevoButton1" Content="Nuevo" HorizontalAlignment="Left" Margin="52,334,0,0" VerticalAlignment="Top" Height="46" Width="113" FontFamily="Book Antiqua" FontSize="14" FontWeight="Bold"/>
-        <Button x:Name="guardarButton1" Content="Guardar" HorizontalAlignment="Left" Margin="226,335,0,0" VerticalAlignment="Top" Height="45" Width="126" FontFamily="Book Antiqua" FontSize="14" FontWeight="Bold"/>
-        <Button x:Name="eliminarButton1" Content="Eliminar" HorizontalAlignment="Left" Margin="404,332,0,0" VerticalAlignment="Top" Height="46" Width="118" FontFamily="Book Antiqua" FontSize="14" FontWeight="Bold"/>
+        <Button x:Name="buscarButton1" Content="Buscar" HorizontalAlignment="Left" Margin="198,32,0,0" VerticalAlignment="Top" Height="38" Width="80" FontFamily="Book Antiqua" FontSize="14" FontWeight="Bold" Click="buscarButton1_Click"/>
+        <Button x:Name="nuevoButton1" Content="Nuevo" HorizontalAlignment="Left" Margin="52,334,0,0" VerticalAlignment="Top" Height="46" Width="113" FontFamily="Book Antiqua" FontSize="14" FontWeight="Bold" Click="nuevoButton1_Click"/>
+        <Button x:Name="guardarButton1" Content="Guardar" HorizontalAlignment="Left" Margin="226,335,0,0" VerticalAlignment="Top" Height="45" Width="126" FontFamily="Book Antiqua" FontSize="14" FontWeight="Bold" Click="guardarButton1_Click"/>
+        <Button x:Name="eliminarButton1" Content="Eliminar" HorizontalAlignment="Left" Margin="404,332,0,0" VerticalAlignment="Top" Height="46" Width="118" FontFamily="Book Antiqua" FontSize="14" FontWeight="Bold" Click="eliminarButton1_Click"/>
     </Grid>
 </Window>

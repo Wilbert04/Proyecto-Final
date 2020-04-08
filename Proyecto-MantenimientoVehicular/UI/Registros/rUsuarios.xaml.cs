@@ -90,7 +90,30 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             this.DataContext = usuarios;
         }
 
-        private void guardarButton_Click(object sender, RoutedEventArgs e)
+       
+
+        private void idTextBox_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            if (!char.IsDigit(e.Text, e.Text.Length - 1))
+                e.Handled = true;
+        }
+
+       
+
+        private void nombreTextBox1_PreviewTextInput_1(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            if (!System.Text.RegularExpressions.Regex.IsMatch(e.Text, "^[a-zA-Z]"))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void nuevoButton1_Click(object sender, RoutedEventArgs e)
+        {
+            LimpiarCampos();
+        }
+
+        private void guardarButton1_Click(object sender, RoutedEventArgs e)
         {
             bool paso = false;
 
@@ -111,7 +134,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
 
             if (paso)
             {
-                MessageBox.Show("Guardado", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Usuario Guardado", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
                 LimpiarCampos();
             }
             else
@@ -121,8 +144,9 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             }
         }
 
-        private void buscarButton_Click(object sender, RoutedEventArgs e)
+        private void buscarButton1_Click(object sender, RoutedEventArgs e)
         {
+
             Usuarios usuariolocal = UsuarioBLL.Buscar(usuarios.UsuarioId);
 
             if (usuariolocal != null)
@@ -133,41 +157,20 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             else
             {
                 LimpiarCampos();
-                MessageBox.Show("No Encontrado", "Salir", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                MessageBox.Show("Usuario No Encontrado", "Salir", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
         }
 
-        private void eliminarButton_Click(object sender, RoutedEventArgs e)
+        private void eliminarButton1_Click(object sender, RoutedEventArgs e)
         {
             if (UsuarioBLL.Eliminar(usuarios.UsuarioId))
             {
                 LimpiarCampos();
-                MessageBox.Show("Eliminado", "Exito", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                MessageBox.Show("Usuario Eliminado", "Exito", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
             else
             {
                 MessageBox.Show("No Eliminado", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-        }
-
-        private void nuevoButton_Click(object sender, RoutedEventArgs e)
-        {
-            LimpiarCampos();
-        }
-
-        private void idTextBox_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
-        {
-            if (!char.IsDigit(e.Text, e.Text.Length - 1))
-                e.Handled = true;
-        }
-
-       
-
-        private void nombreTextBox1_PreviewTextInput_1(object sender, System.Windows.Input.TextCompositionEventArgs e)
-        {
-            if (!System.Text.RegularExpressions.Regex.IsMatch(e.Text, "^[a-zA-Z]"))
-            {
-                e.Handled = true;
             }
         }
     }
