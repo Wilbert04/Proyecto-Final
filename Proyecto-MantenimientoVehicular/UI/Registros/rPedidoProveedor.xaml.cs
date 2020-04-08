@@ -188,7 +188,9 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
                 proveedor: Convert.ToString(proveedorComboBox.Text),
                 categoria: Convert.ToString(categoriaComboBox.Text),
                 articulo: articuloTextBox.Text,
-                unidad:Convert.ToInt32(unidadTextBox.Text)
+                unidad: Convert.ToInt32(unidadTextBox.Text),
+                precio: Convert.ToDecimal(precioTextBox.Text)
+                
                ));
 
             Llenar();
@@ -223,5 +225,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             if (!char.IsDigit(e.Text, e.Text.Length - 1))
                 e.Handled = true;
         }
+
+        
     }
 }

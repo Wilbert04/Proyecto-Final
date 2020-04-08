@@ -14,6 +14,7 @@ namespace Proyecto_MantenimientoVehicular.Entidades
         public string Categoria { get; set; }
         public string Nota { get; set; }
         public DateTime Fecha { get; set; }
+        public DateTime FechaEntrega { get; set; }
 
 
 
@@ -24,8 +25,9 @@ namespace Proyecto_MantenimientoVehicular.Entidades
         {
             PedidoId = 0;
             ProveedoresId = 0;
-             Categoria = string.Empty;
+            Categoria = string.Empty;
             Nota =  string.Empty;
+            Fecha = DateTime.Now;
             Fecha = DateTime.Now;
 
 

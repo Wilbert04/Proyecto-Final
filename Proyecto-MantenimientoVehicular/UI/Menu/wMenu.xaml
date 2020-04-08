@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_MantenimientoVehicular.UI.Menu"
         mc:Ignorable="d"
-        Title="wMenu" Height="500" Width="500">
+        Title="Menu" Height="500" Width="500">
     <Window.Background>
         <ImageBrush TileMode="None" Stretch="None"/>
     </Window.Background>

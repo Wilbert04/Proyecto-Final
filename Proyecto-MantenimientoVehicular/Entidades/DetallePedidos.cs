@@ -12,17 +12,18 @@ namespace Proyecto_MantenimientoVehicular.Entidades
         public string Categoria { get; set; }
         public string Articulo { get; set; }
         public int Unidad { get; set; }
+        public decimal Precio { get; set; }
 
 
-        
-        
+
+
 
         public DetallePedidos()
         {
 
         }
 
-        public DetallePedidos(int id, int pedidoId, string proveedor,string categoria, string articulo, int unidad)
+        public DetallePedidos(int id, int pedidoId, string proveedor,string categoria, string articulo, int unidad, decimal precio)
         {
             Id = id;
             PedidoId = pedidoId;
@@ -30,6 +31,7 @@ namespace Proyecto_MantenimientoVehicular.Entidades
             Categoria = categoria;
             Articulo = articulo;
             Unidad = unidad;
+            Precio = precio;
         }
     }
 }

@@ -221,7 +221,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             }
 
             totalTextBox.Text = Convert.ToString(Total);
-            SubtotalTextBox.Text = Convert.ToString(Subtotal);
+            subtotalTextBox.Text = Convert.ToString(Subtotal);
             itebisTextBox.Text = Convert.ToString(Itebis);
 
             

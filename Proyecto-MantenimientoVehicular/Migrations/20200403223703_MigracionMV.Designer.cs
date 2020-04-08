@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Proyecto_MantenimientoVehicular.DAL;
 
 namespace Proyecto_MantenimientoVehicular.Migrations
 {
     [DbContext(typeof(Contexto))]
-    partial class ContextoModelSnapshot : ModelSnapshot
+    [Migration("20200403223703_MigracionMV")]
+    partial class MigracionMV
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -117,9 +119,6 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                     b.Property<int>("PedidoId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<decimal>("Precio")
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("Proveedor")
                         .HasColumnType("TEXT");
 
@@ -198,9 +197,6 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("Fecha")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("FechaEntrega")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Nota")

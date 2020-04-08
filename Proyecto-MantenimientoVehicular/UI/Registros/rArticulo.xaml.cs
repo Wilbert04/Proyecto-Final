@@ -48,8 +48,6 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
         }
 
         
-
-
         private void LimpiarCampos()
         {
             idTextBox.Text = "0";
@@ -73,24 +71,23 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
 
             if (string.IsNullOrWhiteSpace(articuloTextBox.Text))
             {
-                MessageBox.Show("Campo Obligatorio!!", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Ingrese un Articulo", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
                 paso = false;
             }
 
-            
 
             if (string.IsNullOrWhiteSpace(precioTextBox.Text))
             {
-                MessageBox.Show("Campo Obligatorio!!", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Ingrese el Precio", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
                 paso = false;
             }
 
-            if (string.IsNullOrWhiteSpace(existenciaTextBox.Text))
+
+            if (string.IsNullOrWhiteSpace(categoriaComboBox.Text))
             {
-                MessageBox.Show("Campo Obligatorio!!", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Ingrese una Categoria", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
                 paso = false;
             }
-
 
 
             return paso;
@@ -123,12 +120,12 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
 
             if (paso)
             {
-                MessageBox.Show("Guardado", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Articulo Guardado", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
                 LimpiarCampos();
             }
             else
             {
-                MessageBox.Show("No se Guardo", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Error al Guardar", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
 
             }
         }
@@ -145,7 +142,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             else
             {
                 LimpiarCampos();
-                MessageBox.Show("No Encontrado", "Salir", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                MessageBox.Show("Articulo No Existe", "Salir", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
         }
 
@@ -154,12 +151,12 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             if (ArticuloBLL.Eliminar(articulos.ArticuloId))
             {
                 LimpiarCampos();
-                MessageBox.Show("Eliminado", "Exito", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                MessageBox.Show("Articulo Eliminado", "Exito", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                
             }
             else
             {
-                MessageBox.Show("No Eliminado", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Error al Eliminar", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 

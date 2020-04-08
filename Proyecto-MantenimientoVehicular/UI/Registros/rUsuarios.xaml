@@ -27,7 +27,9 @@
             </TextBox>
 
             <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Height="39" Width="111" Margin="180,-30,0,0" Click="buscarButton_Click">
-               
+                <Button.Background>
+                    <ImageBrush ImageSource="C:\Users\Asus\Documents\Estudios\Sem 1-2020\Aplicada I\Proyecto-Final\Proyecto-Final\Proyecto-MantenimientoVehicular\UI\Imagenes\Buscar.png" Stretch="Uniform" AlignmentX="Left"/>
+                </Button.Background>
             </Button>
             <Label Content="Fecha" HorizontalAlignment="Left" Margin="370,-40,0,0" Height="26"/>
             <DatePicker x:Name="fechaDatePicker" HorizontalAlignment="Left" Margin="428,-40,0,0" Height="26" Width="152">
@@ -85,13 +87,19 @@
             </ComboBox>
 
             <Button x:Name="nuevoButton" Content="Nuevo" HorizontalAlignment="Left" Height="56" Width="151" Margin="50,90,0,0" Click="nuevoButton_Click">
-                
+                <Button.Background>
+                    <ImageBrush ImageSource="C:\Users\Asus\Documents\Estudios\Sem 1-2020\Aplicada I\Proyecto-Final\Proyecto-Final\Proyecto-MantenimientoVehicular\UI\Imagenes\nuevo.png" Stretch="Uniform" AlignmentX="Left"/>
+                </Button.Background>
             </Button>
             <Button x:Name="guardarButton" Content="Guardar" HorizontalAlignment="Left" Margin="250,-55,0,0" Height="56" Width="150" Click="guardarButton_Click">
-               
+                <Button.Background>
+                    <ImageBrush ImageSource="C:\Users\Asus\Documents\Estudios\Sem 1-2020\Aplicada I\Proyecto-Final\Proyecto-Final\Proyecto-MantenimientoVehicular\UI\Imagenes\Save.png" Stretch="Uniform" AlignmentX="Left"/>
+                </Button.Background>
             </Button>
             <Button x:Name="eliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="475,-60,0,0" Height="56" Width="141" Click="eliminarButton_Click">
-                
+                <Button.Background>
+                    <ImageBrush ImageSource="C:\Users\Asus\Documents\Estudios\Sem 1-2020\Aplicada I\Proyecto-Final\Proyecto-Final\Proyecto-MantenimientoVehicular\UI\Imagenes\Eliminar.png" Stretch="Uniform" AlignmentX="Left"/>
+                </Button.Background>
             </Button>
         </StackPanel>
 
