@@ -30,9 +30,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="consultar1Button" Content="Consulta" HorizontalAlignment="Left" Margin="650,28,0,0" VerticalAlignment="Top" Height="40" Width="128" Click="consultar1Button_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="C:\Users\Asus\Documents\Estudios\Sem 1-2020\Aplicada I\Proyecto-Final\Proyecto-Final\Proyecto-MantenimientoVehicular\UI\Imagenes\Buscar1.png" Stretch="Uniform" AlignmentX="Left"/>
-            </Button.Background>
+         
         </Button>
 
     </Grid>

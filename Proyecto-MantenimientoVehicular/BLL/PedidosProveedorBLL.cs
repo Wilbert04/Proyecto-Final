@@ -9,27 +9,42 @@ using System.Linq.Expressions;
 namespace Proyecto_MantenimientoVehicular.BLL
 {
     public class PedidosProveedorBLL
-    {
+    {                                                                           
         public static bool Guardar(PedidosProveedor pedidosProveedor)
         {
             bool paso = false;
             Contexto db = new Contexto();
+            
+            
+            
 
             try
             {
                 if (db.pedidosProveedor.Add(pedidosProveedor) != null)
-                    paso = db.SaveChanges() > 0;
+                {
+                    foreach (var item in pedidosProveedor.DPedidos)
+                    {
+                        var proveedor = db.proveedores.Find(item.ProveedorId);
+
+                        proveedor.CantidadPedidos += 1;
+                    }
+
+
+
+                    db.SaveChanges();
+                    paso = true;
+                }
+                db.Dispose();
             }
             catch (Exception)
             {
                 throw;
             }
-            finally
-            {
-                db.Dispose();
-            }
+            
             return paso;
         }
+
+
 
         public static bool Modificar(PedidosProveedor pedidosProveedor)
         {

@@ -21,9 +21,9 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             {
                 "Usuario","Administrador"
             };
-            this.tipousuarioComboBox.ItemsSource = tipousuario;
+            this.usuariotipoComboBox1.ItemsSource = tipousuario;
 
-            idTextBox.Text = "0";
+            idTextBox1.Text = "0";
 
             this.DataContext = usuarios;
         }
@@ -34,13 +34,13 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             usuarioTextBox1.Text = string.Empty;
             contraseñaPasswordBox1.Password = string.Empty;
             confirmarPasswordBox1.Password = string.Empty;
-            tipousuarioComboBox.Text = string.Empty;
-            fechaDatePicker.SelectedDate = DateTime.Now;
+            usuariotipoComboBox1.Text = string.Empty;
+            fechaDatePicker1.SelectedDate = DateTime.Now;
         }
 
         private bool ExisteEnLaBaseDatos()
         {
-            Usuarios usuarios = UsuarioBLL.Buscar((int)Convert.ToInt32(idTextBox.Text));
+            Usuarios usuarios = UsuarioBLL.Buscar((int)Convert.ToInt32(idTextBox1.Text));
             return (usuarios != null);
         }
 
@@ -97,7 +97,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             if (!ValidarCampos())
                 return;
 
-            if (idTextBox.Text == "0")
+            if (idTextBox1.Text == "0")
                 paso = UsuarioBLL.Guardar(usuarios);
 
             else
@@ -161,7 +161,9 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
                 e.Handled = true;
         }
 
-        private void nombreTextBox1_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+       
+
+        private void nombreTextBox1_PreviewTextInput_1(object sender, System.Windows.Input.TextCompositionEventArgs e)
         {
             if (!System.Text.RegularExpressions.Regex.IsMatch(e.Text, "^[a-zA-Z]"))
             {

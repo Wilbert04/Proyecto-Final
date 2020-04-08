@@ -203,5 +203,10 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
                 e.Handled = true;
         }
 
+        private void agregarclienteButton_Click(object sender, RoutedEventArgs e)
+        {
+            rCliente registro = new rCliente();
+            registro.ShowDialog();
+        }
     }
 }

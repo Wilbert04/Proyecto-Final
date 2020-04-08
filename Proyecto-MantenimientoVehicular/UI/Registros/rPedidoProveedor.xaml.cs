@@ -185,7 +185,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             Pedidos.DPedidos.Add(new DetallePedidos(
                 id: 0,
                 pedidoId: Convert.ToInt32(IdTextbox.Text),
-                proveedor: Convert.ToString(proveedorComboBox.Text),
+                proveedor: Convert.ToInt32(proveedorComboBox.SelectedValue),
                 categoria: Convert.ToString(categoriaComboBox.Text),
                 articulo: articuloTextBox.Text,
                 unidad: Convert.ToInt32(unidadTextBox.Text),
@@ -226,6 +226,10 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
                 e.Handled = true;
         }
 
-        
+        private void agregarproveedor_Click(object sender, RoutedEventArgs e)
+        {
+            rProveedores registro = new rProveedores();
+            registro.ShowDialog();
+        }
     }
 }

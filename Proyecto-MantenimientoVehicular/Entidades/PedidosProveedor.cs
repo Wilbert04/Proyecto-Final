@@ -28,9 +28,9 @@ namespace Proyecto_MantenimientoVehicular.Entidades
             Categoria = string.Empty;
             Nota =  string.Empty;
             Fecha = DateTime.Now;
-            Fecha = DateTime.Now;
+            FechaEntrega = DateTime.Now.AddDays(15);
 
-
+            
 
         }
     }

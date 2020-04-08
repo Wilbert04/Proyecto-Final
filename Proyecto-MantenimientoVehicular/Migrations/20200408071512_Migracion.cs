@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Proyecto_MantenimientoVehicular.Migrations
 {
-    public partial class MigracionMV : Migration
+    public partial class Migracion : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -86,7 +86,8 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                     ProveedoresId = table.Column<int>(nullable: false),
                     Categoria = table.Column<string>(nullable: true),
                     Nota = table.Column<string>(nullable: true),
-                    Fecha = table.Column<DateTime>(nullable: false)
+                    Fecha = table.Column<DateTime>(nullable: false),
+                    FechaEntrega = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -104,6 +105,7 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                     Email = table.Column<string>(nullable: true),
                     Direccion = table.Column<string>(nullable: true),
                     RNC = table.Column<string>(nullable: true),
+                    CantidadPedidos = table.Column<int>(nullable: false),
                     Fecha = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
@@ -183,10 +185,11 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     PedidoId = table.Column<int>(nullable: false),
-                    Proveedor = table.Column<string>(nullable: true),
+                    ProveedorId = table.Column<int>(nullable: false),
                     Categoria = table.Column<string>(nullable: true),
                     Articulo = table.Column<string>(nullable: true),
-                    Unidad = table.Column<int>(nullable: false)
+                    Unidad = table.Column<int>(nullable: false),
+                    Precio = table.Column<decimal>(nullable: false)
                 },
                 constraints: table =>
                 {

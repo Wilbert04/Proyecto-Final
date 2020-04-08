@@ -120,8 +120,8 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                     b.Property<decimal>("Precio")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Proveedor")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("ProveedorId")
+                        .HasColumnType("INTEGER");
 
                     b.Property<int>("Unidad")
                         .HasColumnType("INTEGER");
@@ -218,6 +218,9 @@ namespace Proyecto_MantenimientoVehicular.Migrations
                 {
                     b.Property<int>("ProveedorId")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("CantidadPedidos")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Direccion")

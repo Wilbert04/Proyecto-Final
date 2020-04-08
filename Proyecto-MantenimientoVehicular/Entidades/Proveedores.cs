@@ -12,6 +12,7 @@ namespace Proyecto_MantenimientoVehicular.Entidades
         public string Email { get; set; }
         public string Direccion { get; set; }
         public string RNC { get; set; }
+        public int CantidadPedidos { get; set; }
         public DateTime Fecha { get; set; }
 
         public Proveedores()
@@ -22,6 +23,7 @@ namespace Proyecto_MantenimientoVehicular.Entidades
             Email = string.Empty;
             Direccion = string.Empty;
             RNC = string.Empty;
+            CantidadPedidos = 0;
             Fecha = DateTime.Now;
         }
     }

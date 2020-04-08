@@ -24,6 +24,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
         {
             InitializeComponent();
             IdTextBox.Text = "0";
+            cantidadpedidosTextBox.Text = "0";
 
             this.DataContext = proveedores;
 
@@ -38,6 +39,7 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             emailTextBox.Text = string.Empty;
             rncTextBox.Text = string.Empty;
             direccionTextBox.Text = string.Empty;
+            cantidadpedidosTextBox.Text = "0";
             fechaDatePicker.SelectedDate = DateTime.Now;
         }
 

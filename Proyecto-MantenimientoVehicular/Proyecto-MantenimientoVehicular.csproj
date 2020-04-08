@@ -11,11 +11,6 @@
   <ItemGroup>
     <None Remove="login-logo-png-5.png" />
     <None Remove="Logo.jpeg" />
-    <None Remove="UI\Menu\Logo.jpeg" />
-    <None Remove="UI\Registros\buscar.png" />
-    <None Remove="UI\Registros\eliminar.png" />
-    <None Remove="UI\Registros\guardar.png" />
-    <None Remove="UI\Registros\nuevo.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,18 +22,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="UI\Imagenes\login-logo-png-5.png" />
-    <Resource Include="UI\Imagenes\Logo.jpeg" />
-    <Resource Include="UI\Menu\Logo.jpeg" />
-    <Resource Include="UI\Registros\buscar.png" />
-    <Resource Include="UI\Registros\eliminar.png" />
-    <Resource Include="UI\Registros\guardar.png" />
-    <Resource Include="UI\Registros\nuevo.png" />
+    <Folder Include="Data\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\" />
-    <Folder Include="Properties\" />
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

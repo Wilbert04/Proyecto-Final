@@ -22,9 +22,7 @@
         </ComboBox>
         <TextBox x:Name="criterioTextBox" HorizontalAlignment="Left" Margin="367,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121"/>
         <Button x:Name="consultarButton" Content="    Consultar" HorizontalAlignment="Left" Margin="499,37,0,0" VerticalAlignment="Top" Width="122" Height="35" Click="consultarButton_Click" FontSize="14" FontWeight="Bold" BorderBrush="#FF020000">
-            <Button.Background>
-                <ImageBrush ImageSource="C:\Users\Asus\Documents\Estudios\Sem 1-2020\Aplicada I\Proyecto-Final\Proyecto-Final\Proyecto-MantenimientoVehicular\UI\Imagenes\Buscar1.png" Stretch="Uniform" AlignmentX="Left"/>
-            </Button.Background>
+            
         </Button>
         <DataGrid x:Name="consultarDataGrid" Margin="9,88,10,12" ItemsSource="{Binding}" AutoGenerateColumns="False" >
             <DataGrid.Columns>
