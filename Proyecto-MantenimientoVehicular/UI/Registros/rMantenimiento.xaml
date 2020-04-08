@@ -53,25 +53,19 @@
             </DataGrid.ItemsSource>
         </DataGrid>
         <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="247,32,0,0" VerticalAlignment="Top" Height="37" Width="105" Click="buscarButton_Click" FontWeight="Bold">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Buscar.png" Stretch="Uniform" AlignmentX="Left"/>
-            </Button.Background>
+           
         </Button>
         <Button x:Name="agregararticuloButton" Content="+" HorizontalAlignment="Left" Margin="221,233,0,0" VerticalAlignment="Top" Height="21" Width="20" FontWeight="Bold" Click="agregararticuloButton_Click"/>
-        <Button x:Name="agregarButton" HorizontalAlignment="Left" Margin="788,223,0,0" VerticalAlignment="Top" Width="57" Height="36" FontSize="18" FontWeight="Bold" Click="agregarButton_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Agregar.png" Stretch="Uniform" />
-            </Button.Background>
+        <Button x:Name="agregarButton" Content="+" HorizontalAlignment="Left" Margin="788,223,0,0" VerticalAlignment="Top" Width="57" Height="36" FontSize="18" FontWeight="Bold" Click="agregarButton_Click">
+        
         </Button>
         <Label Content="Subtotal" HorizontalAlignment="Left" Margin="705,486,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontWeight="Bold" FontSize="14"/>
         <Label Content="ITEBIS" HorizontalAlignment="Left" Margin="714,508,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontWeight="Bold" FontSize="14"/>
         <Label Content="Total" HorizontalAlignment="Left" Margin="720,530,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontWeight="Bold" FontSize="14"/>
         <Button x:Name="removerButton" Content="Remover" HorizontalAlignment="Left" Margin="21,490,0,0" VerticalAlignment="Top" Height="27" Width="106" Click="removerButton_Click" FontWeight="Bold">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Remover.png" Stretch="Uniform" AlignmentX="Left"/>
-            </Button.Background>
+           
         </Button>
-        <TextBox x:Name="subtotalTextBox" HorizontalAlignment="Left" Margin="771,490,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" IsReadOnly="True">
+        <TextBox x:Name="SubtotalTextBox" HorizontalAlignment="Left" Margin="771,490,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" IsReadOnly="True">
             <TextBox.Text>
                 <Binding Path="Subtotal" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                     <Binding.ValidationRules>
@@ -99,14 +93,10 @@
             </TextBox.Text>
         </TextBox>
         <Button x:Name="nuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="25,604,0,0" VerticalAlignment="Top" Height="46" Width="125" Click="nuevoButton_Click" FontWeight="Bold">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Nuevo.png" Stretch="Uniform" AlignmentX="Left"/>
-            </Button.Background>
+           
         </Button>
         <Button x:Name="eliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="354,602,0,0" VerticalAlignment="Top" Height="48" Width="127" Click="eliminarButton_Click" FontWeight="Bold">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Eliminar.png" Stretch="Uniform" AlignmentX="Left"/>
-            </Button.Background>
+           
         </Button>
         <Label Content="Descripción" HorizontalAlignment="Left" Margin="408,125,0,0" VerticalAlignment="Top" FontFamily="Bell MT" FontWeight="Bold" FontSize="14"/>
         <TextBox x:Name="descripcionTextBox" HorizontalAlignment="Left" Margin="500,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="221" PreviewTextInput="descripcionTextBox_PreviewTextInput">
@@ -119,9 +109,7 @@
             </TextBox.Text>
         </TextBox>
         <Button x:Name="guardarButton" Content="Guardar" HorizontalAlignment="Left" Margin="191,607,0,0" VerticalAlignment="Top" Height="43" Width="129" Click="guardarButton_Click" FontWeight="Bold">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Save.png" Stretch="Uniform" AlignmentX="Left"/>
-            </Button.Background>
+          
         </Button>
         <Label Content="Disp." HorizontalAlignment="Left" Margin="247,231,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Bell MT" FontSize="14"/>
         <TextBox x:Name="disponibleTextBox" HorizontalAlignment="Left" Margin="291,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="37" IsReadOnly="True"/>

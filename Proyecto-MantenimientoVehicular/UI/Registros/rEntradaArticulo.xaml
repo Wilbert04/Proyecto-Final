@@ -30,24 +30,16 @@
             </TextBox.Text>
         </TextBox>
         <Button x:Name="nuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="22,240,0,0" VerticalAlignment="Top" Height="33" Width="115" FontSize="14" FontWeight="Bold" Click="nuevoButton_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Nuevo.png" Stretch="Uniform" AlignmentX="Left"/>
-            </Button.Background>
+     
         </Button>
         <Button x:Name="guardarButton" Content="Guardar" HorizontalAlignment="Left" Margin="159,238,0,0" VerticalAlignment="Top" Height="33" Width="120" FontSize="14" FontWeight="Bold" Click="guardarButton_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Save.png" Stretch="Uniform" AlignmentX="Left"/>
-            </Button.Background>
+           
         </Button>
         <Button x:Name="eliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="302,237,0,0" VerticalAlignment="Top" Height="33" Width="123" FontSize="14" FontWeight="Bold" Click="eliminarButton_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Eliminar.png" Stretch="Uniform" AlignmentX="Left"/>
-            </Button.Background>
+           
         </Button>
         <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="181,29,0,0" VerticalAlignment="Top" Height="26" Width="99" FontSize="14" FontWeight="Bold" Click="buscarButton_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/BUscar.png" Stretch="Uniform" AlignmentX="Left"/>
-            </Button.Background>
+           
         </Button>
         <DatePicker x:Name="FechaPicker" HorizontalAlignment="Left" Margin="369,30,0,0" VerticalAlignment="Top" Width="100">
             <DatePicker.SelectedDate>

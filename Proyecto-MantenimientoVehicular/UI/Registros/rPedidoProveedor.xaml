@@ -18,9 +18,7 @@
             </TextBox.Text>
         </TextBox>
         <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="196,33,0,0" VerticalAlignment="Top" Width="110" FontSize="14" FontWeight="Bold" Click="buscarButton_Click" Height="33">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/BUscar.png" Stretch="Uniform" AlignmentX="Left"/>
-            </Button.Background>
+            
         </Button>
         <Label Content="Proveedor" HorizontalAlignment="Left" Margin="18,116,0,0" VerticalAlignment="Top" FontSize="14"/>
         <ComboBox x:Name="proveedorComboBox" HorizontalAlignment="Left" Margin="100,118,0,0" VerticalAlignment="Top" Width="160" Height="26"
@@ -57,10 +55,8 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <Button x:Name="agregarButton" HorizontalAlignment="Left" Margin="665,170,0,0" VerticalAlignment="Top" Width="52" FontSize="16" FontWeight="Normal" Click="agregarButton_Click" Height="32">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Agregar.png" Stretch="Uniform" />
-            </Button.Background>
+        <Button x:Name="agregarButton" Content="+" HorizontalAlignment="Left" Margin="665,170,0,0" VerticalAlignment="Top" Width="52" FontSize="16" FontWeight="Normal" Click="agregarButton_Click" Height="32">
+            
         </Button>
         <DataGrid x:Name="detalleDataGrid" Margin="17,208,17,141">
             <DataGrid.ItemsSource>
@@ -68,24 +64,16 @@
             </DataGrid.ItemsSource>
         </DataGrid>
         <Button x:Name="removerButton" Content="Remover" HorizontalAlignment="Left" Margin="18,444,0,0" VerticalAlignment="Top" Width="125" FontSize="14" FontWeight="Bold" Click="removerButton_Click" Height="27">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Remover.png" Stretch="Uniform" AlignmentX="Left"/>
-            </Button.Background>
+           
         </Button>
         <Button x:Name="nuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="19,525,0,0" VerticalAlignment="Top" Height="41" Width="122" FontSize="14" FontWeight="Bold" Click="nuevoButton_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Nuevo.png" Stretch="Uniform" AlignmentX="Left"/>
-            </Button.Background>
+           
         </Button>
         <Button x:Name="guardarButton" Content="Guardar" HorizontalAlignment="Left" Margin="160,524,0,0" VerticalAlignment="Top" Height="41" Width="133" FontSize="14" FontWeight="Bold" Click="guardarButton_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Save.png" Stretch="Uniform" AlignmentX="Left"/>
-            </Button.Background>
+           
         </Button>
         <Button x:Name="eliiminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="307,522,0,0" VerticalAlignment="Top" Width="132" Height="41" FontSize="14" FontWeight="Bold" Click="eliiminarButton_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/UI/Imagenes/Eliminar.png" Stretch="Uniform" AlignmentX="Left"/>
-            </Button.Background>
+           
         </Button>
         <Label Content="Categoría" HorizontalAlignment="Left" Margin="18,172,0,0" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="14"/>
         <ComboBox x:Name="categoriaComboBox" HorizontalAlignment="Left" Margin="99,177,0,0" VerticalAlignment="Top" Width="157"

@@ -62,6 +62,9 @@ namespace Proyecto_MantenimientoVehicular.UI.Registros
             fechaDatePicker.SelectedDate = DateTime.Now;
             proxmantDatePicker.SelectedDate = DateTime.Now;
             //detalleDataGrid.ItemsSource = string.Empty;
+            itebisTextBox.Text = "0";
+            SubtotalTextBox.Text = "0";
+            detalleDataGrid.ItemsSource = string.Empty;
 
         }
 
